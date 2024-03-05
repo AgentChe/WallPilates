@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Profile-Bold.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

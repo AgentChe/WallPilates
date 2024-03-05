@@ -1,0 +1,80 @@
+//
+//  ProfileDetailsViewController.swift
+//  Soccer
+//
+//  Created by Виталий Загороднов on 25.04.2023.
+//
+
+import UIKit
+import RxCocoa
+import RxSwift
+
+class ProfileDetailsViewController: UIViewController {
+    
+    lazy var mainView = ProfileDetailsView()
+    
+    private let viewModel: ProfileDetailsViewModel = .init()
+    private lazy var disposeBag = DisposeBag()
+    
+    override func loadView() {
+        view = mainView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavBar()
+        
+        viewModel.elements
+            .drive(with: mainView.tableView) { $0.setup(elements: $1) }
+            .disposed(by: disposeBag)
+        
+        viewModel.route
+            .emit(with: self) { $0.route($1) }
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.selectedCellModel
+            .bind(to: viewModel.selectedCellModel)
+            .disposed(by: disposeBag)
+    }
+}
+
+private extension ProfileDetailsViewController {
+    func setupNavBar() {
+        let label = UILabel()
+        let attrs = TextAttributes()
+            .font(Fonts.Inter.semiBold(size: 20.scale))
+            .lineHeight(24.scale)
+            .textColor(Appearance.white)
+            .textAlignment(.center)
+        
+        label.attributedText = "Profile.MyProfile".localized.attributed(with: attrs)
+        navigationItem.titleView = label
+    }
+    
+    func route(_ route: ProfileDetailsViewModel.Route) {
+        switch route {
+        case .skillLevel(let level):
+            let vc = ProfileEditViewController.make(skillLevel: level)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        case .trainingDays(let weekSchedule):
+            let vc = ProfileEditViewController.make(weekSchedule: weekSchedule)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        case .focusZone(let zones, let gender):
+            let vc = ProfileEditViewController.make(focusZones: zones, gender: gender)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        case .open(let url):
+            if let url = URL(string: url), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+}
+
+extension ProfileDetailsViewController {
+    static func make() -> ProfileDetailsViewController {
+        ProfileDetailsViewController()
+    }
+}
