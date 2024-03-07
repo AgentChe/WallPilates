@@ -9,8 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ProfileDetailsViewController: UIViewController {
-    
+final class ProfileDetailsViewController: UIViewController {
     lazy var mainView = ProfileDetailsView()
     
     private let viewModel: ProfileDetailsViewModel = .init()
@@ -63,6 +62,10 @@ private extension ProfileDetailsViewController {
             present(vc, animated: true)
         case .focusZone(let zones, let gender):
             let vc = ProfileEditViewController.make(focusZones: zones, gender: gender)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        case .goals(let array):
+            let vc = ProfileEditViewController.make(goals: array)
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         case .open(let url):

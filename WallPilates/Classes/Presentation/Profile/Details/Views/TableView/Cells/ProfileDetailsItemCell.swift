@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ProfileDetailsItemCell: UITableViewCell {
-    
+final class ProfileDetailsItemCell: UITableViewCell {
     private lazy var titleLabel = makeLabel()
     private lazy var subtitleLabel = makeLabel()
     private lazy var chevroneView = makeChevron()
@@ -126,6 +125,8 @@ private extension ProfileDetailsTableElement.CellType {
             return "Profile.TrainingDays".localized
         case .focusZone:
             return "Profile.FocusZones".localized
+        case .goals:
+            return "Profile.Goals".localized
         case .termsOfUse:
             return "Profile.TermsofUse".localized
         case .privatePolicy:

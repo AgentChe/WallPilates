@@ -8,8 +8,7 @@
 import UIKit
 import RxSwift
 
-class ProfileEditSkillLevelView: UIView {
-
+final class ProfileEditSkillLevelView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var slider = makeSlider()
     lazy var continueButton = makeContinueButton()

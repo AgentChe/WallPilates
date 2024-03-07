@@ -9,12 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ProfileEditViewController: UIViewController {
+final class ProfileEditViewController: UIViewController {
+     lazy var mainView = ProfileEditView()
     
-    private lazy var mainView = ProfileEditView()
     private lazy var viewModel = ProfileEditViewModel()
+    private lazy var disposeBag = DisposeBag()
     
-    init(skillLevel: SkillLevel?) {
+    private init(skillLevel: SkillLevel?) {
         super.init(nibName: nil, bundle: nil)
         let content = ProfileEditSkillLevelView(skillLevel: skillLevel)
         content.didTapSave = { [weak self] in
@@ -23,7 +24,7 @@ class ProfileEditViewController: UIViewController {
         self.mainView.setup(contentView: content)
     }
     
-    init(weekSchedule: WeekSchedule?) {
+    private init(weekSchedule: WeekSchedule?) {
         super.init(nibName: nil, bundle: nil)
         let content = ProfileEditDaysOfWeekView(weekSchedule: weekSchedule)
         content.didTapSave = { [weak self] in
@@ -32,7 +33,7 @@ class ProfileEditViewController: UIViewController {
         mainView.setup(contentView: content)
     }
     
-    init(focusZones: [FocusZone], gender: Gender?) {
+    private init(focusZones: [FocusZone], gender: Gender?) {
         super.init(nibName: nil, bundle: nil)
         let content = ProfileEditFocusZoneView(focusZones: focusZones, gender: gender)
         content.didTapSave = { [weak self] in
@@ -41,7 +42,14 @@ class ProfileEditViewController: UIViewController {
         mainView.setup(contentView: content)
     }
     
-    private lazy var disposeBag = DisposeBag()
+    private init(goals: [DrillCategory]) {
+        super.init(nibName: nil, bundle: nil)
+        let content = ProfileEditGoalsView(goals: goals)
+        content.didTapSave = { [weak self] in
+            self?.viewModel.goalsRelay.accept($0)
+        }
+        mainView.setup(contentView: content)
+    }
     
     override func loadView() {
         view = mainView
@@ -80,6 +88,27 @@ class ProfileEditViewController: UIViewController {
     }
 }
 
+// MARK: Public
+extension ProfileEditViewController {
+    static func make(skillLevel: SkillLevel?) -> ProfileEditViewController {
+        ProfileEditViewController(skillLevel: skillLevel)
+    }
+    
+    static func make(weekSchedule: WeekSchedule?) -> ProfileEditViewController {
+        ProfileEditViewController(weekSchedule: weekSchedule)
+    }
+    
+    static func make(focusZones: [FocusZone], gender: Gender?) -> ProfileEditViewController {
+        ProfileEditViewController(focusZones: focusZones, gender: gender)
+    }
+    
+    static func make(goals: [DrillCategory]) -> ProfileEditViewController {
+        ProfileEditViewController(goals: goals)
+    }
+}
+
+
+// MARK: Private
 private extension ProfileEditViewController {
     func open(error: Error) -> Observable<Void> {
         Observable<Void>
@@ -99,19 +128,5 @@ private extension ProfileEditViewController {
     
     func activity(_ activity: Bool) {
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
-    }
-}
-
-extension ProfileEditViewController {
-    static func make(skillLevel: SkillLevel?) -> ProfileEditViewController {
-        ProfileEditViewController(skillLevel: skillLevel)
-    }
-    
-    static func make(weekSchedule: WeekSchedule?) -> ProfileEditViewController {
-        ProfileEditViewController(weekSchedule: weekSchedule)
-    }
-    
-    static func make(focusZones: [FocusZone], gender: Gender?) -> ProfileEditViewController {
-        ProfileEditViewController(focusZones: focusZones, gender: gender)
     }
 }

@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ProfileEditDaysOfWeekView: UIView {
-    
+final class ProfileEditDaysOfWeekView: UIView {
     var didTapSave: ((WeekSchedule) -> Void)?
 
     lazy var titleLabel = makeTitleLabel()

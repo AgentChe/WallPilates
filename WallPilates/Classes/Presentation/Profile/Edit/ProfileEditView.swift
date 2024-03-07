@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileEditView: UIView {
+final class ProfileEditView: UIView {
     lazy var containerView = makeContainer()
     lazy var closeButton = makeCloseButton()
     lazy var preloader = makePreloader()

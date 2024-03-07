@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileDetailsHeaderCell: UITableViewCell {
+final class ProfileDetailsHeaderCell: UITableViewCell {
     private lazy var titleLabel = makeLabel()
     
     private lazy var attrs = TextAttributes()

@@ -342,6 +342,7 @@
 		DE0D2B072B97643F007F1560 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C62B97643F007F1560 /* OnboardingView.swift */; };
 		DE0D2B082B97643F007F1560 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */; };
 		DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0D2B1E2B98ADBC007F1560 /* API.json */; };
+		DE0D2B212B99E18B007F1560 /* ProfileEditGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D2B202B99E18B007F1560 /* ProfileEditGoalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -683,6 +684,7 @@
 		DE0D29C62B97643F007F1560 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DE0D2B1E2B98ADBC007F1560 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		DE0D2B202B99E18B007F1560 /* ProfileEditGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditGoalsView.swift; sourceTree = "<group>"; };
 		E6BF8A3E3741DE0E319C8A7B /* Pods-WallPilates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallPilates.release.xcconfig"; path = "Target Support Files/Pods-WallPilates/Pods-WallPilates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1928,6 +1930,7 @@
 				DE0D29652B97643F007F1560 /* ProfileEditDaysOfWeekView.swift */,
 				DE0D29662B97643F007F1560 /* ProfileEditFocusZoneView.swift */,
 				DE0D29672B97643F007F1560 /* ProfileEditSkillLevelView.swift */,
+				DE0D2B202B99E18B007F1560 /* ProfileEditGoalsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2607,6 +2610,7 @@
 				DE0D29D52B97643F007F1560 /* NumberLaunches.swift in Sources */,
 				DE0D29E62B97643F007F1560 /* Spinner.swift in Sources */,
 				DE0D2AC72B97643F007F1560 /* ProfileCalendarCell.swift in Sources */,
+				DE0D2B212B99E18B007F1560 /* ProfileEditGoalsView.swift in Sources */,
 				DE0D2AFF2B97643F007F1560 /* OSlideView.swift in Sources */,
 				DE0D2A272B97643F007F1560 /* GetProfileResponse.swift in Sources */,
 				DE0D2A472B97643F007F1560 /* GetWorkoutCoversRequest.swift in Sources */,

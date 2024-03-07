@@ -8,8 +8,7 @@
 import UIKit
 import RxCocoa
 
-class ProfileDetailsTableView: UITableView {
-    
+final class ProfileDetailsTableView: UITableView {
     lazy var selectedCellModel = PublishRelay<ProfileDetailsTableElement>()
     
     private var elements = [ProfileDetailsTableElement]()

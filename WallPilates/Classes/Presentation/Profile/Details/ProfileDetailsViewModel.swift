@@ -14,6 +14,7 @@ final class ProfileDetailsViewModel {
         case skillLevel(SkillLevel?)
         case trainingDays(WeekSchedule?)
         case focusZone([FocusZone], Gender?)
+        case goals([DrillCategory])
         case open(url: String)
     }
     
@@ -27,6 +28,7 @@ final class ProfileDetailsViewModel {
     private lazy var profileManager = ProfileManager()
     private lazy var contentManager = ContentManager()
     private lazy var workoutManager = WorkoutManager()
+    private lazy var drillManager = DrillManager()
 }
 
 private extension ProfileDetailsViewModel {
@@ -43,6 +45,8 @@ private extension ProfileDetailsViewModel {
                     return .trainingDays(data.weekSchedule)
                 case .focusZone:
                     return .focusZone(data.zones, data.gender)
+                case .goals:
+                    return .goals(data.goals)
                 case .termsOfUse:
                     return .open(url: GlobalDefinitions.termsOfServiceUrl)
                 case .privatePolicy:
@@ -97,9 +101,25 @@ private extension ProfileDetailsViewModel {
                     }
             }
         
+        let currentGoals = Observable
+            .merge(
+                profile.map { $0.drillsIds ?? [] },
+                ProfileMediator.shared.drillsIdsChange.asObservable()
+            )
+        
+        let goals = Observable
+            .combineLatest(
+                drillManager.obtainDrillCategories(forceUpdate: false).asObservable(),
+                currentGoals
+            ) { drills, ids in
+                ids.compactMap { id in
+                    drills.first(where: { $0.id == id })
+                }
+            }
+        
         return Observable
-            .combineLatest(level, weekSchedule, focusZones, profile.map { $0.gender }) {
-                EditableData(level: $0, weekSchedule: $1, zones: $2, gender: $3)
+            .combineLatest(level, weekSchedule, focusZones, profile.map { $0.gender }, goals) {
+                EditableData(level: $0, weekSchedule: $1, zones: $2, gender: $3, goals: $4)
             }
             .asDriver(onErrorDriveWith: .never())
     }
@@ -109,11 +129,13 @@ private extension ProfileDetailsViewModel {
             .map { value -> [ProfileDetailsTableElement] in
                 let trainingDaysSubtitle = value.weekSchedule?.daysString
                 let focusZonesSubtitle = value.zones.map { $0.name }.joined(separator: ", ")
+                let goalsSubtitle = value.goals.map { $0.name }.joined(separator: ", ")
                 
                 return [
                     .item(type: .skillLevel, subtitle: value.level?.name),
                     .item(type: .trainingDays, subtitle: trainingDaysSubtitle),
-                    .item(type: .focusZone, isLast: true, subtitle: focusZonesSubtitle),
+                    .item(type: .focusZone, subtitle: focusZonesSubtitle),
+                    .item(type: .goals, isLast: true, subtitle: goalsSubtitle),
                     .header("Profile.Legal&Privacy".localized),
                     .item(type: .termsOfUse),
                     .item(type: .privatePolicy),
@@ -130,6 +152,7 @@ private extension ProfileDetailsViewModel {
         let weekSchedule: WeekSchedule?
         let zones: [FocusZone]
         let gender: Gender?
+        let goals: [DrillCategory]
     }
 }
 

@@ -8,8 +8,7 @@
 import UIKit
 import RxSwift
 
-class ProfileEditFocusZoneView: UIView {
-    
+final class ProfileEditFocusZoneView: UIView {
     var didTapSave: (([FocusZone]) -> Void)?
 
     lazy var titleLabel = makeTitleLabel()

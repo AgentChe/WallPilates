@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ProfileDetailsView: UIView {
-    
+final class ProfileDetailsView: UIView {
     lazy var tableView = makeTableView()
 
     override init(frame: CGRect) {

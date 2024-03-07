@@ -15,6 +15,7 @@ enum ProfileDetailsTableElement {
         case skillLevel
         case trainingDays
         case focusZone
+        case goals
         case termsOfUse
         case privatePolicy
         case contactUs
