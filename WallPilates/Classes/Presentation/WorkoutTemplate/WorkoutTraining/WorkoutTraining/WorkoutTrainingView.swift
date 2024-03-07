@@ -15,7 +15,6 @@ class WorkoutTrainingView: UIView {
     lazy var menuView = makeMenuView()
     lazy var preloader = makePreloader()
     lazy var trainingTickLabel = makeLabel()
-    lazy var stepLabel = makeLabel()
     lazy var prepareLabel = makeLabel()
     lazy var collectionView = makeCollectionView()
     lazy var progressView = makeProgressView()
@@ -34,11 +33,6 @@ class WorkoutTrainingView: UIView {
         .textColor(Appearance.white)
         .font(Fonts.Inter.bold(size: 60.scale))
         .lineHeight(70.scale)
-        .textAlignment(.center)
-    private lazy var stepNameAttrs = TextAttributes()
-        .textColor(Appearance.white)
-        .font(Fonts.Inter.semiBold(size: 50.scale))
-        .lineHeight(60.scale)
         .textAlignment(.center)
     
     private lazy var menuBottomConstraint = NSLayoutConstraint()
@@ -73,11 +67,6 @@ extension WorkoutTrainingView {
     
     func setup(prepared: String) {
         prepareLabel.attributedText = prepared.attributed(with: preparedAttrs)
-    }
-    
-    func setup(stepName: String) {
-        stepLabel.numberOfLines = 0
-        stepLabel.attributedText = stepName.attributed(with: stepNameAttrs)
     }
     
     func menu(hidden: Bool, animated: Bool = true, completion: (() -> Void)? = nil) {
@@ -148,12 +137,6 @@ private extension WorkoutTrainingView {
         ])
         
         NSLayoutConstraint.activate([
-            stepLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16.scale),
-            stepLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16.scale),
-            stepLabel.bottomAnchor.constraint(equalTo: prepareLabel.topAnchor, constant: -108.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             pausedLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             pausedLabel.topAnchor.constraint(equalTo: trainingTickLabel.bottomAnchor, constant: 9.scale)
         ])
@@ -196,7 +179,6 @@ private extension WorkoutTrainingView {
 
 // MARK: Lazy initialization
 private extension WorkoutTrainingView {
-    
     func makeCloseButton() -> TapAreaButton {
         let view = TapAreaButton()
         view.setImage(UIImage(named: "DrillTraining.Close"), for: .normal)

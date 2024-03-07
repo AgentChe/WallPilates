@@ -24,7 +24,6 @@ final class WorkoutTrainingViewModel {
     lazy var currentAndNextExercise = makeCurrentAndNextExercise()
     lazy var currentIndex = makeCurrentIndex()
     lazy var exercises = workoutTraining.map { $0.template.exercises }
-    lazy var currentStep = makeCurrentStep()
     lazy var menuState = makeMenuState()
     lazy var route = makeRoute()
     
@@ -88,7 +87,6 @@ private extension WorkoutTrainingViewModel {
     }
     
     func saveProgress(customerWorkoutId: Int, exerciseId: Int, trainedTime: Int, finish: Bool) -> Observable<AssignedWorkout?> {
-        
         func source() -> Single<AssignedWorkout?> { 
             workoutManager.logProgress(
                 customerWorkoutId: customerWorkoutId,
@@ -174,22 +172,6 @@ private extension WorkoutTrainingViewModel {
             .asDriver(onErrorJustReturn: [])
     }
     
-    func makeGroupedExercises() -> Driver<[WorkoutStep: [WorkoutExercise]]> {
-        Driver.combineLatest(workoutTraining, steps) { training, steps in
-            let initial: [WorkoutStep: [WorkoutExercise]] = [:]
-            
-            return initial
-            // TODO
-//            return training.template.exercises
-//                .reduce(into: initial) { result, exercise in
-//                    guard let step = steps.first(where: { $0.id == exercise.workoutStepId }) else { return }
-//                    var exercises = result[step] ?? []
-//                    exercises.append(exercise)
-//                    result[step] = exercises
-//                }
-        }
-    }
-    
     func makeCurrentAndNextExercise() -> Driver<(current: WorkoutExercise, next: WorkoutExercise?)> {
         currentIndex
             .withLatestFrom(exercises) { ($0, $1) }
@@ -242,18 +224,6 @@ private extension WorkoutTrainingViewModel {
             }
             .compactMap { $0.index }
             .asDriver(onErrorDriveWith: .never())
-    }
-    
-    // TODO
-    func makeCurrentStep() -> Driver<WorkoutStep> {
-        .never()
-//        currentAndNextExercise
-//            .withLatestFrom(steps) { ($0, $1) }
-//            .compactMap { exercise, steps in
-//                steps.first(where: { $0.id == exercise.current.workoutStepId })
-//            }
-//            .distinctUntilChanged()
-//            .asDriver(onErrorDriveWith: .never())
     }
     
     func makeMenuState() -> Driver<MenuState> {

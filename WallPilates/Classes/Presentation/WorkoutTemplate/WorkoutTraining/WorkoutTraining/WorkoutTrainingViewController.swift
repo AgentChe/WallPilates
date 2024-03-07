@@ -117,9 +117,13 @@ class WorkoutTrainingViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.currentStep
-            .drive(Binder(lifeCyrcle) { base, step in
-                base.startStep(for: step)
+        viewModel
+            .currentAndNextExercise
+            .asObservable()
+            .take(1)
+            .mapToVoid()
+            .bind(to: Binder(lifeCyrcle) { base, void in
+                base.start()
             })
             .disposed(by: disposeBag)
         
@@ -197,7 +201,6 @@ extension WorkoutTrainingViewController: WorkoutTrainingLifeCyrcleDelegate {
         mainView.setup(prepared: "")
         mainView.setup(prepareTick: "")
         mainView.setup(trainingTick: "")
-        mainView.setup(stepName: "")
         mainView.menu(hidden: true, animated: false)
         mainView.instruction(hidden: true, animated: false)
     }
@@ -218,7 +221,6 @@ extension WorkoutTrainingViewController: WorkoutTrainingLifeCyrcleDelegate {
         mainView.menu(hidden: false)
         mainView.setup(prepared: "")
         mainView.setup(prepareTick: "")
-        mainView.setup(stepName: "")
         mainView.menuView.playPauseButton.stateCode = .play
     }
     
@@ -257,21 +259,6 @@ extension WorkoutTrainingViewController: WorkoutTrainingLifeCyrcleDelegate {
         mainView.menuView.playPauseButton.stateCode = .pause
         
         viewModel.didFinishWorkout.accept((totalSeconds, exersiseId))
-    }
-    
-    func workoutTrainingHideStepName() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.mainView.stepLabel.transform = CGAffineTransform(translationX: .zero, y: 20.scale)
-            self.mainView.stepLabel.alpha = 0
-        }) { _ in
-            self.mainView.stepLabel.text = ""
-            self.mainView.stepLabel.transform = .identity
-            self.mainView.stepLabel.alpha = 1
-        }
-    }
-    
-    func workoutTrainingSetName(name: String) {
-        mainView.setup(stepName: name)
     }
 }
 

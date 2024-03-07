@@ -16,8 +16,6 @@ protocol WorkoutTrainingLifeCyrcleDelegate: AnyObject {
     func workoutTrainigPaused()
     func workoutTrainingStopped(totalSeconds: Int, exersiseId: Int)
     func workoutTrainingFinish(totalSeconds: Int, exersiseId: Int)
-    func workoutTrainingHideStepName()
-    func workoutTrainingSetName(name: String)
     func workoutTrainingStartStep()
 }
 
@@ -32,31 +30,13 @@ final class WorkoutTrainingLifeCyrcle {
 
 // MARK: Public
 extension WorkoutTrainingLifeCyrcle {
-    
-    func startTrainig() {
-        trainingTimer?.invalidate()
-        trainingTimer = nil
-        trainingSeconds = 0
-        delegate?.workoutTrainingTick(seconds: trainingSeconds)
-        
-        trainingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-            guard let self else {
-                return
-            }
-            
-            self.trainingSeconds += 1
-            self.delegate?.workoutTrainingTick(seconds: self.trainingSeconds)
-        }
-    }
-    
-    func startStep(for step: WorkoutStep) {
+    func start() {
         delegate?.workoutTrainingPrepare()
         timer?.invalidate()
         timer = nil
         
         var prepareLeft = 6
         
-        delegate?.workoutTrainingSetName(name: step.name)
         delegate?.workoutTrainingReadyIn(seconds: prepareLeft - 1)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
@@ -73,12 +53,26 @@ extension WorkoutTrainingLifeCyrcle {
                     self.delegate?.workoutTrainingStartStep()
                 case 1:
                     self.delegate?.workoutTrainingPrepared()
-                case 3:
-                    self.delegate?.workoutTrainingHideStepName()
                 default:
                     self.delegate?.workoutTrainingReadyIn(seconds: prepareLeft - 1)
                 }
             }
+        }
+    }
+    
+    func startTrainig() {
+        trainingTimer?.invalidate()
+        trainingTimer = nil
+        trainingSeconds = 0
+        delegate?.workoutTrainingTick(seconds: trainingSeconds)
+        
+        trainingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+            guard let self else {
+                return
+            }
+            
+            self.trainingSeconds += 1
+            self.delegate?.workoutTrainingTick(seconds: self.trainingSeconds)
         }
     }
     
