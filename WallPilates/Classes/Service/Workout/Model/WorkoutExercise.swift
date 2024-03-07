@@ -13,5 +13,4 @@ struct WorkoutExercise: Codable, Hashable {
     let subTitle: String
     let image: URL
     let instruction: String
-    var workoutStepId = 1 // TODO: удалить свойство, т.к, нет группировки на секции
 }

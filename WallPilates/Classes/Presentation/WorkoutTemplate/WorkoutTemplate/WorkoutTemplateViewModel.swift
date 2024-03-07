@@ -137,29 +137,11 @@ private extension WorkoutTemplateViewModel {
                     ])
                 }
                 
-                let exercises = Dictionary(grouping: template.exercises) { exercise -> WorkoutStep? in
-                    steps.first(where: { $0.id == exercise.workoutStepId })
-                }
-                let exerciseNeedTitle = exercises.filter { $0.key != nil }.count > 1
-                
-                exercises.forEach { group in
-                    guard let step = group.key else {
-                        return
-                    }
-                    
-                    if exerciseNeedTitle {
-                        result.append(contentsOf: [
-                            .offset(32.scale),
-                            .title(step.name)
-                        ])
-                    }
-                    
-                    group.value.forEach { exercise in
-                        result.append(contentsOf: [
-                            .offset(16.scale),
-                            .exercise(exercise)
-                        ])
-                    }
+                template.exercises.forEach { exercise in
+                    result.append(contentsOf: [
+                        .offset(16.scale),
+                        .exercise(exercise)
+                    ])
                 }
                 
                 return result

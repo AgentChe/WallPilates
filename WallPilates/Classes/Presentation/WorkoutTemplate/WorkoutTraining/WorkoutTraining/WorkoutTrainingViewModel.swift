@@ -178,13 +178,15 @@ private extension WorkoutTrainingViewModel {
         Driver.combineLatest(workoutTraining, steps) { training, steps in
             let initial: [WorkoutStep: [WorkoutExercise]] = [:]
             
-            return training.template.exercises
-                .reduce(into: initial) { result, exercise in
-                    guard let step = steps.first(where: { $0.id == exercise.workoutStepId }) else { return }
-                    var exercises = result[step] ?? []
-                    exercises.append(exercise)
-                    result[step] = exercises
-                }
+            return initial
+            // TODO
+//            return training.template.exercises
+//                .reduce(into: initial) { result, exercise in
+//                    guard let step = steps.first(where: { $0.id == exercise.workoutStepId }) else { return }
+//                    var exercises = result[step] ?? []
+//                    exercises.append(exercise)
+//                    result[step] = exercises
+//                }
         }
     }
     
@@ -227,12 +229,8 @@ private extension WorkoutTrainingViewModel {
                         return
                     }
                     
-                    let previosIndex = result.elements.indices.contains(currentIndex - 1)
+                    result.index = result.elements.indices.contains(currentIndex - 1)
                         ? currentIndex - 1
-                        : currentIndex
-                    
-                    result.index = result.elements[safe: currentIndex]?.workoutStepId == result.elements[safe: previosIndex]?.workoutStepId
-                        ? previosIndex
                         : currentIndex
                 case let .set(elements):
                     guard elements.count > 0 else {
@@ -246,27 +244,31 @@ private extension WorkoutTrainingViewModel {
             .asDriver(onErrorDriveWith: .never())
     }
     
+    // TODO
     func makeCurrentStep() -> Driver<WorkoutStep> {
-        currentAndNextExercise
-            .withLatestFrom(steps) { ($0, $1) }
-            .compactMap { exercise, steps in
-                steps.first(where: { $0.id == exercise.current.workoutStepId })
-            }
-            .distinctUntilChanged()
-            .asDriver(onErrorDriveWith: .never())
+        .never()
+//        currentAndNextExercise
+//            .withLatestFrom(steps) { ($0, $1) }
+//            .compactMap { exercise, steps in
+//                steps.first(where: { $0.id == exercise.current.workoutStepId })
+//            }
+//            .distinctUntilChanged()
+//            .asDriver(onErrorDriveWith: .never())
     }
     
     func makeMenuState() -> Driver<MenuState> {
        Driver
-            .combineLatest(currentIndex, exercises, currentStep)
-            .compactMap { currentIndex, elements, step -> MenuState? in
-                guard currentIndex < elements.count - 1 else { return .last }
-                guard let currentExercise = elements[safe: currentIndex] else { return nil }
-                let currentElements = elements.filter { $0.workoutStepId == step.id }
+            .combineLatest(currentIndex, exercises)
+            .compactMap { currentIndex, elements -> MenuState? in
+                guard currentIndex > 0 else {
+                    return .first
+                }
                 
-                guard let index = currentElements.firstIndex(of: currentExercise) else { return nil }
+                guard currentIndex < elements.count - 1 else {
+                    return .last
+                }
                 
-                return index == 0 ? .first : .middle
+                return .middle
             }
     }
 }
