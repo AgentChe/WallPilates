@@ -12,4 +12,5 @@ struct WorkoutStep: Codable, Hashable {
     let name: String
     let image: URL
     let paid: Bool
+    let exercisesCount: Int
 }

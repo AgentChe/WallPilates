@@ -33,7 +33,6 @@ final class GetDrillsResponse {
                     let imagePath = drillJSON["image"] as? String,
                     let imageUrl = URL(string: imagePath),
                     let paid = drillJSON["paid"] as? Bool,
-                    let explanation = drillJSON["explanation"] as? String,
                     let instruction = drillJSON["description"] as? String
                 else {
                     return nil
@@ -46,7 +45,6 @@ final class GetDrillsResponse {
                     image: imageUrl,
                     categoryId: categoryId,
                     paid: paid,
-                    explanation: explanation,
                     instruction: instruction
                 )
             }

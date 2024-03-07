@@ -14,6 +14,5 @@ struct Drill: Codable, Hashable {
     let image: URL
     let categoryId: Int
     let paid: Bool
-    let explanation: String
     let instruction: String
 }

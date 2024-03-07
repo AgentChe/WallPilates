@@ -1,0 +1,34 @@
+/api/glossary/workout_names
+Добавить в респонс к каждому элементу:
+exercises_count - количество упражнений в тренировке
+
+/api/glossary/body_parts
+Добавить в респонс к каждому элементу:
+exercises_count - количество упражнений в тренировке
+
+/api/glossary/training_steps
+Добавить в респонс к каждому элементу:
+exercises_count - количество упражнений в тренировке
+
+/api/workouts/details
+/api/workouts/template
+/api/home
+body_part_ids - может отсутствовать у некоторых объектов
+training_step_id - убираем совсем
+
+/api/drills/details
+/api/drills/list
+/api/home
+explanation - убираем совсем
+
+/api/home
+Убираем drills из daily_picks
+Добавляем массив (как объекты в /api/glossary/training_steps) goals: [
+    {
+        training_step_id: Int,
+        name: String,
+        image: URL,
+        paid Bool,
+        exercises_count: Int
+    }
+]

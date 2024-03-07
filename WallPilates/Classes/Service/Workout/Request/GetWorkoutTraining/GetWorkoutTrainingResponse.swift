@@ -17,7 +17,6 @@ final class GetWorkoutTrainingResponse {
             let imagePath = data["image"] as? String,
             let imageUrl = URL(string: imagePath),
             let levelId = data["level_id"] as? Int,
-            let focusZonesIds = data["body_part_ids"] as? [Int],
             let exercisesBundleArray = data["training_steps"] as? [[String: Any]],
             let customerWorkoutId = data["customer_workout_id"] as? Int,
             let finished = data["finished"] as? Bool,
@@ -27,10 +26,7 @@ final class GetWorkoutTrainingResponse {
         }
         
         let exercises = exercisesBundleArray.reduce([]) { result, exercisesBundleJSON -> [WorkoutExercise] in
-            guard
-                let workoutStepId = exercisesBundleJSON["training_step_id"] as? Int,
-                let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]]
-            else {
+            guard let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]] else {
                 return result
             }
             
@@ -51,8 +47,7 @@ final class GetWorkoutTrainingResponse {
                     name: name,
                     subTitle: subTitle,
                     image: imageUrl,
-                    instruction: instruction,
-                    workoutStepId: workoutStepId
+                    instruction: instruction
                 )
             }
             
@@ -64,7 +59,7 @@ final class GetWorkoutTrainingResponse {
             name: name,
             image: imageUrl,
             levelId: levelId,
-            focusZonesIds: focusZonesIds,
+            focusZonesIds: data["body_part_ids"] as? [Int],
             exercises: exercises
         )
         

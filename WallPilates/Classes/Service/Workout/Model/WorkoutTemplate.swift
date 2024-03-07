@@ -12,6 +12,6 @@ struct WorkoutTemplate: Codable, Hashable {
     let name: String
     let image: URL
     let levelId: Int
-    let focusZonesIds: [Int]
+    let focusZonesIds: [Int]?
     let exercises: [WorkoutExercise]
 }

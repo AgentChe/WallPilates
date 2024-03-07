@@ -136,11 +136,6 @@ private extension DrillTrainingInstructionViewModel {
                 result.append(.header(headerElement))
                 
                 result.append(contentsOf: [
-                    .offset(1.scale),
-                    .description(drill.explanation)
-                ])
-                
-                result.append(contentsOf: [
                     .offset(16.scale),
                     .buttons
                 ])

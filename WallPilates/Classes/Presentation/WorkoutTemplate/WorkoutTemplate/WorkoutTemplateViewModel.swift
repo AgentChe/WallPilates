@@ -127,13 +127,15 @@ private extension WorkoutTemplateViewModel {
                     .buttons
                 ])
                 
-                let focusZonesElement = focusZones.filter { focusZone -> Bool in
-                    template.focusZonesIds.contains(where: { $0 == focusZone.id })
+                if let focusZonesIds = template.focusZonesIds, !focusZones.isEmpty {
+                    let focusZonesElement = focusZones.filter { focusZone -> Bool in
+                        focusZonesIds.contains(where: { $0 == focusZone.id })
+                    }
+                    result.append(contentsOf: [
+                        .offset(32.scale),
+                        .focusZones(focusZonesElement)
+                    ])
                 }
-                result.append(contentsOf: [
-                    .offset(32.scale),
-                    .focusZones(focusZonesElement)
-                ])
                 
                 let exercises = Dictionary(grouping: template.exercises) { exercise -> WorkoutStep? in
                     steps.first(where: { $0.id == exercise.workoutStepId })

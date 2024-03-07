@@ -343,6 +343,7 @@
 		DE0D2B062B97643F007F1560 /* OWorkoutTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C52B97643F007F1560 /* OWorkoutTypeView.swift */; };
 		DE0D2B072B97643F007F1560 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C62B97643F007F1560 /* OnboardingView.swift */; };
 		DE0D2B082B97643F007F1560 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */; };
+		DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0D2B1E2B98ADBC007F1560 /* API.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -685,6 +686,7 @@
 		DE0D29C52B97643F007F1560 /* OWorkoutTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWorkoutTypeView.swift; sourceTree = "<group>"; };
 		DE0D29C62B97643F007F1560 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		DE0D2B1E2B98ADBC007F1560 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		E6BF8A3E3741DE0E319C8A7B /* Pods-WallPilates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallPilates.release.xcconfig"; path = "Target Support Files/Pods-WallPilates/Pods-WallPilates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -804,6 +806,7 @@
 				DE0D28012B97643E007F1560 /* Misc */,
 				DE0D283D2B97643E007F1560 /* Service */,
 				DE0D28BF2B97643E007F1560 /* Presentation */,
+				DE0D2B1E2B98ADBC007F1560 /* API.json */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2267,6 +2270,7 @@
 				DE0D27F72B97642F007F1560 /* PlusJakartaSans-Regular.ttf in Resources */,
 				DE0D27F52B97642F007F1560 /* PlusJakartaSans-Medium.ttf in Resources */,
 				DE0D27F92B97642F007F1560 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
+				DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */,
 				DE0D27F62B97642F007F1560 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				DE0D27D82B97508D007F1560 /* Assets.xcassets in Resources */,
 				DE0D27F12B97642F007F1560 /* Inter-Bold.ttf in Resources */,

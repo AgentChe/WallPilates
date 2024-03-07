@@ -46,8 +46,7 @@ private extension HomeViewModel {
                 
                 let dailyPicks = self.dailyPicksElements(
                     homeKit: homeKit,
-                    skillLevels: skillLevels,
-                    drillCategories: drillCategories
+                    skillLevels: skillLevels
                 )
                 result.append(contentsOf: dailyPicks)
                 
@@ -168,24 +167,8 @@ private extension HomeViewModel {
     
     func dailyPicksElements(
         homeKit: HomeKit,
-        skillLevels: [SkillLevel],
-        drillCategories: [DrillCategory]
+        skillLevels: [SkillLevel]
     ) -> [HomeTableElement] {
-        let drills = homeKit.dailyDrills.compactMap { drill -> DailyPicksElement? in
-            guard
-                let skillLevel = skillLevels.first(where: { $0.id == drill.skillLevelId }),
-                let drillCategory = drillCategories.first(where: { $0.id == drill.categoryId })
-            else {
-                return nil
-            }
-            
-            return DailyPicksElement(
-                drill: drill,
-                skillLevel: skillLevel,
-                drillCategory: drillCategory
-            )
-        }
-        
         let workouts = homeKit.dailyWorkouts.compactMap { workout -> DailyPicksElement? in
             guard let skillLevel = skillLevels.first(where: { $0.id == workout.id }) else {
                 return nil
@@ -197,9 +180,7 @@ private extension HomeViewModel {
             )
         }
         
-        let elements = drills + workouts
-        
-        if elements.isEmpty {
+        if workouts.isEmpty {
             return []
         }
         
@@ -207,7 +188,7 @@ private extension HomeViewModel {
             .offset(32.scale),
             .title(.large("Home.DailyPicks".localized)),
             .offset(16.scale),
-            .dailyPicks(elements)
+            .dailyPicks(workouts)
         ]
     }
     

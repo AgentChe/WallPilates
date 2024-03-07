@@ -15,33 +15,57 @@ final class GetHomeKitResponse {
             let score = data["score"] as? Int,
             let levelId = data["level_id"] as? Int,
             let dailyPicks = data["daily_picks"] as? [String: Any],
-            let dailyDrillsArray = dailyPicks["drills"] as? [[String: Any]],
-            let dailyWorkoutsArray = dailyPicks["workouts"] as? [[String: Any]],
-            let tryDrillsArray = data["try_drills"] as? [[String: Any]]
+            let dailyWorkoutsArray = dailyPicks["workouts"] as? [[String: Any]]
         else {
             return nil
         }
         
         let planJSON = data["plan"] as? [String: [String: Any]]
         
-        let dailyDrills = map(drillsArray: dailyDrillsArray)
         let dailyWorkouts = map(dailyWorkoutsArray: dailyWorkoutsArray)
         let plan = GetPlanResponse.map(planJSON: planJSON ?? [:])
+        
+        let tryDrillsArray = data["try_drills"] as? [[String: Any]] ?? []
         let tryDrills = map(drillsArray: tryDrillsArray)
+        
+        let workoutStepsArray = data["goals"] as? [[String: Any]] ?? []
+        let workoutSteps = map(stepsArray: workoutStepsArray)
         
         return HomeKit(
             score: score,
             levelId: levelId,
-            dailyDrills: dailyDrills,
             dailyWorkouts: dailyWorkouts,
             plan: plan,
-            tryDrills: tryDrills
+            tryDrills: tryDrills,
+            workoutSteps: workoutSteps
         )
     }
 }
 
 // MARK: Private
 private extension GetHomeKitResponse {
+    static func map(stepsArray: [[String: Any]]) -> [WorkoutStep] {
+        stepsArray.compactMap { stepJSON -> WorkoutStep? in
+            guard
+                let id = stepJSON["training_step_id"] as? Int,
+                let name = stepJSON["name"] as? String,
+                let imagePath = stepJSON["image"] as? String,
+                let imageUrl = URL(string: imagePath),
+                let paid = stepJSON["paid"] as? Bool
+            else {
+                return nil
+            }
+            
+            return WorkoutStep(
+                id: id,
+                name: name,
+                image: imageUrl,
+                paid: paid,
+                exercisesCount: stepJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
+            )
+        }
+    }
+    
     static func map(drillsArray: [[String: Any]]) -> [Drill] {
         drillsArray.compactMap { drillJSON -> Drill? in
             guard
@@ -52,7 +76,6 @@ private extension GetHomeKitResponse {
                 let imageUrl = URL(string: imagePath),
                 let categoryId = drillJSON["drill_category_id"] as? Int,
                 let paid = drillJSON["paid"] as? Bool,
-                let explanation = drillJSON["explanation"] as? String,
                 let instruction = drillJSON["description"] as? String
             else {
                 return nil
@@ -65,7 +88,6 @@ private extension GetHomeKitResponse {
                 image: imageUrl,
                 categoryId: categoryId,
                 paid: paid,
-                explanation: explanation,
                 instruction: instruction
             )
         }
@@ -79,17 +101,13 @@ private extension GetHomeKitResponse {
                 let imagePath = workoutJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
                 let levelId = workoutJSON["level_id"] as? Int,
-                let focusZonesIds = workoutJSON["body_part_ids"] as? [Int],
                 let exercisesBundleArray = workoutJSON["training_steps"] as? [[String: Any]]
             else {
                 return nil
             }
             
             let exercises = exercisesBundleArray.reduce([]) { result, exercisesBundleJSON -> [WorkoutExercise] in
-                guard
-                    let workoutStepId = exercisesBundleJSON["training_step_id"] as? Int,
-                    let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]]
-                else {
+                guard let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]] else {
                     return result
                 }
                 
@@ -110,8 +128,7 @@ private extension GetHomeKitResponse {
                         name: name,
                         subTitle: subTitle,
                         image: imageUrl,
-                        instruction: instruction,
-                        workoutStepId: workoutStepId
+                        instruction: instruction
                     )
                 }
                 
@@ -123,7 +140,7 @@ private extension GetHomeKitResponse {
                 name: name,
                 image: imageUrl,
                 levelId: levelId,
-                focusZonesIds: focusZonesIds,
+                focusZonesIds: workoutJSON["body_part_ids"] as? [Int],
                 exercises: exercises
             )
         }

@@ -32,7 +32,8 @@ final class GetFocusZonesResponse {
                 id: id,
                 name: name,
                 image: imageUrl,
-                paid: paid
+                paid: paid,
+                exercisesCount: focusZoneJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
             )
         }
     }
