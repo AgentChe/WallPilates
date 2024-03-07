@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ProfileMainProgressView: UIView {
-
+final class ProfileMainProgressView: UIView {
     lazy var label = makeLabel()
     
     private lazy var attrs = makeAttrs()

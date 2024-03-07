@@ -14,5 +14,5 @@ enum ProfileMainTableElement {
     case calendar([PlanOnDay])
     case planTraining(HomePlanTrainingElement)
     case noTrainings
-    case stats(drill: String, workout: String)
+    case stats(Int)
 }

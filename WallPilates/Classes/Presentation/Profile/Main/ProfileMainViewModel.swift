@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 final class ProfileMainViewModel {
-    
     enum Route {
         case details
         case drill(PlanDrill)
@@ -81,18 +80,8 @@ private extension ProfileMainViewModel {
                 
                 result.append(contentsOf: planTrainings)
                 
-                let drillCompleted = homeKit.plan
-                    .flatMap { plan -> [PlanDrill] in
-                        plan.drills.filter { $0.status == .completed }
-                    }
-                
-                let workoutCompleted = homeKit.plan
-                    .flatMap { plan  -> [PlanWorkout] in
-                        plan.workouts.filter { $0.status == .completed }
-                    }
-                
                 result.append(.offset(40.scale))
-                result.append(.stats(drill: "\(drillCompleted.count)", workout: "\(workoutCompleted.count)"))
+                result.append(.stats(homeKit.trainingCompletedSeconds))
                 result.append(.offset(40.scale))
                 
                 return result
@@ -180,21 +169,9 @@ private extension ProfileMainViewModel {
         }
         
         if !completedDrills.isEmpty {
-//            result.append(contentsOf: [
-//                .offset(24.scale),
-//                .title(.small("Home.Completed".localized))
-//            ])
-//
             fill(from: completedDrills)
         }
         if !completedWorkouts.isEmpty {
-//            if completedDrills.isEmpty {
-//                result.append(contentsOf: [
-//                    .offset(24.scale),
-//                    .title(.small("Home.Completed".localized))
-//                ])
-//            }
-//
             fill(from: completedWorkouts)
         }
 

@@ -31,13 +31,16 @@ final class GetHomeKitResponse {
         let workoutStepsArray = data["goals"] as? [[String: Any]] ?? []
         let workoutSteps = map(stepsArray: workoutStepsArray)
         
+        let trainingCompletedSeconds = data["training_completed_seconds"] as? Int ?? 0 // TODO
+        
         return HomeKit(
             score: score,
             levelId: levelId,
             dailyWorkouts: dailyWorkouts,
             plan: plan,
             tryDrills: tryDrills,
-            workoutSteps: workoutSteps
+            workoutSteps: workoutSteps,
+            trainingCompletedSeconds: trainingCompletedSeconds
         )
     }
 }

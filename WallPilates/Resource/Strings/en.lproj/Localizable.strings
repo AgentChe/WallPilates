@@ -200,9 +200,8 @@
 "Profile.DaysOfWeek.Fr" = "F";
 "Profile.DaysOfWeek.Sa" = "S";
 "Profile.Level" = "%@ Level";
-"Profile.Completed.Workouts" = "Completed workouts";
-"Profile.Completed.Drills" = "Completed drills";
 "Profile.StatsTitle" = "Personal stats";
+"Profile.StatsDescription" = "min of completed training ";
 "Profile.SkillLevel" = "Skill level";
 "Profile.TrainingDays" = "Training days";
 "Profile.FocusZones" = "Focus zones";

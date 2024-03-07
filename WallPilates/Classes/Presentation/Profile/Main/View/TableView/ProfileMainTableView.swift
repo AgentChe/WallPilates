@@ -65,9 +65,9 @@ extension ProfileMainTableView: UITableViewDataSource {
             return cell
         case .noTrainings:
             return dequeueReusableCell(withIdentifier: String(describing: HomeNoTrainingsCell.self), for: indexPath)
-        case .stats(let drill, let workout):
+        case .stats(let trainingCompletedSeconds):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ProfileMainStatsCell.self), for: indexPath) as! ProfileMainStatsCell
-            cell.setup(drillValue: drill, workoutValue: workout)
+            cell.setup(trainingCompletedSeconds: trainingCompletedSeconds)
             return cell
         }
     }

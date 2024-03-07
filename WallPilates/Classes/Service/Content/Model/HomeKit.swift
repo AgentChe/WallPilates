@@ -12,4 +12,5 @@ struct HomeKit: Codable, Hashable {
     let plan: [PlanOnDay]
     let tryDrills: [Drill]
     let workoutSteps: [WorkoutStep]
+    let trainingCompletedSeconds: Int
 }

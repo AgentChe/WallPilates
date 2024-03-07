@@ -32,3 +32,4 @@ explanation - убираем совсем
         exercises_count: Int
     }
 ]
+Добавляем поле training_completed_seconds - количество секунд, которое пользователь потратил на тренировки

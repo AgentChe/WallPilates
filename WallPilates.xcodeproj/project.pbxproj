@@ -280,8 +280,6 @@
 		DE0D2AC72B97643F007F1560 /* ProfileCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29722B97643F007F1560 /* ProfileCalendarCell.swift */; };
 		DE0D2AC82B97643F007F1560 /* ProfileMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29732B97643F007F1560 /* ProfileMainTableView.swift */; };
 		DE0D2AC92B97643F007F1560 /* ProfileMainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29742B97643F007F1560 /* ProfileMainTableElement.swift */; };
-		DE0D2ACA2B97643F007F1560 /* ProfileMainStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29752B97643F007F1560 /* ProfileMainStatsView.swift */; };
-		DE0D2ACB2B97643F007F1560 /* ProfileMainScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29762B97643F007F1560 /* ProfileMainScrollContainerView.swift */; };
 		DE0D2ACC2B97643F007F1560 /* ProfileMainProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29772B97643F007F1560 /* ProfileMainProgressView.swift */; };
 		DE0D2ACD2B97643F007F1560 /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29782B97643F007F1560 /* ProfileMainViewController.swift */; };
 		DE0D2ACE2B97643F007F1560 /* ProfileMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29792B97643F007F1560 /* ProfileMainView.swift */; };
@@ -623,8 +621,6 @@
 		DE0D29722B97643F007F1560 /* ProfileCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCalendarCell.swift; sourceTree = "<group>"; };
 		DE0D29732B97643F007F1560 /* ProfileMainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainTableView.swift; sourceTree = "<group>"; };
 		DE0D29742B97643F007F1560 /* ProfileMainTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainTableElement.swift; sourceTree = "<group>"; };
-		DE0D29752B97643F007F1560 /* ProfileMainStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainStatsView.swift; sourceTree = "<group>"; };
-		DE0D29762B97643F007F1560 /* ProfileMainScrollContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainScrollContainerView.swift; sourceTree = "<group>"; };
 		DE0D29772B97643F007F1560 /* ProfileMainProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainProgressView.swift; sourceTree = "<group>"; };
 		DE0D29782B97643F007F1560 /* ProfileMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
 		DE0D29792B97643F007F1560 /* ProfileMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainView.swift; sourceTree = "<group>"; };
@@ -1951,8 +1947,6 @@
 			isa = PBXGroup;
 			children = (
 				DE0D296A2B97643F007F1560 /* TableView */,
-				DE0D29752B97643F007F1560 /* ProfileMainStatsView.swift */,
-				DE0D29762B97643F007F1560 /* ProfileMainScrollContainerView.swift */,
 				DE0D29772B97643F007F1560 /* ProfileMainProgressView.swift */,
 			);
 			path = View;
@@ -2354,7 +2348,6 @@
 				DE0D2B012B97643F007F1560 /* ODrillsView.swift in Sources */,
 				DE0D29F32B97643F007F1560 /* AppsFlyerManager.swift in Sources */,
 				DE0D29F52B97643F007F1560 /* AmplitudeManager.swift in Sources */,
-				DE0D2ACB2B97643F007F1560 /* ProfileMainScrollContainerView.swift in Sources */,
 				DE0D2ACF2B97643F007F1560 /* ProfileMainViewModel.swift in Sources */,
 				DE0D2AE52B97643F007F1560 /* DrillsTableView.swift in Sources */,
 				DE0D2A7F2B97643F007F1560 /* WorkoutTrainingAssembly.swift in Sources */,
@@ -2418,7 +2411,6 @@
 				DE0D2AF92B97643F007F1560 /* OSkillLevelScoreView.swift in Sources */,
 				DE0D2AB32B97643F007F1560 /* DTITableView.swift in Sources */,
 				DE0D2A952B97643F007F1560 /* WorkoutTemplateTableElement.swift in Sources */,
-				DE0D2ACA2B97643F007F1560 /* ProfileMainStatsView.swift in Sources */,
 				DE0D2A3A2B97643F007F1560 /* WorkoutCover.swift in Sources */,
 				DE0D29E12B97643F007F1560 /* RxActivityIndicator.swift in Sources */,
 				DE0D2AA32B97643F007F1560 /* DrillTrainingViewController.swift in Sources */,
