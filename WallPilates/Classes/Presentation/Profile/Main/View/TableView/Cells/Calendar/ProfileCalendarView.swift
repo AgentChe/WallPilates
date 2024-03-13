@@ -8,8 +8,7 @@
 import UIKit
 import JTAppleCalendar
 
-class ProfileCalendarView: JTACMonthView {
-    
+final class ProfileCalendarView: JTACMonthView {
     private var didSelectDate: ((Date) -> Void)?
     private var elements = [PlanOnDay]()
 
@@ -23,6 +22,7 @@ class ProfileCalendarView: JTACMonthView {
     }
 }
 
+// MARK: Public
 extension ProfileCalendarView {
     func setup(elements: [PlanOnDay], didSelectDate: @escaping (Date) -> Void) {
         self.elements = elements
@@ -31,6 +31,7 @@ extension ProfileCalendarView {
     }
 }
 
+// MARK: JTACMonthViewDataSource
 extension ProfileCalendarView: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         let calendar = Calendar.current
@@ -48,6 +49,7 @@ extension ProfileCalendarView: JTACMonthViewDataSource {
     }
 }
 
+// MARK: JTACMonthViewDelegate
 extension ProfileCalendarView: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: String(describing: ProfileCalendarDayCell.self), for: indexPath) as! ProfileCalendarDayCell
@@ -72,6 +74,7 @@ extension ProfileCalendarView: JTACMonthViewDelegate {
     }
 }
 
+// MARK: Private
 private extension ProfileCalendarView {
     func initialize() {
         scrollDirection = .horizontal

@@ -16,12 +16,12 @@ final class WorkoutTemplateExerciseCell: UITableViewCell {
     lazy var arrowView = makeArrowView()
     
     private lazy var nameAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.semiBold(size: 16.scale))
         .lineHeight(20.8.scale)
         .textAlignment(.left)
     private lazy var subTitleAttrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.5))
+        .textColor(Appearance.mono200.withAlphaComponent(0.5))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(18.2.scale)
         .textAlignment(.left)
@@ -111,7 +111,7 @@ private extension WorkoutTemplateExerciseCell {
         view.layer.cornerRadius = 8.scale
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -38,7 +38,7 @@ extension ScreenPreloader {
 // MARK: Private
 private extension ScreenPreloader {
     func initialize() {
-        backgroundColor = Appearance.background.withAlphaComponent(0.6)
+        backgroundColor = Appearance.main100.withAlphaComponent(0.6)
     }
 }
 

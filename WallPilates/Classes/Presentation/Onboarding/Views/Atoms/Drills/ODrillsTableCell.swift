@@ -27,10 +27,10 @@ final class ODrillsTableCell: UITableViewCell {
 // MARK: Public
 extension ODrillsTableCell {
     func setup(element: ODrillsTableElement) {
-        container.layer.borderColor = element.marked ? Appearance.primary.cgColor : Appearance.white.withAlphaComponent(0.1).cgColor
+        container.layer.borderColor = element.marked ? Appearance.main300.cgColor : UIColor.clear.cgColor
         
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)
@@ -80,7 +80,7 @@ private extension ODrillsTableCell {
 private extension ODrillsTableCell {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 10.scale
         view.layer.borderWidth = 1.scale
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -35,7 +35,7 @@ final class OAgeButton: UIButton {
 // MARK: Private
 private extension OAgeButton {
     func update() {
-        layer.borderColor = marked ? Appearance.primary.cgColor : UIColor.clear.cgColor
+        layer.borderColor = marked ? Appearance.main300.cgColor : UIColor.clear.cgColor
         layer.borderWidth = marked ? 1.scale : 0
     }
 }
@@ -54,7 +54,7 @@ private extension OAgeButton {
 private extension OAgeButton {
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

@@ -85,7 +85,7 @@ private extension DrillTrainingQuitView {
 
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.mono100
         view.layer.cornerRadius = 12.scale
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -95,7 +95,7 @@ private extension DrillTrainingQuitView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.center)
@@ -109,7 +109,7 @@ private extension DrillTrainingQuitView {
     
     func makeSubTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)
@@ -123,14 +123,14 @@ private extension DrillTrainingQuitView {
     
     func makeContinueButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
 
         let view = UIButton()
         view.setAttributedTitle("DrillTrainingQuit.Continue".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primary
+        view.backgroundColor = Appearance.main300
         view.layer.cornerRadius = 8.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
@@ -139,7 +139,7 @@ private extension DrillTrainingQuitView {
     
     func makeFinishButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)

@@ -29,10 +29,10 @@ final class GetPlanResponse {
             else {
                 return nil
             }
-            
+
             let drillsArray = planJSON["drills"] as? [[String: Any]]
             let workoutArray = planJSON["workouts"] as? [[String: Any]]
-            
+
             let drills = (drillsArray ?? []).compactMap { drillJSON -> PlanDrill? in
                 guard
                     let customerDrillId = drillJSON["customer_drill_id"] as? Int,
@@ -46,7 +46,7 @@ final class GetPlanResponse {
                 else {
                     return nil
                 }
-                
+
                 return PlanDrill(
                     customerDrillId: customerDrillId,
                     name: name,
@@ -56,7 +56,7 @@ final class GetPlanResponse {
                     categoryId: categoryId
                 )
             }
-            
+
             let workouts = (workoutArray ?? []).compactMap { workoutJSON -> PlanWorkout? in
                 guard
                     let customerWorkoutId = workoutJSON["customer_workout_id"] as? Int,
@@ -69,7 +69,7 @@ final class GetPlanResponse {
                 else {
                     return nil
                 }
-                
+
                 return PlanWorkout(
                     customerWorkoutId: customerWorkoutId,
                     name: name,
@@ -78,7 +78,7 @@ final class GetPlanResponse {
                     status: status
                 )
             }
-            
+
             return PlanOnDay(
                 day: Date(timeIntervalSince1970: day),
                 status: status,

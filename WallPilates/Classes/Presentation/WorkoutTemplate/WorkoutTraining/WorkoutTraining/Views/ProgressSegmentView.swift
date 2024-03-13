@@ -26,7 +26,7 @@ class ProgressSegmentView: UIView {
         }
     }
     
-    var progressColor: UIColor = Appearance.primary {
+    var progressColor: UIColor = Appearance.main300 {
         didSet {
             setNeedsLayout()
         }

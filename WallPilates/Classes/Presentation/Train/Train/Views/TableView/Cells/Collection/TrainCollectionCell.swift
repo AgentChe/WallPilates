@@ -16,13 +16,13 @@ final class TrainCollectionCell: UICollectionViewCell {
     lazy var tag2Label = makeTagLabel()
     
     private lazy var nameAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .lineBreakMode(.byTruncatingTail)
         .textAlignment(.left)
     private lazy var tagAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.semiBold(size: 12.scale))
         .lineHeight(14.4.scale)
         .textAlignment(.center)
@@ -138,7 +138,7 @@ private extension TrainCollectionCell {
     
     func makeTagLabel() -> PaddingLabel {
         let view = PaddingLabel()
-        view.backgroundColor = Appearance.white.withAlphaComponent(0.2)
+        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.2)
         view.layer.cornerRadius = 11.scale
         view.layer.masksToBounds = true
         view.insets = UIEdgeInsets(top: 4.scale, left: 8.scale, bottom: 4.scale, right: 8.scale)

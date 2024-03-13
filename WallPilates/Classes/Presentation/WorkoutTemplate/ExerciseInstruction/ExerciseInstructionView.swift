@@ -26,7 +26,7 @@ final class ExerciseInstructionView: UIView {
 // MARK: Private
 private extension ExerciseInstructionView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

@@ -50,7 +50,7 @@ extension OGenderView {
 // MARK: Private
 private extension OGenderView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
     
     @objc
@@ -117,7 +117,7 @@ private extension OGenderView {
 private extension OGenderView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.bold(size: 24.scale))
             .lineHeight(28.8.scale)
             .textAlignment(.center)
@@ -132,8 +132,9 @@ private extension OGenderView {
     
     func makeGenderButton(gender: Gender) -> OGenderButton {
         let view = OGenderButton(gender: gender)
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 10.scale
+        view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(tapped(sender:)), for: .touchUpInside)
         addSubview(view)
@@ -142,12 +143,12 @@ private extension OGenderView {
     
     func makeContinueButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primary
-        view.layer.cornerRadius = 8.scale
+        view.backgroundColor = Appearance.main300
+        view.layer.cornerRadius = 28.scale
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -8,21 +8,19 @@
 import UIKit
 import JTAppleCalendar
 
-class ProfileCalendarDayCell: JTACDayCell {
-    
-    private lazy var weekDayLabel = makeLabel()
-    private lazy var dayLabel = makeLabel()
-    private lazy var statusView = makeStatusView()
-    private lazy var daySelectView = makeDaySelectView()
+final class ProfileCalendarDayCell: JTACDayCell {
+    lazy var weekDayLabel = makeLabel()
+    lazy var dayLabel = makeLabel()
+    lazy var statusView = makeStatusView()
+    lazy var daySelectView = makeDaySelectView()
     
     private lazy var statusViewWidth = NSLayoutConstraint()
     
     private lazy var dayAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
-    
     private lazy var weekDayAttrs = TextAttributes()
         .font(Fonts.Inter.regular(size: 12.scale))
         .lineHeight(16.scale)
@@ -43,16 +41,16 @@ class ProfileCalendarDayCell: JTACDayCell {
 extension ProfileCalendarDayCell {
     func setup(isSelected: Bool) {
         daySelectView.layer.borderWidth = isSelected ? 2.scale : 0
-        daySelectView.layer.borderColor = isSelected ? Appearance.secondary.cgColor : UIColor.clear.cgColor
+        daySelectView.layer.borderColor = isSelected ? Appearance.main400.cgColor : UIColor.clear.cgColor
     }
     
     func setup(isCurrentDay: Bool) {
         daySelectView.backgroundColor = isCurrentDay
-            ? Appearance.white.withAlphaComponent(0.2)
+            ? Appearance.main200
             : UIColor.clear
         weekDayLabel.textColor = isCurrentDay
-            ? Appearance.secondary
-            : Appearance.white.withAlphaComponent(0.7)
+            ? Appearance.main400
+            : Appearance.mono100.withAlphaComponent(0.7)
     }
     
     func setup(status: PlanStatus?, text: String, weekDay: DaysOfWeek) {
@@ -68,13 +66,13 @@ extension ProfileCalendarDayCell {
         statusViewWidth.isActive = false
         switch status {
         case .skipped:
-            statusView.backgroundColor = Appearance.primary
+            statusView.backgroundColor = Appearance.main300
             statusViewWidth.constant = 15.scale
         case .planned:
-            statusView.backgroundColor = Appearance.fourth
+            statusView.backgroundColor = Appearance.main600
             statusViewWidth.constant = 6.scale
         case .completed:
-            statusView.backgroundColor = Appearance.third
+            statusView.backgroundColor = Appearance.main500
             statusViewWidth.constant = 15.scale
         }
         statusViewWidth.isActive = true

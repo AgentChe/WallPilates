@@ -14,9 +14,9 @@ final class CalendarView: UIView {
     lazy var addButton = makeAddButton()
     lazy var closeButton = makeCloseButton()
     lazy var dayOfWeakStack = makeStackView()
-    private lazy var separatorView = makeSeparateView()
-    private lazy var planStatusStack = makeStackView()
-    private lazy var titleLabel = makeTitleLabel()
+    lazy var separatorView = makeSeparateView()
+    lazy var planStatusStack = makeStackView()
+    lazy var titleLabel = makeTitleLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +32,7 @@ final class CalendarView: UIView {
 // MARK: Private
 private extension CalendarView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
         let planned = CalendarEventType()
         planned.setup(status: .planned)
         let completed = CalendarEventType()
@@ -49,7 +49,7 @@ private extension CalendarView {
         let attr = TextAttributes()
             .font(Fonts.Inter.regular(size: 12.scale))
             .lineHeight(16.scale)
-            .textColor(Appearance.white.withAlphaComponent(0.7))
+            .textColor(Appearance.mono100.withAlphaComponent(0.7))
             .textAlignment(.center)
         
         Calendar.current.veryShortStandaloneWeekdaySymbols
@@ -138,14 +138,14 @@ private extension CalendarView {
     
     func makeAddButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.scale)
         
         let view = UIButton()
         view.setAttributedTitle("Calendar.Add".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
-        view.backgroundColor = Appearance.primary
+        view.layer.cornerRadius = 28.scale
+        view.backgroundColor = Appearance.main300
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -171,7 +171,7 @@ private extension CalendarView {
     
     func makeSeparateView() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.white.withAlphaComponent(0.2)
+        view.backgroundColor = Appearance.main200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -183,7 +183,7 @@ private extension CalendarView {
         let attrs = TextAttributes()
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .textAlignment(.center)
         view.attributedText = "Calendar.SelectDate".localized.attributed(with: attrs)
         addSubview(view)

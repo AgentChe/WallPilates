@@ -312,25 +312,17 @@
 		DE0D2AE92B97643F007F1560 /* TryAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29A32B97643F007F1560 /* TryAgainViewController.swift */; };
 		DE0D2AEA2B97643F007F1560 /* OCombineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29A62B97643F007F1560 /* OCombineData.swift */; };
 		DE0D2AEB2B97643F007F1560 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29A72B97643F007F1560 /* OnboardingViewController.swift */; };
-		DE0D2AEC2B97643F007F1560 /* OGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29A92B97643F007F1560 /* OGoalsView.swift */; };
 		DE0D2AED2B97643F007F1560 /* OCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29AB2B97643F007F1560 /* OCircleProgressView.swift */; };
 		DE0D2AEE2B97643F007F1560 /* OFocusZoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29AC2B97643F007F1560 /* OFocusZoneButton.swift */; };
-		DE0D2AEF2B97643F007F1560 /* OPositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29AD2B97643F007F1560 /* OPositionButton.swift */; };
-		DE0D2AF02B97643F007F1560 /* ORoleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29AE2B97643F007F1560 /* ORoleButton.swift */; };
 		DE0D2AF12B97643F007F1560 /* OGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29AF2B97643F007F1560 /* OGenderButton.swift */; };
-		DE0D2AF22B97643F007F1560 /* OWhereTrainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B02B97643F007F1560 /* OWhereTrainButton.swift */; };
 		DE0D2AF32B97643F007F1560 /* OAgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B12B97643F007F1560 /* OAgeButton.swift */; };
 		DE0D2AF42B97643F007F1560 /* ODayOfWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B22B97643F007F1560 /* ODayOfWeekButton.swift */; };
-		DE0D2AF52B97643F007F1560 /* OGoalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B32B97643F007F1560 /* OGoalButton.swift */; };
 		DE0D2AF62B97643F007F1560 /* ODrillsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B52B97643F007F1560 /* ODrillsTableElement.swift */; };
 		DE0D2AF72B97643F007F1560 /* ODrillsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B62B97643F007F1560 /* ODrillsTableCell.swift */; };
 		DE0D2AF82B97643F007F1560 /* ODrillsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B72B97643F007F1560 /* ODrillsTableView.swift */; };
 		DE0D2AF92B97643F007F1560 /* OSkillLevelScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B82B97643F007F1560 /* OSkillLevelScoreView.swift */; };
-		DE0D2AFA2B97643F007F1560 /* OPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29B92B97643F007F1560 /* OPositionView.swift */; };
-		DE0D2AFB2B97643F007F1560 /* ORoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BA2B97643F007F1560 /* ORoleView.swift */; };
 		DE0D2AFC2B97643F007F1560 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BB2B97643F007F1560 /* OWelcomeView.swift */; };
 		DE0D2AFD2B97643F007F1560 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BC2B97643F007F1560 /* OPreloaderView.swift */; };
-		DE0D2AFE2B97643F007F1560 /* OWhereTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BD2B97643F007F1560 /* OWhereTrainView.swift */; };
 		DE0D2AFF2B97643F007F1560 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BE2B97643F007F1560 /* OSlideView.swift */; };
 		DE0D2B002B97643F007F1560 /* OGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29BF2B97643F007F1560 /* OGenderView.swift */; };
 		DE0D2B012B97643F007F1560 /* ODrillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C02B97643F007F1560 /* ODrillsView.swift */; };
@@ -338,7 +330,6 @@
 		DE0D2B032B97643F007F1560 /* ODaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C22B97643F007F1560 /* ODaysOfWeekView.swift */; };
 		DE0D2B042B97643F007F1560 /* OFocusZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C32B97643F007F1560 /* OFocusZoneView.swift */; };
 		DE0D2B052B97643F007F1560 /* OAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C42B97643F007F1560 /* OAgeView.swift */; };
-		DE0D2B062B97643F007F1560 /* OWorkoutTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C52B97643F007F1560 /* OWorkoutTypeView.swift */; };
 		DE0D2B072B97643F007F1560 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C62B97643F007F1560 /* OnboardingView.swift */; };
 		DE0D2B082B97643F007F1560 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */; };
 		DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0D2B1E2B98ADBC007F1560 /* API.json */; };
@@ -654,25 +645,17 @@
 		DE0D29A32B97643F007F1560 /* TryAgainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
 		DE0D29A62B97643F007F1560 /* OCombineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCombineData.swift; sourceTree = "<group>"; };
 		DE0D29A72B97643F007F1560 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DE0D29A92B97643F007F1560 /* OGoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGoalsView.swift; sourceTree = "<group>"; };
 		DE0D29AB2B97643F007F1560 /* OCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCircleProgressView.swift; sourceTree = "<group>"; };
 		DE0D29AC2B97643F007F1560 /* OFocusZoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFocusZoneButton.swift; sourceTree = "<group>"; };
-		DE0D29AD2B97643F007F1560 /* OPositionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPositionButton.swift; sourceTree = "<group>"; };
-		DE0D29AE2B97643F007F1560 /* ORoleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORoleButton.swift; sourceTree = "<group>"; };
 		DE0D29AF2B97643F007F1560 /* OGenderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGenderButton.swift; sourceTree = "<group>"; };
-		DE0D29B02B97643F007F1560 /* OWhereTrainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWhereTrainButton.swift; sourceTree = "<group>"; };
 		DE0D29B12B97643F007F1560 /* OAgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAgeButton.swift; sourceTree = "<group>"; };
 		DE0D29B22B97643F007F1560 /* ODayOfWeekButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODayOfWeekButton.swift; sourceTree = "<group>"; };
-		DE0D29B32B97643F007F1560 /* OGoalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGoalButton.swift; sourceTree = "<group>"; };
 		DE0D29B52B97643F007F1560 /* ODrillsTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODrillsTableElement.swift; sourceTree = "<group>"; };
 		DE0D29B62B97643F007F1560 /* ODrillsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODrillsTableCell.swift; sourceTree = "<group>"; };
 		DE0D29B72B97643F007F1560 /* ODrillsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODrillsTableView.swift; sourceTree = "<group>"; };
 		DE0D29B82B97643F007F1560 /* OSkillLevelScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSkillLevelScoreView.swift; sourceTree = "<group>"; };
-		DE0D29B92B97643F007F1560 /* OPositionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPositionView.swift; sourceTree = "<group>"; };
-		DE0D29BA2B97643F007F1560 /* ORoleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ORoleView.swift; sourceTree = "<group>"; };
 		DE0D29BB2B97643F007F1560 /* OWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
 		DE0D29BC2B97643F007F1560 /* OPreloaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
-		DE0D29BD2B97643F007F1560 /* OWhereTrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWhereTrainView.swift; sourceTree = "<group>"; };
 		DE0D29BE2B97643F007F1560 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		DE0D29BF2B97643F007F1560 /* OGenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGenderView.swift; sourceTree = "<group>"; };
 		DE0D29C02B97643F007F1560 /* ODrillsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODrillsView.swift; sourceTree = "<group>"; };
@@ -680,7 +663,6 @@
 		DE0D29C22B97643F007F1560 /* ODaysOfWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODaysOfWeekView.swift; sourceTree = "<group>"; };
 		DE0D29C32B97643F007F1560 /* OFocusZoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFocusZoneView.swift; sourceTree = "<group>"; };
 		DE0D29C42B97643F007F1560 /* OAgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAgeView.swift; sourceTree = "<group>"; };
-		DE0D29C52B97643F007F1560 /* OWorkoutTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWorkoutTypeView.swift; sourceTree = "<group>"; };
 		DE0D29C62B97643F007F1560 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DE0D2B1E2B98ADBC007F1560 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
@@ -1412,9 +1394,9 @@
 			isa = PBXGroup;
 			children = (
 				DE0D28C42B97643E007F1560 /* Views */,
+				DE0D28C32B97643E007F1560 /* HomeViewController.swift */,
 				DE0D28C12B97643E007F1560 /* HomeViewModel.swift */,
 				DE0D28C22B97643E007F1560 /* HomeView.swift */,
-				DE0D28C32B97643E007F1560 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1879,8 +1861,8 @@
 			isa = PBXGroup;
 			children = (
 				DE0D29592B97643F007F1560 /* Views */,
-				DE0D29562B97643F007F1560 /* ProfileDetailsViewModel.swift */,
 				DE0D29572B97643F007F1560 /* ProfileDetailsViewController.swift */,
+				DE0D29562B97643F007F1560 /* ProfileDetailsViewModel.swift */,
 				DE0D29582B97643F007F1560 /* ProfileDetailsView.swift */,
 			);
 			path = Details;
@@ -1940,8 +1922,8 @@
 			children = (
 				DE0D29692B97643F007F1560 /* View */,
 				DE0D29782B97643F007F1560 /* ProfileMainViewController.swift */,
-				DE0D29792B97643F007F1560 /* ProfileMainView.swift */,
 				DE0D297A2B97643F007F1560 /* ProfileMainViewModel.swift */,
+				DE0D29792B97643F007F1560 /* ProfileMainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2134,8 +2116,8 @@
 				DE0D29A52B97643F007F1560 /* Utils */,
 				DE0D29A82B97643F007F1560 /* Views */,
 				DE0D29A72B97643F007F1560 /* OnboardingViewController.swift */,
-				DE0D29C62B97643F007F1560 /* OnboardingView.swift */,
 				DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */,
+				DE0D29C62B97643F007F1560 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -2152,20 +2134,15 @@
 			isa = PBXGroup;
 			children = (
 				DE0D29AA2B97643F007F1560 /* Atoms */,
-				DE0D29A92B97643F007F1560 /* OGoalsView.swift */,
-				DE0D29B92B97643F007F1560 /* OPositionView.swift */,
-				DE0D29BA2B97643F007F1560 /* ORoleView.swift */,
-				DE0D29BB2B97643F007F1560 /* OWelcomeView.swift */,
-				DE0D29BC2B97643F007F1560 /* OPreloaderView.swift */,
-				DE0D29BD2B97643F007F1560 /* OWhereTrainView.swift */,
 				DE0D29BE2B97643F007F1560 /* OSlideView.swift */,
+				DE0D29BB2B97643F007F1560 /* OWelcomeView.swift */,
 				DE0D29BF2B97643F007F1560 /* OGenderView.swift */,
-				DE0D29C02B97643F007F1560 /* ODrillsView.swift */,
+				DE0D29C42B97643F007F1560 /* OAgeView.swift */,
 				DE0D29C12B97643F007F1560 /* OSkillLevelView.swift */,
 				DE0D29C22B97643F007F1560 /* ODaysOfWeekView.swift */,
+				DE0D29C02B97643F007F1560 /* ODrillsView.swift */,
 				DE0D29C32B97643F007F1560 /* OFocusZoneView.swift */,
-				DE0D29C42B97643F007F1560 /* OAgeView.swift */,
-				DE0D29C52B97643F007F1560 /* OWorkoutTypeView.swift */,
+				DE0D29BC2B97643F007F1560 /* OPreloaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2176,13 +2153,9 @@
 				DE0D29B42B97643F007F1560 /* Drills */,
 				DE0D29AB2B97643F007F1560 /* OCircleProgressView.swift */,
 				DE0D29AC2B97643F007F1560 /* OFocusZoneButton.swift */,
-				DE0D29AD2B97643F007F1560 /* OPositionButton.swift */,
-				DE0D29AE2B97643F007F1560 /* ORoleButton.swift */,
 				DE0D29AF2B97643F007F1560 /* OGenderButton.swift */,
-				DE0D29B02B97643F007F1560 /* OWhereTrainButton.swift */,
 				DE0D29B12B97643F007F1560 /* OAgeButton.swift */,
 				DE0D29B22B97643F007F1560 /* ODayOfWeekButton.swift */,
-				DE0D29B32B97643F007F1560 /* OGoalButton.swift */,
 				DE0D29B82B97643F007F1560 /* OSkillLevelScoreView.swift */,
 			);
 			path = Atoms;
@@ -2379,7 +2352,6 @@
 				DE0D2A002B97643F007F1560 /* ScheduleDrillRequest.swift in Sources */,
 				DE0D2A3B2B97643F007F1560 /* AssignedWorkout.swift in Sources */,
 				DE0D2AA82B97643F007F1560 /* DrillTrainingInstructionScrollView.swift in Sources */,
-				DE0D2B062B97643F007F1560 /* OWorkoutTypeView.swift in Sources */,
 				DE0D2AD22B97643F007F1560 /* TrainViewModel.swift in Sources */,
 				DE0D2AD12B97643F007F1560 /* TrainInfoView.swift in Sources */,
 				DE0D2AB52B97643F007F1560 /* ProfileDetailsViewModel.swift in Sources */,
@@ -2391,7 +2363,6 @@
 				DE0D2A0C2B97643F007F1560 /* Paygate.swift in Sources */,
 				DE0D2AAB2B97643F007F1560 /* DrillTrainingMenuView.swift in Sources */,
 				DE0D29CA2B97643F007F1560 /* UIColor+Extension.swift in Sources */,
-				DE0D2AFE2B97643F007F1560 /* OWhereTrainView.swift in Sources */,
 				DE0D2AD42B97643F007F1560 /* TrainViewController.swift in Sources */,
 				DE0D2A032B97643F007F1560 /* GetDrillsResponse.swift in Sources */,
 				DE0D2A362B97643F007F1560 /* WorkoutExercise.swift in Sources */,
@@ -2406,7 +2377,6 @@
 				DE0D2B042B97643F007F1560 /* OFocusZoneView.swift in Sources */,
 				DE0D2A802B97643F007F1560 /* WorkoutTrainingLifeCyrcle.swift in Sources */,
 				DE0D29FA2B97643F007F1560 /* DrillCategory.swift in Sources */,
-				DE0D2AEF2B97643F007F1560 /* OPositionButton.swift in Sources */,
 				DE0D29CE2B97643F007F1560 /* String+Extension.swift in Sources */,
 				DE0D2A0F2B97643F007F1560 /* PaygateManager.swift in Sources */,
 				DE0D29FE2B97643F007F1560 /* GetDrillTrainingResponse.swift in Sources */,
@@ -2440,7 +2410,6 @@
 				DE0D29D12B97643F007F1560 /* DefaultRequestWrapper.swift in Sources */,
 				DE0D2AB12B97643F007F1560 /* DTIHeaderCell.swift in Sources */,
 				DE0D2A6F2B97643F007F1560 /* CalendarEventType.swift in Sources */,
-				DE0D2AF02B97643F007F1560 /* ORoleButton.swift in Sources */,
 				DE0D29DB2B97643F007F1560 /* SignError.swift in Sources */,
 				DE0D2A262B97643F007F1560 /* GetProfileRequest.swift in Sources */,
 				DE0D2A5C2B97643F007F1560 /* HomeDrillCategoriesCell.swift in Sources */,
@@ -2452,7 +2421,6 @@
 				DE0D2A752B97643F007F1560 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE0D2ADA2B97643F007F1560 /* TrainTableView.swift in Sources */,
 				DE0D2AD02B97643F007F1560 /* TrainInfoViewController.swift in Sources */,
-				DE0D2AF22B97643F007F1560 /* OWhereTrainButton.swift in Sources */,
 				DE0D2A562B97643F007F1560 /* PlanWeekdaysCell.swift in Sources */,
 				DE0D2A702B97643F007F1560 /* CalendarViewModel.swift in Sources */,
 				DE0D2A1A2B97643F007F1560 /* HomeKit.swift in Sources */,
@@ -2470,7 +2438,6 @@
 				DE0D2AEB2B97643F007F1560 /* OnboardingViewController.swift in Sources */,
 				DE0D2A862B97643F007F1560 /* WorkoutTrainingMenuView.swift in Sources */,
 				DE0D2A5D2B97643F007F1560 /* DailyPicksTableCell.swift in Sources */,
-				DE0D2AFB2B97643F007F1560 /* ORoleView.swift in Sources */,
 				DE0D2A352B97643F007F1560 /* WorkoutStep.swift in Sources */,
 				DE0D2A142B97643F007F1560 /* PlanDrill.swift in Sources */,
 				DE0D2A722B97643F007F1560 /* PaygateViewModel.swift in Sources */,
@@ -2482,7 +2449,6 @@
 				DE0D2AE22B97643F007F1560 /* DrillsViewModel.swift in Sources */,
 				DE0D29F22B97643F007F1560 /* Appearance.swift in Sources */,
 				DE0D2A642B97643F007F1560 /* HomeTableElement.swift in Sources */,
-				DE0D2AFA2B97643F007F1560 /* OPositionView.swift in Sources */,
 				DE0D2AE32B97643F007F1560 /* DrillsViewController.swift in Sources */,
 				DE0D2AD62B97643F007F1560 /* TrainTrainingCell.swift in Sources */,
 				DE0D2AAF2B97643F007F1560 /* DTIDescriptionCell.swift in Sources */,
@@ -2517,7 +2483,6 @@
 				DE0D2A9B2B97643F007F1560 /* ExerciseInstructionViewController.swift in Sources */,
 				DE0D2ACD2B97643F007F1560 /* ProfileMainViewController.swift in Sources */,
 				DE0D29CD2B97643F007F1560 /* ObservableAndSingle+Extension.swift in Sources */,
-				DE0D2AF52B97643F007F1560 /* OGoalButton.swift in Sources */,
 				DE0D2A842B97643F007F1560 /* ProgressSegmentView.swift in Sources */,
 				DE0D2AB42B97643F007F1560 /* DTITableElement.swift in Sources */,
 				DE0D2A392B97643F007F1560 /* WorkoutTemplate.swift in Sources */,
@@ -2564,7 +2529,6 @@
 				DE0D2A6E2B97643F007F1560 /* CalendarDateCell.swift in Sources */,
 				DE0D29D92B97643F007F1560 /* XOREncryption.swift in Sources */,
 				DE0D29F92B97643F007F1560 /* DrillManager.swift in Sources */,
-				DE0D2AEC2B97643F007F1560 /* OGoalsView.swift in Sources */,
 				DE0D2A992B97643F007F1560 /* ExerciseInstructionTableView.swift in Sources */,
 				DE0D2A822B97643F007F1560 /* WorkoutTrainingImageViewCell.swift in Sources */,
 				DE0D29DD2B97643F007F1560 /* ContentError.swift in Sources */,
@@ -2796,6 +2760,7 @@
 				INFOPLIST_FILE = WallPilates/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -2827,6 +2792,7 @@
 				INFOPLIST_FILE = WallPilates/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

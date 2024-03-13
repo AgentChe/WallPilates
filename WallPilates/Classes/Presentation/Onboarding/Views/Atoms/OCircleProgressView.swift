@@ -56,7 +56,7 @@ private extension OCircleProgressView {
         circleLayer.lineWidth = 15.scale
         circleLayer.strokeStart = 0
         circleLayer.strokeEnd = 1
-        circleLayer.strokeColor = Appearance.black.cgColor
+        circleLayer.strokeColor = Appearance.main200.cgColor
         
         trackLayer.path = circularPath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
@@ -64,7 +64,7 @@ private extension OCircleProgressView {
         trackLayer.lineWidth = 15.scale
         trackLayer.strokeStart = 0
         trackLayer.strokeEnd = 0
-        trackLayer.strokeColor = Appearance.primary.cgColor
+        trackLayer.strokeColor = Appearance.main300.cgColor
 
         layer.addSublayer(circleLayer)
         layer.addSublayer(trackLayer)
@@ -92,7 +92,7 @@ private extension OCircleProgressView {
     
     func makeAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.PlusJakartaSans.bold(size: 45.scale))
             .lineHeight(54.46.scale)
             .textAlignment(.center)

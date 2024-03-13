@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ProfileDetailsCell: UITableViewCell {
-    private lazy var iconView = makeIconView()
-    private lazy var titleLabel = makeTitle()
-    private lazy var chevroneView = makeChevron()
+final class ProfileDetailsCell: UITableViewCell {
+    lazy var iconView = makeIconView()
+    lazy var titleLabel = makeTitle()
+    lazy var chevroneView = makeChevron()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -75,7 +75,7 @@ private extension ProfileDetailsCell {
         let attrs = TextAttributes()
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.scale)
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .textAlignment(.left)
         view.attributedText = "Profile.MyProfile".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false

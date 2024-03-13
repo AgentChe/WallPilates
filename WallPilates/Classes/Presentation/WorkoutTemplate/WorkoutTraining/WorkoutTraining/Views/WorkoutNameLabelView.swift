@@ -24,7 +24,7 @@ class WorkoutNameLabelView: UIView {
 extension WorkoutNameLabelView {
     func setup(name: String) {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(25.scale)
             .textAlignment(.center)
@@ -36,10 +36,10 @@ extension WorkoutNameLabelView {
 // MARK: Private
 private extension WorkoutNameLabelView {
     func initialize() {
-        backgroundColor = Appearance.black
+        backgroundColor = Appearance.mono100
         layer.cornerRadius = 10.scale
         layer.borderWidth = 1
-        layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
     }
 }
 

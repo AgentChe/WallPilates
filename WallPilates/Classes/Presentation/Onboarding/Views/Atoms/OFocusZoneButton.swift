@@ -35,10 +35,9 @@ final class OFocusZoneButton: UIButton {
 // MARK: Private
 private extension OFocusZoneButton {
     func update() {
-        layer.borderColor = marked ? UIColor.clear.cgColor : Appearance.white.withAlphaComponent(0.1).cgColor
-        layer.borderWidth = marked ? 0 : 1.scale
+        backgroundColor = marked ? Appearance.main300 : Appearance.main200
         
-        backgroundColor = marked ? Appearance.primary : Appearance.black
+        label.textColor = marked ? Appearance.mono200 : Appearance.mono100
     }
 }
 
@@ -56,7 +55,6 @@ private extension OFocusZoneButton {
 private extension OFocusZoneButton {
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
             .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

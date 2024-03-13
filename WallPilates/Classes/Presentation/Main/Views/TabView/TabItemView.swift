@@ -44,11 +44,11 @@ private extension TabItemView {
         
         switch mode {
         case .selected:
-            color = UIColor(integralRed: 255, green: 62, blue: 53)
+            color = Appearance.main300
             image = UIImage(named: code + ".Selected")
             alpha = 1
         case .deselected:
-            color = Appearance.white
+            color = Appearance.mono100
             image = UIImage(named: code + ".Deselected")
             alpha = 0.5
         }

@@ -39,7 +39,7 @@ final class PaygateView: UIView {
 // MARK: Private
 private extension PaygateView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
     
     @objc
@@ -59,9 +59,9 @@ private extension PaygateView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 375.scale),
-            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 189.scale : 167.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 184.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 88.scale : 45.scale)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 88.scale : 25.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -177,7 +177,7 @@ private extension PaygateView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.boldItalic(size: 24.scale))
             .lineHeight(31.2.scale)
             .letterSpacing(-0.37.scale)
@@ -202,7 +202,7 @@ private extension PaygateView {
     
     func makeProductButton() -> PaygateProductButton {
         let view = PaygateProductButton()
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = Appearance.mono200
         view.layer.borderWidth = 2.scale
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -213,14 +213,14 @@ private extension PaygateView {
     
     func makeContinueButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primary
-        view.layer.cornerRadius = 16.scale
+        view.backgroundColor = Appearance.main300
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -228,7 +228,7 @@ private extension PaygateView {
     
     func makeInfoLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white.withAlphaComponent(0.6))
+            .textColor(Appearance.mono100.withAlphaComponent(0.6))
             .font(Fonts.Inter.regular(size: 12.scale))
             .lineHeight(14.4.scale)
         
@@ -242,7 +242,7 @@ private extension PaygateView {
     func makeSeparator() -> UIView {
         let view = UIView()
         view.isHidden = !ScreenSize.isIphoneXFamily
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -250,7 +250,7 @@ private extension PaygateView {
     
     func makeTermsOfServiceButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.PlusJakartaSans.semiBold(size: 12.scale))
         
         let view = TapAreaButton()
@@ -263,7 +263,7 @@ private extension PaygateView {
     
     func makePrivacyPolicyButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.PlusJakartaSans.semiBold(size: 12.scale))
         
         let view = TapAreaButton()
@@ -276,7 +276,7 @@ private extension PaygateView {
     
     func makeRestoreButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.PlusJakartaSans.semiBold(size: 12.scale))
         
         let view = TapAreaButton()

@@ -63,7 +63,7 @@ private extension HomeNoTrainingsCell {
     
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

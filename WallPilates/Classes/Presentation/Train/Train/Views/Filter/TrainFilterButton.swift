@@ -18,12 +18,12 @@ final class TrainFilterButton: UIButton {
     lazy var separator = makeSeparator()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.4))
+        .textColor(Appearance.mono200.withAlphaComponent(0.4))
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.center)
     private lazy var selectedAttrs = TextAttributes()
-        .textColor(Appearance.primary)
+        .textColor(Appearance.main300)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.center)
@@ -49,7 +49,7 @@ private extension TrainFilterButton {
     func update() {
         label.attributedText = text.attributed(with: marked ? selectedAttrs : attrs)
         
-        let color = marked ? Appearance.primary : UIColor.clear
+        let color = marked ? Appearance.main300 : UIColor.clear
         separator.backgroundColor = color
     }
 }

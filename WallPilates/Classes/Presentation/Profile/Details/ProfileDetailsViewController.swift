@@ -21,7 +21,6 @@ final class ProfileDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
         
         viewModel.elements
             .drive(with: mainView.tableView) { $0.setup(elements: $1) }
@@ -37,19 +36,8 @@ final class ProfileDetailsViewController: UIViewController {
     }
 }
 
+// MARK: Private
 private extension ProfileDetailsViewController {
-    func setupNavBar() {
-        let label = UILabel()
-        let attrs = TextAttributes()
-            .font(Fonts.Inter.semiBold(size: 20.scale))
-            .lineHeight(24.scale)
-            .textColor(Appearance.white)
-            .textAlignment(.center)
-        
-        label.attributedText = "Profile.MyProfile".localized.attributed(with: attrs)
-        navigationItem.titleView = label
-    }
-    
     func route(_ route: ProfileDetailsViewModel.Route) {
         switch route {
         case .skillLevel(let level):
@@ -78,6 +66,8 @@ private extension ProfileDetailsViewController {
 
 extension ProfileDetailsViewController {
     static func make() -> ProfileDetailsViewController {
-        ProfileDetailsViewController()
+        let vc = ProfileDetailsViewController()
+        vc.navigationItem.title = "Profile.MyProfile".localized
+        return vc
     }
 }

@@ -112,7 +112,7 @@ private extension ProfileMainViewModel {
         skillLevels: [SkillLevel],
         planDay: Date
     ) -> [ProfileMainTableElement] {
-        guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }), !plan.drills.isEmpty else {
+        guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }) else {
             return [
                 .offset(16.scale),
                 .noTrainings

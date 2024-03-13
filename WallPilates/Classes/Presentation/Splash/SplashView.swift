@@ -27,7 +27,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 
@@ -58,6 +58,8 @@ private extension SplashView {
 private extension SplashView {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
+        view.layer.cornerRadius = 12.scale
+        view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Splash.Image")
         view.translatesAutoresizingMaskIntoConstraints = false

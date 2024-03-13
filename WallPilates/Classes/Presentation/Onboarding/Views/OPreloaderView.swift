@@ -55,7 +55,7 @@ final class OPreloaderView: OSlideView {
 // MARK: Private
 private extension OPreloaderView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
     
     func request() {
@@ -197,7 +197,7 @@ private extension OPreloaderView {
     
     func makeTitleAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)

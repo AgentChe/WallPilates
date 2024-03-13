@@ -10,26 +10,16 @@ import Kingfisher
 
 final class HomeDrillCoverCell: UITableViewCell {
     lazy var pictureView = makeImageView()
-    lazy var drillTypeLabel = makeLabel(numberOfLines: 1)
-    lazy var nameLabel = makeLabel(numberOfLines: 2)
-    lazy var skillLevelLabel = makeLabel(numberOfLines: 1)
+    lazy var contentLabel = makeLabel()
     lazy var arrowView = makeArrowView()
     
-    private lazy var drillTypeAttrs = TextAttributes()
-        .textColor(Appearance.primary)
-        .font(Fonts.Inter.regular(size: 12.scale))
-        .lineHeight(15.6.scale)
-        .letterSpacing(0.41.scale)
-        .textAlignment(.left)
-    
     private lazy var nameAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 16.scale))
         .lineHeight(20.8.scale)
         .textAlignment(.left)
-    
     private lazy var skillLevelAttrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.5))
+        .textColor(Appearance.mono100.withAlphaComponent(0.5))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(18.2.scale)
         .textAlignment(.left)
@@ -58,9 +48,10 @@ extension HomeDrillCoverCell {
     func setup(element: HomeDrillElement) {
         pictureView.kf.setImage(with: element.drill.image)
         
-        drillTypeLabel.attributedText = element.drillCategory.name.uppercased().attributed(with: drillTypeAttrs)
-        nameLabel.attributedText = element.drill.name.attributed(with: nameAttrs)
-        skillLevelLabel.attributedText = element.skillLevel.name.attributed(with: skillLevelAttrs)
+        let result = NSMutableAttributedString()
+        result.append((element.drill.name + "\n").attributed(with: nameAttrs))
+        result.append(element.skillLevel.name.attributed(with: skillLevelAttrs))
+        contentLabel.attributedText = result
     }
 }
 
@@ -85,21 +76,9 @@ private extension HomeDrillCoverCell {
         ])
         
         NSLayoutConstraint.activate([
-            drillTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 122.scale),
-            drillTypeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -56.scale),
-            drillTypeLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -5.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 122.scale),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -56.scale),
-            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            skillLevelLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 122.scale),
-            skillLevelLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -56.scale),
-            skillLevelLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale)
+            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 122.scale),
+            contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -56.scale),
+            contentLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -119,15 +98,15 @@ private extension HomeDrillCoverCell {
         view.layer.cornerRadius = 8.scale
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
     }
     
-    func makeLabel(numberOfLines: Int) -> UILabel {
+    func makeLabel() -> UILabel {
         let view = UILabel()
-        view.numberOfLines = numberOfLines
+        view.numberOfLines = 3
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -38,7 +38,7 @@ final class OGenderButton: UIButton {
 private extension OGenderButton {
     func update() {
         layer.borderWidth = marked ? 1.scale : 0
-        layer.borderColor = marked ? Appearance.primary.cgColor : UIColor.clear.cgColor
+        layer.borderColor = marked ? Appearance.main300.cgColor : UIColor.clear.cgColor
     }
     
     var icon: UIImage? {
@@ -97,8 +97,8 @@ private extension OGenderButton {
     func makeGradientView() -> GradientView {
         let view = GradientView()
         view.gradientLayer.colors = [
-            UIColor(integralRed: 34, green: 34, blue: 34, alpha: 0).cgColor,
-            UIColor(integralRed: 34, green: 34, blue: 34).cgColor
+            UIColor(integralRed: 235, green: 232, blue: 224, alpha: 0).cgColor,
+            UIColor(integralRed: 235, green: 232, blue: 224).cgColor
         ]
         view.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         view.gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
@@ -110,7 +110,7 @@ private extension OGenderButton {
     
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

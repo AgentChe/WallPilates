@@ -57,7 +57,7 @@ private extension ProfileMainProgressView {
         circleLayer.lineWidth = 6.scale
         circleLayer.strokeStart = 0
         circleLayer.strokeEnd = 1
-        circleLayer.strokeColor = Appearance.black.cgColor
+        circleLayer.strokeColor = Appearance.main200.cgColor
         
         trackLayer.path = circularPath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
@@ -65,7 +65,7 @@ private extension ProfileMainProgressView {
         trackLayer.lineWidth = 6.scale
         trackLayer.strokeStart = 0
         trackLayer.strokeEnd = 0
-        trackLayer.strokeColor = Appearance.secondary.cgColor
+        trackLayer.strokeColor = Appearance.main400.cgColor
 
         layer.addSublayer(circleLayer)
         layer.addSublayer(trackLayer)
@@ -93,7 +93,7 @@ private extension ProfileMainProgressView {
     
     func makeAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.secondary)
+            .textColor(Appearance.main400)
             .font(Fonts.PlusJakartaSans.bold(size: 32.scale))
             .lineHeight(38.4.scale)
             .textAlignment(.center)

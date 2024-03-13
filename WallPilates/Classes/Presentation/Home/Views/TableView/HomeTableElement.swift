@@ -41,7 +41,6 @@ struct DailyPicksElement {
     
     let dailyPicks: DailyPicks
     let image: URL
-    let type: String
     let name: String
     let tag1: String
     let tag2: String?
@@ -50,7 +49,6 @@ struct DailyPicksElement {
     init(drill: Drill, skillLevel: SkillLevel, drillCategory: DrillCategory) {
         dailyPicks = .drill(drill)
         image = drill.image
-        type = "Home.Drill".localized
         name = drill.name
         tag1 = skillLevel.name
         tag2 = drillCategory.name
@@ -60,11 +58,10 @@ struct DailyPicksElement {
     init(workout: WorkoutTemplate, skillLevel: SkillLevel) {
         dailyPicks = .workout(workout)
         image = workout.image
-        type = "Home.Training".localized
         name = workout.name
         tag1 = skillLevel.name
-        tag2 = nil
-        action = "Home.StartWorkout".localized
+        tag2 = String(format: "Home.ExercisesCount".localized, workout.exercises.count)
+        action = "Home.StartTraining".localized
     }
 }
 
@@ -80,7 +77,6 @@ struct HomePlanTrainingElement {
 
 struct HomeDrillElement {
     let drill: Drill
-    let drillCategory: DrillCategory
     let skillLevel: SkillLevel
 }
 

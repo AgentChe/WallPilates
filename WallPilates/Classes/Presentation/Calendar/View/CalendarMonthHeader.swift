@@ -8,11 +8,11 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarMonthHeader: JTACMonthReusableView {
+final class CalendarMonthHeader: JTACMonthReusableView {
     lazy var monthLabel = makeLabel()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.center)

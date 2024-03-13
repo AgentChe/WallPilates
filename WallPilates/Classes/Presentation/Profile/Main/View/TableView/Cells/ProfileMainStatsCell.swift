@@ -10,19 +10,17 @@ import UIKit
 final class ProfileMainStatsCell: UITableViewCell {
     lazy var titlelabel = makeTitleLabel()
     lazy var timeLabel = makeLabel()
-    lazy var timeDescriptionLabel = makeTimeDescriptionLabel()
-    
-    private lazy var formatter: DateComponentsFormatter = {
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.second, .minute, .hour]
-        formatter.unitsStyle = .positional
-        return formatter
-    }()
+    lazy var timeDescriptionLabel = makeLabel()
     
     private lazy var timeAttrs = TextAttributes()
-        .textColor(Appearance.secondary)
+        .textColor(Appearance.main400)
         .font(Fonts.Inter.bold(size: 50.scale))
         .lineHeight(60.scale)
+        .textAlignment(.center)
+    private lazy var timeDescriptionAttrs = TextAttributes()
+        .font(Fonts.Inter.regular(size: 16.scale))
+        .lineHeight(25.6.scale)
+        .textColor(Appearance.mono100)
         .textAlignment(.center)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,9 +38,22 @@ final class ProfileMainStatsCell: UITableViewCell {
 // MARK: Public
 extension ProfileMainStatsCell {
     func setup(trainingCompletedSeconds: Int) {
-        // TODO: формат отображения и текст
-        let time = formatter.string(from: TimeInterval(trainingCompletedSeconds))
-        timeLabel.attributedText = time?.attributed(with: timeAttrs)
+        let minutesHours = (trainingCompletedSeconds / 3600, (trainingCompletedSeconds % 3600) / 60)
+        let hours = minutesHours.0
+        let minutes = minutesHours.1
+        
+        let description: String
+        if hours > 1 {
+            description = "Profile.StatsDescription.Hours".localized
+        } else if hours == 1 {
+            description = "Profile.StatsDescription.Hour".localized
+        } else {
+            description = "Profile.StatsDescription.Min".localized
+        }
+        timeDescriptionLabel.attributedText = description.attributed(with: timeDescriptionAttrs)
+        
+        let value = hours > 0 ? hours : minutes
+        timeLabel.attributedText = String(value).attributed(with: timeAttrs)
     }
 }
 
@@ -86,7 +97,7 @@ private extension ProfileMainStatsCell {
         let attrs = TextAttributes()
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .textAlignment(.center)
         
         let view = UILabel()
@@ -98,20 +109,6 @@ private extension ProfileMainStatsCell {
     
     func makeLabel() -> UILabel {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(view)
-        return view
-    }
-    
-    func makeTimeDescriptionLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .font(Fonts.Inter.regular(size: 16.scale))
-            .lineHeight(25.6.scale)
-            .textColor(Appearance.black)
-            .textAlignment(.center)
-        
-        let view = UILabel()
-        view.attributedText = "Profile.StatsDescription".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

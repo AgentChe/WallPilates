@@ -71,8 +71,7 @@ private extension HomeViewModel {
                 
                 let drills = self.drillsElements(
                     homeKit: homeKit,
-                    skillLevels: skillLevels,
-                    drillCategories: drillCategories
+                    skillLevels: skillLevels
                 )
                 result.append(contentsOf: drills)
                 
@@ -170,7 +169,7 @@ private extension HomeViewModel {
         skillLevels: [SkillLevel]
     ) -> [HomeTableElement] {
         let workouts = homeKit.dailyWorkouts.compactMap { workout -> DailyPicksElement? in
-            guard let skillLevel = skillLevels.first(where: { $0.id == workout.id }) else {
+            guard let skillLevel = skillLevels.first(where: { $0.id == workout.levelId }) else {
                 return nil
             }
             
@@ -240,7 +239,7 @@ private extension HomeViewModel {
         skillLevels: [SkillLevel],
         planDay: Date
     ) -> [HomeTableElement] {
-        guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }), !plan.drills.isEmpty else {
+        guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }) else {
             return [
                 .offset(16.scale),
                 .noTrainings,
@@ -327,8 +326,7 @@ private extension HomeViewModel {
     
     func drillsElements(
         homeKit: HomeKit,
-        skillLevels: [SkillLevel],
-        drillCategories: [DrillCategory]
+        skillLevels: [SkillLevel]
     ) -> [HomeTableElement] {
         guard !homeKit.tryDrills.isEmpty else {
             return []
@@ -341,16 +339,12 @@ private extension HomeViewModel {
         ]
         
         homeKit.tryDrills.enumerated().forEach { index, drill in
-            guard
-                let drillCategory = drillCategories.first(where: { $0.id == drill.categoryId }),
-                let skillLevel = skillLevels.first(where: { $0.id == drill.skillLevelId })
-            else {
+            guard let skillLevel = skillLevels.first(where: { $0.id == drill.skillLevelId }) else {
                 return
             }
             
             let element = HomeDrillElement(
                 drill: drill,
-                drillCategory: drillCategory,
                 skillLevel: skillLevel
             )
             result.append(.drill(element))

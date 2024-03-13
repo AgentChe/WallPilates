@@ -8,12 +8,12 @@
 import UIKit
 
 final class ProfileDetailsHeaderCell: UITableViewCell {
-    private lazy var titleLabel = makeLabel()
+    lazy var titleLabel = makeLabel()
     
     private lazy var attrs = TextAttributes()
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .textAlignment(.left)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,9 +39,8 @@ private extension ProfileDetailsHeaderCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
+        
         selectionStyle = .none
-        
-        
     }
 }
 

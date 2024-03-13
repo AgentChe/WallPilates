@@ -38,10 +38,10 @@ private extension OSkillLevelScoreView {
     func update() {
         let (marked, target) = marked
         
-        scoreView.backgroundColor = marked ? Appearance.secondary : Appearance.white.withAlphaComponent(0.1)
+        scoreView.backgroundColor = marked ? Appearance.main400 : Appearance.main200
         
         scoreView.layer.borderWidth = marked ? 0 : 1.scale
-        scoreView.layer.borderColor = marked ? UIColor.clear.cgColor : Appearance.white.withAlphaComponent(0.1).cgColor
+        scoreView.layer.borderColor = marked ? UIColor.clear.cgColor : Appearance.mono200.withAlphaComponent(0.1).cgColor
         
         label.isHidden = !target
     }
@@ -76,7 +76,7 @@ private extension OSkillLevelScoreView {
     
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

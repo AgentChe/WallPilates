@@ -27,7 +27,7 @@ final class WorkoutTemplateView: UIView {
 // MARK: Private
 private extension WorkoutTemplateView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

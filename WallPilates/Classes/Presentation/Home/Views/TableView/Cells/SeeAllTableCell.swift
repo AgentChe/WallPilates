@@ -11,6 +11,12 @@ final class SeeAllTableCell: UITableViewCell {
     lazy var nameLabel = makeLabel()
     lazy var seeAllLabel = makeSeeAllLabel()
     
+    private lazy var attrs = TextAttributes()
+        .textColor(Appearance.mono100)
+        .font(Fonts.Inter.semiBold(size: 20.scale))
+        .lineHeight(24.scale)
+        .textAlignment(.left)
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -26,11 +32,6 @@ final class SeeAllTableCell: UITableViewCell {
 // MARK: Public
 extension SeeAllTableCell {
     func setup(element: String) {
-        let attrs = TextAttributes()
-            .textColor(Appearance.white)
-            .font(Fonts.Inter.semiBold(size: 20.scale))
-            .lineHeight(24.scale)
-            .textAlignment(.left)
         nameLabel.attributedText = element.attributed(with: attrs)
     }
 }
@@ -71,17 +72,16 @@ private extension SeeAllTableCell {
     
     func makeSeeAllLabel() -> PaddingLabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 12.scale))
             .lineHeight(14.4.scale)
             .textAlignment(.center)
         
         let view = PaddingLabel()
         view.insets = UIEdgeInsets(top: 8.scale, left: 12.scale, bottom: 8.scale, right: 12.scale)
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 6.scale
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
-        view.layer.borderWidth = 1.scale
+        view.layer.masksToBounds = true
         view.attributedText = "Home.SeeAll".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

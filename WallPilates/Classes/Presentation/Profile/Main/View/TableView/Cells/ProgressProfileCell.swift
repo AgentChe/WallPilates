@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ProgressProfileCell: UITableViewCell {
-    
-    private lazy var titleLabel = makeLabel()
-    private lazy var progressView = makeProgressView()
+final class ProgressProfileCell: UITableViewCell {
+    lazy var titleLabel = makeLabel()
+    lazy var progressView = makeProgressView()
     
     private lazy var titleAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.center)

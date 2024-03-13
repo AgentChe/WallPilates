@@ -26,7 +26,7 @@ final class PaygateInfoCell: UIView {
 extension PaygateInfoCell {
     func setup(text: String) {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(19.6.scale)
             .letterSpacing(-0.41.scale)

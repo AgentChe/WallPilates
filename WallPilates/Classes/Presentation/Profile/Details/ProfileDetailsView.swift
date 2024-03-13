@@ -25,7 +25,7 @@ final class ProfileDetailsView: UIView {
 // MARK: Private
 private extension ProfileDetailsView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

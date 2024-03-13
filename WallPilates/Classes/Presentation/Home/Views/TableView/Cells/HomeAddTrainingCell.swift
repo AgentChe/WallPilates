@@ -48,15 +48,15 @@ private extension HomeAddTrainingCell {
 private extension HomeAddTrainingCell {
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
         
         let view = UIButton()
         view.setAttributedTitle("Home.AddTraining".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.isUserInteractionEnabled = false
-        view.backgroundColor = UIColor(integralRed: 251, green: 18, blue: 2)
+        view.backgroundColor = Appearance.main300
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -7,16 +7,16 @@
 
 import UIKit
 
-class CalendarEventType: UIView {
-    private lazy var titleLabel = makeLabel()
-    private lazy var statusView = makeStatusView()
+final class CalendarEventType: UIView {
+    lazy var titleLabel = makeLabel()
+    lazy var statusView = makeStatusView()
     
     private lazy var statusViewWidth = NSLayoutConstraint()
     
     private lazy var attrs = TextAttributes()
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(19.scale)
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,15 +35,15 @@ extension CalendarEventType {
         switch status {
         case .skipped:
             titleLabel.attributedText = "Calendar.Unfinished".localized.attributed(with: attrs)
-            statusView.backgroundColor = Appearance.primary
+            statusView.backgroundColor = Appearance.main300
             statusViewWidth.constant = 15.scale
         case .planned:
             titleLabel.attributedText = "Calendar.Scheduled".localized.attributed(with: attrs)
-            statusView.backgroundColor = Appearance.fourth
+            statusView.backgroundColor = Appearance.main600
             statusViewWidth.constant = 6.scale
         case .completed:
             titleLabel.attributedText = "Calendar.Completed".localized.attributed(with: attrs)
-            statusView.backgroundColor = Appearance.third
+            statusView.backgroundColor = Appearance.main500
             statusViewWidth.constant = 15.scale
         }
         statusViewWidth.isActive = true

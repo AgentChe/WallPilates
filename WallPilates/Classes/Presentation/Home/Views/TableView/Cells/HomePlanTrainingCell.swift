@@ -11,23 +11,15 @@ import Kingfisher
 final class HomePlanTrainingCell: UITableViewCell {
     lazy var container = makeContainer()
     lazy var pictureView = makeImageView()
-    lazy var typeLabel = makeLabel(numberOfLines: 1)
-    lazy var nameLabel = makeLabel(numberOfLines: 2)
-    lazy var skillLevelLabel = makeLabel(numberOfLines: 1)
+    lazy var contentLabel = makeLabel()
     
-    private lazy var typeAttrs = TextAttributes()
-        .textColor(Appearance.primary)
-        .font(Fonts.Inter.regular(size: 12.scale))
-        .lineHeight(15.6.scale)
-        .letterSpacing(0.41.scale)
-        .textAlignment(.left)
     private lazy var nameAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 16.scale))
         .lineHeight(20.8.scale)
         .textAlignment(.left)
     private lazy var skillLevelAttrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.5))
+        .textColor(Appearance.mono100.withAlphaComponent(0.5))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(18.2.scale)
         .textAlignment(.left)
@@ -54,18 +46,22 @@ final class HomePlanTrainingCell: UITableViewCell {
 // MARK: Public
 extension HomePlanTrainingCell {
     func setup(element: HomePlanTrainingElement) {
+        let result = NSMutableAttributedString()
+        
         switch element.training {
         case .drill(let drill):
             pictureView.kf.setImage(with: drill.image)
-            typeLabel.attributedText = "Home.Drill".localized.uppercased().attributed(with: typeAttrs)
-            nameLabel.attributedText = drill.name.attributed(with: nameAttrs)
+            
+            result.append((drill.name + "\n").attributed(with: nameAttrs))
         case .workout(let workout):
             pictureView.kf.setImage(with: workout.image)
-            typeLabel.attributedText = "Home.Training".localized.uppercased().attributed(with: typeAttrs)
-            nameLabel.attributedText = workout.name.attributed(with: nameAttrs)
+            
+            result.append((workout.name + "\n").attributed(with: nameAttrs))
         }
         
-        skillLevelLabel.attributedText = element.skillLevel.name.attributed(with: skillLevelAttrs)
+        result.append(element.skillLevel.name.attributed(with: skillLevelAttrs))
+        
+        contentLabel.attributedText = result
     }
 }
 
@@ -97,21 +93,9 @@ private extension HomePlanTrainingCell {
         ])
         
         NSLayoutConstraint.activate([
-            typeLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
-            typeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            typeLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -5.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
-            nameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            nameLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            skillLevelLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
-            skillLevelLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            skillLevelLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale)
+            contentLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
+            contentLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            contentLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
 }
@@ -120,10 +104,10 @@ private extension HomePlanTrainingCell {
 private extension HomePlanTrainingCell {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 10.scale
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
@@ -135,15 +119,15 @@ private extension HomePlanTrainingCell {
         view.layer.cornerRadius = 8.scale
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
     }
     
-    func makeLabel(numberOfLines: Int) -> UILabel {
+    func makeLabel() -> UILabel {
         let view = UILabel()
-        view.numberOfLines = numberOfLines
+        view.numberOfLines = 3
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

@@ -28,7 +28,7 @@ final class TrainView: UIView {
 // MARK: Private
 private extension TrainView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

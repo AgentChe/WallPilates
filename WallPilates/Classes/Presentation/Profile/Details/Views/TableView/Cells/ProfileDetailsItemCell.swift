@@ -8,21 +8,21 @@
 import UIKit
 
 final class ProfileDetailsItemCell: UITableViewCell {
-    private lazy var titleLabel = makeLabel()
-    private lazy var subtitleLabel = makeLabel()
-    private lazy var chevroneView = makeChevron()
-    private lazy var lineView = makeLineView()
+    lazy var titleLabel = makeLabel()
+    lazy var subtitleLabel = makeLabel()
+    lazy var chevroneView = makeChevron()
+    lazy var lineView = makeLineView()
     
     private lazy var titleAttrs = TextAttributes()
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .textAlignment(.left)
     
     private lazy var subtitleAttrs = TextAttributes()
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
-        .textColor(Appearance.white.withAlphaComponent(0.7))
+        .textColor(Appearance.mono100.withAlphaComponent(0.7))
         .textAlignment(.right)
         .lineBreakMode(.byTruncatingTail)
 
@@ -110,12 +110,13 @@ private extension ProfileDetailsItemCell {
     func makeLineView() -> UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         contentView.addSubview(view)
         return view
     }
 }
 
+// MARK: Additional
 private extension ProfileDetailsTableElement.CellType {
     var title: String {
         switch self {

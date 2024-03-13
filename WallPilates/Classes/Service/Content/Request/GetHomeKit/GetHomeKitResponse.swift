@@ -108,12 +108,12 @@ private extension GetHomeKitResponse {
             else {
                 return nil
             }
-            
+
             let exercises = exercisesBundleArray.reduce([]) { result, exercisesBundleJSON -> [WorkoutExercise] in
                 guard let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]] else {
                     return result
                 }
-                
+
                 let exercises = exercisesArray.compactMap { exerciseJSON -> WorkoutExercise? in
                     guard
                         let id = exerciseJSON["exercise_id"] as? Int,
@@ -125,7 +125,7 @@ private extension GetHomeKitResponse {
                     else {
                         return nil
                     }
-                    
+
                     return WorkoutExercise(
                         id: id,
                         name: name,
@@ -134,10 +134,10 @@ private extension GetHomeKitResponse {
                         instruction: instruction
                     )
                 }
-                
+
                 return result + exercises
             }
-            
+
             return WorkoutTemplate(
                 id: id,
                 name: name,

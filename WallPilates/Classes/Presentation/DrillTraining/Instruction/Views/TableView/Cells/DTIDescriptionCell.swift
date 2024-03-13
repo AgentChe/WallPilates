@@ -11,7 +11,7 @@ final class DTIDescriptionCell: UITableViewCell {
     lazy var label = makeLabel()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.8))
+        .textColor(Appearance.mono200.withAlphaComponent(0.8))
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)

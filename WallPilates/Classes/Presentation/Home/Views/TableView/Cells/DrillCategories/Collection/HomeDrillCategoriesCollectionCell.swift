@@ -11,7 +11,7 @@ final class HomeDrillCategoriesCollectionCell: UICollectionViewCell {
     lazy var label = makeLabel()
     
     private static let attrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
@@ -67,10 +67,10 @@ private extension HomeDrillCategoriesCollectionCell {
     func makeLabel() -> PaddingLabel {
         let view = PaddingLabel()
         view.insets = UIEdgeInsets(top: 10.scale, left: 16.scale, bottom: 10.scale, right: 16.scale)
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 10.scale
         view.layer.masksToBounds = true
-        view.layer.borderColor = Appearance.white.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
         view.layer.borderWidth = 1.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

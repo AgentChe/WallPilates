@@ -36,7 +36,7 @@ final class ProfileEditSkillLevelView: UIView {
 // MARK: Private
 private extension ProfileEditSkillLevelView {
     func initialize(skillLevel: SkillLevel?) {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
         
         contentManager
             .obtainLevels(forceUpdate: false)
@@ -136,7 +136,7 @@ private extension ProfileEditSkillLevelView {
 private extension ProfileEditSkillLevelView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.bold(size: 24.scale))
             .lineHeight(28.8.scale)
             .textAlignment(.center)
@@ -161,9 +161,9 @@ private extension ProfileEditSkillLevelView {
     func makeSlider() -> UISlider {
         let view = UISlider()
         view.minimumValue = 1
-        view.thumbTintColor = Appearance.secondary
-        view.maximumTrackTintColor = Appearance.white.withAlphaComponent(0.1)
-        view.minimumTrackTintColor = Appearance.secondary
+        view.thumbTintColor = Appearance.main400
+        view.maximumTrackTintColor = Appearance.main200
+        view.minimumTrackTintColor = Appearance.main400
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(update(sender:)), for: .valueChanged)
         addSubview(view)
@@ -172,12 +172,12 @@ private extension ProfileEditSkillLevelView {
     
     func makeContinueButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primary
-        view.layer.cornerRadius = 8.scale
+        view.backgroundColor = Appearance.main300
+        view.layer.cornerRadius = 28.scale
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

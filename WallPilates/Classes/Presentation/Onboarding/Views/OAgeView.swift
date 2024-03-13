@@ -40,7 +40,7 @@ final class OAgeView: OSlideView {
 // MARK: Private
 private extension OAgeView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
     
     @objc
@@ -117,7 +117,7 @@ private extension OAgeView {
 private extension OAgeView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.bold(size: 24.scale))
             .lineHeight(28.8.scale)
             .textAlignment(.center)
@@ -132,7 +132,7 @@ private extension OAgeView {
     
     func makeAgeButton(age: String) -> OAgeButton {
         let view = OAgeButton(age: age)
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(ageTapped(sender:)), for: .touchUpInside)
@@ -142,12 +142,12 @@ private extension OAgeView {
     
     func makeContinueButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primary
-        view.layer.cornerRadius = 8.scale
+        view.backgroundColor = Appearance.main300
+        view.layer.cornerRadius = 28.scale
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false

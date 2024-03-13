@@ -42,7 +42,7 @@ extension ProfileEditView {
 // MARK: Private
 private extension ProfileEditView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

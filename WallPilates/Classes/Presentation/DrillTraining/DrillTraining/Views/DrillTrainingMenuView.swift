@@ -29,7 +29,7 @@ final class DrillTrainingMenuView: UIView {
 extension DrillTrainingMenuView {
     func setup(name: String) {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 24.scale))
             .lineHeight(28.8.scale)
             .textAlignment(.center)
@@ -114,14 +114,14 @@ private extension DrillTrainingMenuView {
     
     func makeFinishButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.scale)
             .textAlignment(.center)
         
         let view = UIButton()
         view.setAttributedTitle("DrillTraining.FinishTraining".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primary
+        view.backgroundColor = Appearance.main300
         view.layer.cornerRadius = 8.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

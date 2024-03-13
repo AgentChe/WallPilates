@@ -7,10 +7,9 @@
 
 import UIKit
 
-class ProfileMainView: UIView {
-    
-    lazy var preloader = makePreloader()
+final class ProfileMainView: UIView {
     lazy var tableView = makeTableView()
+    lazy var preloader = makePreloader()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +26,7 @@ class ProfileMainView: UIView {
 // MARK: Private
 private extension ProfileMainView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 
@@ -54,6 +53,8 @@ private extension ProfileMainView {
 private extension ProfileMainView {
     func makeTableView() -> ProfileMainTableView {
         let view = ProfileMainTableView()
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

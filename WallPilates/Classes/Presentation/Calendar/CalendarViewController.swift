@@ -33,6 +33,7 @@ class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else {
                 return .never()

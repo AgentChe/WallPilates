@@ -78,7 +78,7 @@ private extension WorkoutTemplateButtonsCell {
     func makeCalendarButton() -> UIButton {
         let view = UIButton()
         view.layer.cornerRadius = 8.scale
-        view.backgroundColor = Appearance.black
+        view.backgroundColor = Appearance.mono100
         view.addTarget(self, action: #selector(calendarTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
@@ -96,14 +96,14 @@ private extension WorkoutTemplateButtonsCell {
     
     func makeStartButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.scale)
         
         let view = UIButton()
         view.setAttributedTitle("WorkoutTemplate.StartWorkout".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 8.scale
-        view.backgroundColor = Appearance.primary
+        view.backgroundColor = Appearance.main300
             view.addTarget(self, action: #selector(startTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

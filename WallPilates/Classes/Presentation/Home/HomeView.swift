@@ -26,7 +26,7 @@ final class HomeView: UIView {
 // MARK: Private
 private extension HomeView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

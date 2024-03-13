@@ -72,7 +72,7 @@ private extension TrainFilterView {
 private extension TrainFilterView {
     func makeSeparator() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.white.withAlphaComponent(0.1)
+        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.1)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

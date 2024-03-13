@@ -26,7 +26,7 @@ final class DrillsView: UIView {
 // MARK: Private
 private extension DrillsView {
     func initialize() {
-        backgroundColor = Appearance.background
+        backgroundColor = Appearance.main100
     }
 }
 

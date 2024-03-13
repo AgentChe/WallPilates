@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, gender, age, role, skillLevel, goals, daysOfWeek, whereTrain, drills, position, workoutType, focusZone, preloader
+        case welcome, gender, age, skillLevel, daysOfWeek, drills, focusZone, preloader
     }
     
     var didFinish: (() -> Void)?
@@ -26,14 +26,9 @@ final class OnboardingView: UIView {
             OWelcomeView(step: .welcome),
             genderView,
             OAgeView(step: .age),
-            ORoleView(step: .role),
             skillLevelView,
-            OGoalsView(step: .goals),
             daysOfWeekView,
-            OWhereTrainView(step: .whereTrain),
             drillsView,
-            OPositionView(step: .position),
-            OWorkoutTypeView(step: .workoutType),
             focusZoneView,
             preloaderView
         ]
@@ -97,7 +92,7 @@ private extension OnboardingView {
                 
                 if index == 0 {
                     view.frame.origin = CGPoint(x: 0, y: 0)
-                    addSubview(view)
+                    self?.addSubview(view)
                 }
             }
         

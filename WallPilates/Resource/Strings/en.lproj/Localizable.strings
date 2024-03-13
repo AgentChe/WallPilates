@@ -28,9 +28,9 @@
 "Splash.Preloader3" = "Setting up your account...";
 
 // MARK: Paygate
-"Paygate.Title" = "Unlock Premium Status";
-"Paygate.Cell1" = "100+ workout plans and soccer drills";
-"Paygate.Cell2" = "Detailed instructions";
+"Paygate.Title" = "UNLOCK PREMIUM STATUS";
+"Paygate.Cell1" = "Customized wall pilates workouts";
+"Paygate.Cell2" = "Clear instructions";
 "Paygate.Cell3" = "Easily schedule your training";
 "Paygate.Info" = "Secured by the App Store. Cancel anytime.";
 "Paygate.TermsOfUse" = "Terms of Use";
@@ -48,9 +48,7 @@
 "Paygate.Price.Period" = "month";
 
 // MARK: Onboarding
-"Onboarding.Skip" = "Skip";
-"Onboarding.Welcome.Title" = "WELCOME TO\nSOCCER";
-"Onboarding.Welcome.SubTitle" = "Soccer training app";
+"Onboarding.Welcome.Title" = "WELCOME TO\nWALL PILATES";
 "Onboarding.Welcome.Button" = "Start now";
 "Onboarding.Gender.Title" = "What is your gender?";
 "Onboarding.Gender.Male" = "Male";
@@ -61,16 +59,7 @@
 "Onboarding.Age.3" = "35-44";
 "Onboarding.Age.4" = "45-60";
 "Onboarding.Age.5" = "60+";
-"Onboarding.Role.Title" = "What is your role?";
-"Onboarding.Role.Player" = "Player";
-"Onboarding.Role.Coach" = "Coach";
-"Onboarding.Role.Amateur" = "Amateur";
 "Onboarding.SkillLevel.Title" = "Define your skill level";
-"Onboarding.Goals.Title" = "What do you want to\nimprove?";
-"Onboarding.Goals.1" = "Speed and agility";
-"Onboarding.Goals.2" = "Ball control and dribbling\nskills";
-"Onboarding.Goals.3" = "Shooting and scoring\nabilities";
-"Onboarding.Goals.4" = "Overall physical fitness";
 "Onboarding.DaysOfWeek.Title" = "Choose training days";
 "Onboarding.DaysOfWeek.Su" = "Su";
 "Onboarding.DaysOfWeek.Mo" = "Mo";
@@ -79,27 +68,7 @@
 "Onboarding.DaysOfWeek.Th" = "Th";
 "Onboarding.DaysOfWeek.Fr" = "Fr";
 "Onboarding.DaysOfWeek.Sa" = "Sa";
-"Onboarding.WhereTrain.Title" = "Where do you prefer to\ntrain?";
-"Onboarding.WhereTrain.Indoor" = "Indoor";
-"Onboarding.WhereTrain.Outdoor" = "Outdoor";
-"Onboarding.Drills.Title" = "What type of drills or\nexercises are you most\ninterested in?";
-"Onboarding.Position.Title" = "Choose your position";
-"Onboarding.Position.ST" = "ST";
-"Onboarding.Position.LW" = "LW";
-"Onboarding.Position.CAM" = "CAM";
-"Onboarding.Position.RW" = "RW";
-"Onboarding.Position.CM" = "CM";
-"Onboarding.Position.DM" = "DM";
-"Onboarding.Position.LB" = "LB";
-"Onboarding.Position.RB" = "RB";
-"Onboarding.Position.CB" = "CB";
-"Onboarding.Position.GK" = "GK";
-"Onboarding.WorkoutType.Title" = "What type of workouts do\nyou prefer?";
-"Onboarding.WorkoutType.Cell1" = "Cardio";
-"Onboarding.WorkoutType.Cell2" = "Strength training";
-"Onboarding.WorkoutType.Cell3" = "HIIT (High-intensity interval training)";
-"Onboarding.WorkoutType.Cell4" = "Yoga (or other mind-body workouts)";
-"Onboarding.WorkoutType.Cell5" = "No particular preference";
+"Onboarding.Drills.Title" = "Choose your goals";
 "Onboarding.FocusZone.Title" = "Which body part would\nyou like to improve?";
 "Onboarding.FocusZone.Arms" = "Arms";
 "Onboarding.FocusZone.Chest" = "Chest";
@@ -118,19 +87,17 @@
 
 // MARK: Home
 "Home.DailyPicks" = "Daily picks";
-"Home.Drill" = "Drill";
-"Home.Training" = "Training";
 "Home.SeeAll" = "See all";
-"Home.TryDrills" = "Try drills";
-"Home.ImproveYourFitness" = "Improve your fitness";
+"Home.TryDrills" = "Try exercises";
+"Home.ImproveYourFitness" = "Select by goals";
 "Home.StartTraining" = "Start training";
-"Home.StartWorkout" = "Start workout";
 "Home.YourScore" = "Your score";
 "Home.Level" = "Level - %@";
 "Home.Schedule" = "Schedule • %@";
 "Home.NoTrainings" = "No trainings for today";
 "Home.AddTraining" = "Add a training";
 "Home.Completed" = "Completed";
+"Home.ExercisesCount" = "%i exercises";
 
 // MARK: DrillTrainingInstruction
 "DrillTrainingInstruction.StartTraining" = "Start training";
@@ -201,7 +168,9 @@
 "Profile.DaysOfWeek.Sa" = "S";
 "Profile.Level" = "%@ Level";
 "Profile.StatsTitle" = "Personal stats";
-"Profile.StatsDescription" = "min of completed training ";
+"Profile.StatsDescription.Min" = "min of completed training";
+"Profile.StatsDescription.Hour" = "hour of completed training";
+"Profile.StatsDescription.Hours" = "hours of completed training";
 "Profile.SkillLevel" = "Skill level";
 "Profile.TrainingDays" = "Training days";
 "Profile.FocusZones" = "Focus zones";

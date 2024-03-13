@@ -29,17 +29,17 @@ final class PlanWeekDayButton: UIButton {
     }()
     
     private lazy var dayOfWeekAttrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.7))
+        .textColor(Appearance.mono100.withAlphaComponent(0.7))
         .font(Fonts.Inter.regular(size: 12.scale))
         .lineHeight(16.8.scale)
         .textAlignment(.center)
     private lazy var dayOfWeekSelectedAttrs = TextAttributes()
-        .textColor(Appearance.secondary)
+        .textColor(Appearance.main400)
         .font(Fonts.Inter.regular(size: 12.scale))
         .lineHeight(16.8.scale)
         .textAlignment(.center)
     private lazy var dayAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
@@ -72,9 +72,9 @@ extension PlanWeekDayButton {
         
         dayLabel.attributedText = dayFormatter.string(from: model.day).attributed(with: dayAttrs)
         
-        daySelectView.backgroundColor = model.isCurrentDay ? Appearance.white.withAlphaComponent(0.2) : UIColor.clear
+        daySelectView.backgroundColor = model.isCurrentDay ? Appearance.main200 : UIColor.clear
         daySelectView.layer.borderWidth = model.isSelected ? 2.scale : 0
-        daySelectView.layer.borderColor = model.isSelected ? Appearance.secondary.cgColor : UIColor.clear.cgColor
+        daySelectView.layer.borderColor = model.isSelected ? Appearance.main400.cgColor : UIColor.clear.cgColor
         
         setup(status: model.planStatus)
     }
@@ -93,13 +93,13 @@ private extension PlanWeekDayButton {
         statusViewWidth.isActive = false
         switch status {
         case .skipped:
-            statusView.backgroundColor = Appearance.primary
+            statusView.backgroundColor = Appearance.main300
             statusViewWidth.constant = 15.scale
         case .planned:
-            statusView.backgroundColor = Appearance.fourth
+            statusView.backgroundColor = Appearance.main600
             statusViewWidth.constant = 6.scale
         case .completed:
-            statusView.backgroundColor = Appearance.third
+            statusView.backgroundColor = Appearance.main500
             statusViewWidth.constant = 15.scale
         }
         statusViewWidth.isActive = true

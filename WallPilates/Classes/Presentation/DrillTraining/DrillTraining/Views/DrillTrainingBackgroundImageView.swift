@@ -53,7 +53,7 @@ private extension DrillTrainingBackgroundImageView {
 private extension DrillTrainingBackgroundImageView {
     func makeShadowView() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.background.withAlphaComponent(0.4)
+        view.backgroundColor = Appearance.main100.withAlphaComponent(0.4)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -64,9 +64,9 @@ private extension DrillTrainingBackgroundImageView {
         view.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         view.gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         view.gradientLayer.colors = [
-            Appearance.background.withAlphaComponent(0).cgColor,
-            Appearance.background.withAlphaComponent(1).cgColor,
-            Appearance.background.withAlphaComponent(1).cgColor
+            Appearance.main100.withAlphaComponent(0).cgColor,
+            Appearance.main100.withAlphaComponent(1).cgColor,
+            Appearance.main100.withAlphaComponent(1).cgColor
         ]
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

@@ -41,10 +41,9 @@ final class ODayOfWeekButton: UIButton {
 // MARK: Private
 private extension ODayOfWeekButton {
     func update() {
-        layer.borderWidth = marked ? 0 : 1.scale
-        layer.borderColor = marked ? UIColor.clear.cgColor : Appearance.white.withAlphaComponent(0.1).cgColor
+        backgroundColor = marked ? Appearance.main400 : Appearance.main200
         
-        backgroundColor = marked ? Appearance.secondary : Appearance.black
+        label.textColor = marked ? Appearance.mono200 : Appearance.mono100
     }
     
     var text: String {
@@ -81,7 +80,6 @@ private extension ODayOfWeekButton {
 private extension ODayOfWeekButton {
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

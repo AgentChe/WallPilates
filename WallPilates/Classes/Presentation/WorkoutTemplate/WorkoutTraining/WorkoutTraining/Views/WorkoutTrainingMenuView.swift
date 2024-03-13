@@ -231,14 +231,14 @@ private extension WorkoutTrainingMenuView {
     
     func makeFinishButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.scale)
             .textAlignment(.center)
         
         let view = UIButton()
         view.setAttributedTitle("WorkoutTraining.FinishWorkout".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primary
+        view.backgroundColor = Appearance.main300
         view.layer.cornerRadius = 8.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -248,19 +248,19 @@ private extension WorkoutTrainingMenuView {
 
 private extension TextAttributes {
     static let titleAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.semiBold(size: 24.scale))
         .lineHeight(28.scale)
         .textAlignment(.center)
     
     static let nextTitleAttrs = TextAttributes()
-        .textColor(Appearance.white.withAlphaComponent(0.5))
+        .textColor(Appearance.mono200.withAlphaComponent(0.5))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(20.scale)
         .textAlignment(.center)
     
     static let nextSubtitleAttrs = TextAttributes()
-        .textColor(Appearance.white)
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.semiBold(size: 16.scale))
         .lineHeight(20.scale)
         .textAlignment(.center)
