@@ -9,7 +9,6 @@ import RxSwift
 import RxCocoa
 
 final class CalendarViewModel {
-    
     enum SchedulerType {
         case drill(customerDrillId: Int)
         case workout(customerWorkoutId: Int)

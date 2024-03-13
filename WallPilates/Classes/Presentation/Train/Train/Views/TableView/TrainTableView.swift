@@ -8,7 +8,6 @@
 import UIKit
 
 protocol TrainTableDelegate: AnyObject {
-    func trainTableDidTapped(drillCategory: DrillCategory)
     func trainTableDidTapped(training: TrainTrainigElement.Training)
 }
 
@@ -66,20 +65,6 @@ extension TrainTableView: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 extension TrainTableView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch sections[indexPath.section].elements[indexPath.row] {
-        case .title(let element):
-            switch element {
-            case .drillCategory(let drillCategory):
-                mainDelegate?.trainTableDidTapped(drillCategory: drillCategory)
-            default:
-                return
-            }
-        default:
-            return
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch sections[indexPath.section].elements[indexPath.row] {
         case .title:

@@ -12,18 +12,12 @@ struct TrainTableSection {
 }
 
 enum TrainTableElement {
-    case title(TrainTitleElement)
+    case title(String)
     case trainings([TrainTrainigElement])
-}
-
-enum TrainTitleElement {
-    case drillCategory(DrillCategory)
-    case workout(String)
 }
 
 struct TrainTrainigElement {
     enum Training {
-        case drill(Drill)
         case workoutCover(WorkoutCover)
         case focusZone(FocusZone)
         case workoutStep(WorkoutStep)

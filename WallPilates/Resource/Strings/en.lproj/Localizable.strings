@@ -132,16 +132,15 @@
 "DrillTrainingQuit.Finish" = "Finish training";
 
 // MARK: Train
-"Train.Filter.Drills" = "Drills";
-"Train.Filter.Workouts" = "Fitness";
 "Train.SeeAll" = "See all";
-"Train.Workouts" = "Workouts";
+"Train.Workouts" = "Wall Pilates Workouts";
 "Train.FocusZones" = "Focus Zones";
 "Train.Steps" = "Select by goals";
+"Train.ExercisesCount" = "%i exercises";
 
 // MARK: TrainInfo
 "TrainInfo.Title" = "Info";
-"TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings To change the level of difficulty please go to the settings";
+"TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings";
 
 // MARK: WorkoutTemplate
 "WorkoutTemplate.StartWorkout" = "Start workout";

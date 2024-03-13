@@ -16,9 +16,6 @@ final class TrainViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var externalSelectFilter = PublishRelay<TrainFilterView.Filter>()
-    private var selectFilter: TrainFilterView.Filter? // На случай, если переход на фильтр был совершен на другом экране до инициализации TrainViewController
-    
     private let didOpenProfile: (() -> Void)
     
     private init(didOpenProfile: @escaping () -> Void) {
@@ -38,20 +35,6 @@ final class TrainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
-            guard let self = self else {
-                return .never()
-            }
-            
-            return self.open(error: error)
-        }
-        
-        viewModel.activity
-            .drive(Binder(self) { base, activity in
-                base.activity(activity)
-            })
-            .disposed(by: disposeBag)
-        
         mainView.infoButton.rx.tap
             .bind(to: Binder(self) { base, void in
                 base.didTapInfo()
@@ -64,7 +47,6 @@ final class TrainViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        addFilterActions()
         mainView.tableView.mainDelegate = self
     }
     
@@ -81,7 +63,7 @@ final class TrainViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        .darkContent
     }
 }
 
@@ -92,32 +74,12 @@ extension TrainViewController {
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
-    
-    func select(filter: TrainFilterView.Filter) {
-        selectFilter = filter
-        externalSelectFilter.accept(filter)
-    }
 }
 
 // MARK: TrainTableDelegate
 extension TrainViewController: TrainTableDelegate {
-    func trainTableDidTapped(drillCategory: DrillCategory) {
-        let vc = DrillsViewController.make(drillCategory: drillCategory)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func trainTableDidTapped(training: TrainTrainigElement.Training) {
         switch training {
-        case .drill(let drill):
-            let needPayment = drill.paid ? !SessionManager().hasActiveSubscriptions() : false
-            
-            if needPayment {
-                let vc = PaygateViewController.make()
-                present(vc, animated: true)
-            } else {
-                let vc = DrillTrainingInstructionViewController.make(drill: drill)
-                navigationController?.pushViewController(vc, animated: true)
-            }
         case .workoutCover(let workoutCover):
             let needPayment = workoutCover.paid ? !SessionManager().hasActiveSubscriptions() : false
             
@@ -159,43 +121,5 @@ private extension TrainViewController {
             self?.didOpenProfile()
         }
         present(vc, animated: false)
-    }
-    
-    func addFilterActions() {
-        Observable
-            .merge(
-                mainView.filterView.drillsButton.rx.tap
-                    .map { TrainFilterView.Filter.drills },
-                mainView.filterView.workoutsButton.rx.tap
-                    .map { TrainFilterView.Filter.workouts },
-                externalSelectFilter.asObservable()
-            )
-            .startWith(selectFilter ?? .drills)
-            .bind(to: Binder(self) { base, filter in
-                base.mainView.filterView.filter = filter
-                base.viewModel.didSelectFilter.accept(filter)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func activity(_ activity: Bool) {
-        mainView.tableView.isHidden = activity
-        activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
-    }
-    
-    func open(error: Error) -> Observable<Void> {
-        Observable<Void>
-            .create { [weak self] observe in
-                guard let self = self else {
-                    return Disposables.create()
-                }
-                
-                let vc = TryAgainViewController.make(error: error) {
-                    observe.onNext(())
-                }
-                self.present(vc, animated: true)
-                
-                return Disposables.create()
-            }
     }
 }

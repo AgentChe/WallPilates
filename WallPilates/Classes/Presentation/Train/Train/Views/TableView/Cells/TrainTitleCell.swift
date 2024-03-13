@@ -9,10 +9,9 @@ import UIKit
 
 final class TrainTitleCell: UITableViewCell {
     lazy var nameLabel = makeLabel()
-    lazy var seeAllLabel = makeSeeAllLabel()
     
     private let attrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.left)
@@ -31,11 +30,8 @@ final class TrainTitleCell: UITableViewCell {
 
 // MARK: Public
 extension TrainTitleCell {
-    func setup(element: TrainTitleElement) {
-        let args = args(from: element)
-        
-        nameLabel.attributedText = args.0.attributed(with: attrs)
-        seeAllLabel.isHidden = args.1
+    func setup(element: String) {
+        nameLabel.attributedText = element.attributed(with: attrs)
     }
 }
 
@@ -47,15 +43,6 @@ private extension TrainTitleCell {
         
         selectionStyle = .none
     }
-    
-    func args(from element: TrainTitleElement) -> (String, Bool) {
-        switch element {
-        case .drillCategory(let drillCategory):
-            return (drillCategory.name, false)
-        case .workout(let workoutName):
-            return (workoutName, true)
-        }
-    }
 }
 
 // MARK: Make constraints
@@ -65,11 +52,6 @@ private extension TrainTitleCell {
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 43.scale)
         ])
-        
-        NSLayoutConstraint.activate([
-            seeAllLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            seeAllLabel.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor)
-        ])
     }
 }
 
@@ -77,25 +59,6 @@ private extension TrainTitleCell {
 private extension TrainTitleCell {
     func makeLabel() -> UILabel {
         let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(view)
-        return view
-    }
-    
-    func makeSeeAllLabel() -> PaddingLabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
-            .font(Fonts.Inter.semiBold(size: 12.scale))
-            .lineHeight(14.4.scale)
-            .textAlignment(.center)
-        
-        let view = PaddingLabel()
-        view.insets = UIEdgeInsets(top: 8.scale, left: 12.scale, bottom: 8.scale, right: 12.scale)
-        view.backgroundColor = Appearance.mono100
-        view.layer.cornerRadius = 6.scale
-        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
-        view.layer.borderWidth = 1.scale
-        view.attributedText = "Train.SeeAll".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

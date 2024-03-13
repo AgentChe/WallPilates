@@ -52,7 +52,7 @@ class WorkoutTrainingResultViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        .darkContent
     }
 }
 

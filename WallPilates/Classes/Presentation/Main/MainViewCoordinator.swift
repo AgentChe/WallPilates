@@ -12,7 +12,6 @@ final class MainViewCoordinator {
     
     lazy var homeVC = NavigationController(rootViewController: HomeViewController.make(seeAllWorkouts: { [weak self] in
         self?.change(tab: .train)
-        self?.trainController.select(filter: .workouts)
     }, addTrainings: { [weak self] in
         self?.change(tab: .train)
     }))

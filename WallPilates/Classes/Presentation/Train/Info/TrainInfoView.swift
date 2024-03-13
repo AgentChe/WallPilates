@@ -38,12 +38,12 @@ private extension TrainInfoView {
             dimmedView.topAnchor.constraint(equalTo: topAnchor)
         ])
 
-        containerBottomConstraint = container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 393.scale)
+        containerBottomConstraint = container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 339.scale)
         NSLayoutConstraint.activate([
             container.leadingAnchor.constraint(equalTo: leadingAnchor),
             container.trailingAnchor.constraint(equalTo: trailingAnchor),
             containerBottomConstraint,
-            container.heightAnchor.constraint(equalToConstant: 393.scale)
+            container.heightAnchor.constraint(equalToConstant: 339.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -96,7 +96,7 @@ private extension TrainInfoView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
@@ -110,10 +110,10 @@ private extension TrainInfoView {
     
     func makeSubTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.8))
+            .textColor(Appearance.mono100.withAlphaComponent(0.8))
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
-            .textAlignment(.center)
+            .textAlignment(.left)
         
         let view = UILabel()
         view.numberOfLines = 0
@@ -133,7 +133,7 @@ private extension TrainInfoView {
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main300
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
@@ -141,15 +141,15 @@ private extension TrainInfoView {
 
     func makeCancelButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
 
         let view = UIButton()
         view.setAttributedTitle("Cancel".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = UIColor(integralRed: 51, green: 51, blue: 51)
-        view.layer.cornerRadius = 8.scale
+        view.backgroundColor = Appearance.main200
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

@@ -9,9 +9,7 @@ import UIKit
 
 final class TrainView: UIView {
     lazy var infoButton = makeInfoButton()
-    lazy var filterView = makeFilterView()
     lazy var tableView = makeTableView()
-    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,22 +41,10 @@ private extension TrainView {
         ])
         
         NSLayoutConstraint.activate([
-            filterView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            filterView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            filterView.heightAnchor.constraint(equalToConstant: 34.scale),
-            filterView.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 14.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: filterView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: infoButton.bottomAnchor, constant: 14.scale),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
-            preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
@@ -68,14 +54,6 @@ private extension TrainView {
     func makeInfoButton() -> TapAreaButton {
         let view = TapAreaButton()
         view.setImage(UIImage(named: "Train.Info"), for: .normal)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeFilterView() -> TrainFilterView {
-        let view = TrainFilterView()
-        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -93,13 +71,6 @@ private extension TrainView {
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
         view.backgroundColor = UIColor.clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makePreloader() -> Spinner {
-        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

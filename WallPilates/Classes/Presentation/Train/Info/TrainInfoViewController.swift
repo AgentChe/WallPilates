@@ -86,7 +86,7 @@ private extension TrainInfoViewController {
 
     func animateDismiss(completion: @escaping (() -> Void)) {
         mainView.containerBottomConstraint.isActive = false
-        mainView.containerBottomConstraint.constant = 393.scale
+        mainView.containerBottomConstraint.constant = 339.scale
         mainView.containerBottomConstraint.isActive = true
 
         UIView.animate(withDuration: 0.3, animations: { [weak self] in

@@ -295,8 +295,6 @@
 		DE0D2AD82B97643F007F1560 /* TrainTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D298A2B97643F007F1560 /* TrainTitleCell.swift */; };
 		DE0D2AD92B97643F007F1560 /* TrainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D298B2B97643F007F1560 /* TrainTableElement.swift */; };
 		DE0D2ADA2B97643F007F1560 /* TrainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D298C2B97643F007F1560 /* TrainTableView.swift */; };
-		DE0D2ADB2B97643F007F1560 /* TrainFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D298E2B97643F007F1560 /* TrainFilterButton.swift */; };
-		DE0D2ADC2B97643F007F1560 /* TrainFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D298F2B97643F007F1560 /* TrainFilterView.swift */; };
 		DE0D2ADD2B97643F007F1560 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29912B97643F007F1560 /* MainViewController.swift */; };
 		DE0D2ADE2B97643F007F1560 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29922B97643F007F1560 /* MainView.swift */; };
 		DE0D2ADF2B97643F007F1560 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29952B97643F007F1560 /* TabItemView.swift */; };
@@ -626,8 +624,6 @@
 		DE0D298A2B97643F007F1560 /* TrainTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTitleCell.swift; sourceTree = "<group>"; };
 		DE0D298B2B97643F007F1560 /* TrainTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableElement.swift; sourceTree = "<group>"; };
 		DE0D298C2B97643F007F1560 /* TrainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableView.swift; sourceTree = "<group>"; };
-		DE0D298E2B97643F007F1560 /* TrainFilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainFilterButton.swift; sourceTree = "<group>"; };
-		DE0D298F2B97643F007F1560 /* TrainFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainFilterView.swift; sourceTree = "<group>"; };
 		DE0D29912B97643F007F1560 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE0D29922B97643F007F1560 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE0D29952B97643F007F1560 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -1986,9 +1982,9 @@
 			isa = PBXGroup;
 			children = (
 				DE0D29832B97643F007F1560 /* Views */,
+				DE0D29822B97643F007F1560 /* TrainViewController.swift */,
 				DE0D29802B97643F007F1560 /* TrainViewModel.swift */,
 				DE0D29812B97643F007F1560 /* TrainView.swift */,
-				DE0D29822B97643F007F1560 /* TrainViewController.swift */,
 			);
 			path = Train;
 			sourceTree = "<group>";
@@ -1997,7 +1993,6 @@
 			isa = PBXGroup;
 			children = (
 				DE0D29842B97643F007F1560 /* TableView */,
-				DE0D298D2B97643F007F1560 /* Filter */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2029,15 +2024,6 @@
 				DE0D29892B97643F007F1560 /* TrainCollectionView.swift */,
 			);
 			path = Collection;
-			sourceTree = "<group>";
-		};
-		DE0D298D2B97643F007F1560 /* Filter */ = {
-			isa = PBXGroup;
-			children = (
-				DE0D298E2B97643F007F1560 /* TrainFilterButton.swift */,
-				DE0D298F2B97643F007F1560 /* TrainFilterView.swift */,
-			);
-			path = Filter;
 			sourceTree = "<group>";
 		};
 		DE0D29902B97643F007F1560 /* Main */ = {
@@ -2332,7 +2318,6 @@
 				DE0D2AA52B97643F007F1560 /* DrillTrainingAssembly.swift in Sources */,
 				DE0D2A5B2B97643F007F1560 /* HomeDrillCategoriesCollectionLayout.swift in Sources */,
 				DE0D2A742B97643F007F1560 /* PaygateOptionInfo.swift in Sources */,
-				DE0D2ADB2B97643F007F1560 /* TrainFilterButton.swift in Sources */,
 				DE0D2AC02B97643F007F1560 /* ProfileEditFocusZoneView.swift in Sources */,
 				DE0D29ED2B97643F007F1560 /* AppDelegate.swift in Sources */,
 				DE0D2A3C2B97643F007F1560 /* ScheduleWorkoutResponse.swift in Sources */,
@@ -2342,7 +2327,6 @@
 				DE0D2A612B97643F007F1560 /* HomeStatsCell.swift in Sources */,
 				DE0D2AB62B97643F007F1560 /* ProfileDetailsViewController.swift in Sources */,
 				DE0D2A912B97643F007F1560 /* WTFocusZonesCollectionCell.swift in Sources */,
-				DE0D2ADC2B97643F007F1560 /* TrainFilterView.swift in Sources */,
 				DE0D2A002B97643F007F1560 /* ScheduleDrillRequest.swift in Sources */,
 				DE0D2A3B2B97643F007F1560 /* AssignedWorkout.swift in Sources */,
 				DE0D2AA82B97643F007F1560 /* DrillTrainingInstructionScrollView.swift in Sources */,
