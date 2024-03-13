@@ -15,9 +15,9 @@ final class DrillsViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private let drillCategory: DrillCategory
+    private let drillCategory: DrillCategory?
     
-    private init(drillCategory: DrillCategory) {
+    private init(drillCategory: DrillCategory?) {
         self.drillCategory = drillCategory
         
         super.init(nibName: nil, bundle: nil)
@@ -60,9 +60,9 @@ final class DrillsViewController: UIViewController {
 
 // MARK: Make
 extension DrillsViewController {
-    static func make(drillCategory: DrillCategory) -> DrillsViewController {
+    static func make(drillCategory: DrillCategory? = nil) -> DrillsViewController {
         let vc = DrillsViewController(drillCategory: drillCategory)
-        vc.navigationItem.title = drillCategory.name
+        vc.navigationItem.title = drillCategory?.name ?? "Home.TryDrills".localized
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -70,12 +70,14 @@ extension DrillsViewController {
 
 // MARK: DrillsTableDelegate
 extension DrillsViewController: DrillsTableDelegate {
-    func drillsTableDidTap(element: DrillsTableElement) {
-        if element.locked {
+    func drillsTableDidTap(element: Drill) {
+        let needPayment = element.paid ? !SessionManager().hasActiveSubscriptions() : false
+        
+        if needPayment {
             let vc = PaygateViewController.make()
             present(vc, animated: true)
         } else {
-            let vc = DrillTrainingInstructionViewController.make(drill: element.drill)
+            let vc = DrillTrainingInstructionViewController.make(drill: element)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

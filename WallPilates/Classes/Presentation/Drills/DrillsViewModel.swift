@@ -14,40 +14,47 @@ final class DrillsViewModel {
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
     
-    private let drillCategory: Driver<DrillCategory>
+    private let drillCategory: Driver<DrillCategory?>
     private lazy var drills = makeDrills()
     private lazy var profile = makeProfile()
-    private lazy var activeSubscription = makeActiveSubscription()
     private lazy var skillLevels = makeSkillLevels()
     
     private lazy var drillManager = DrillManager()
-    private lazy var sessionManager = SessionManager()
     private lazy var profileManager = ProfileManager()
     private lazy var contentManager = ContentManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
-    init(drillCategory: DrillCategory) {
+    init(drillCategory: DrillCategory?) {
         self.drillCategory = BehaviorRelay(value: drillCategory).asDriver()
     }
 }
 
 // MARK: Private
 private extension DrillsViewModel {
-    func makeElements() -> Driver<[DrillsTableElement]> {
+    func makeElements() -> Driver<[HomeTableElement]> {
         Driver
-            .combineLatest(drillCategory, drills, activeSubscription, skillLevels)
-            .map { drillCategory, drills, activeSubscription, skillLevels -> [DrillsTableElement] in
-                drills.compactMap { drill -> DrillsTableElement? in
+            .combineLatest(drills, skillLevels)
+            .map { drills, skillLevels -> [HomeTableElement] in
+                var result = [HomeTableElement]()
+                
+                drills.enumerated().forEach { index, drill in
                     guard let skillLevel = skillLevels.first(where: { $0.id == drill.skillLevelId }) else {
-                        return nil
+                        return
                     }
                     
-                    return DrillsTableElement(drill: drill,
-                                              drillCategory: drillCategory,
-                                              skillLevel: skillLevel,
-                                              locked: drill.paid ? !activeSubscription : false)
+                    let element = HomeDrillElement(
+                        drill: drill,
+                        skillLevel: skillLevel
+                    )
+                    result.append(.drill(element))
+                    
+                    if index != (drills.count - 1) {
+                        result.append(.offset(16.scale))
+                    }
                 }
+                
+                return result
             }
     }
     
@@ -61,7 +68,7 @@ private extension DrillsViewModel {
                 
                 func source() -> Single<[Drill]> {
                     self.drillManager
-                        .obtainDrills(categoryId: drillCategory.id,
+                        .obtainDrills(categoryId: drillCategory?.id,
                                       levelId: profile?.skillLevelId)
                 }
                 
@@ -91,19 +98,5 @@ private extension DrillsViewModel {
         contentManager
             .obtainLevels(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
-    }
-    
-    func makeActiveSubscription() -> Driver<Bool> {
-        PurchaseValidationObserver.shared
-            .didValidatedWithActiveSubscription
-            .map { [weak self] in
-                guard let self = self else {
-                    return false
-                }
-                
-                return self.sessionManager.hasActiveSubscriptions()
-            }
-            .startWith(sessionManager.hasActiveSubscriptions())
-            .asDriver(onErrorJustReturn: false)
     }
 }

@@ -8,13 +8,13 @@
 import UIKit
 
 protocol DrillsTableDelegate: AnyObject {
-    func drillsTableDidTap(element: DrillsTableElement)
+    func drillsTableDidTap(element: Drill)
 }
 
 final class DrillsTableView: UITableView {
     weak var mainDelegate: DrillsTableDelegate?
     
-    lazy var elements = [DrillsTableElement]()
+    lazy var elements = [HomeTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -29,7 +29,7 @@ final class DrillsTableView: UITableView {
 
 // MARK: Public
 extension DrillsTableView {
-    func setup(elements: [DrillsTableElement]) {
+    func setup(elements: [HomeTableElement]) {
         self.elements = elements
         
         reloadData()
@@ -43,28 +43,51 @@ extension DrillsTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(withIdentifier: String(describing: DrillsTableCell.self)) as! DrillsTableCell
-        cell.setup(element: elements[indexPath.row])
-        return cell
+        switch elements[indexPath.row] {
+        case .offset:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
+            cell.backgroundColor = UIColor.clear
+            cell.contentView.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
+            return cell
+        case .drill(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: HomeDrillCoverCell.self)) as! HomeDrillCoverCell
+            cell.setup(element: element)
+            return cell
+        default:
+            return UITableViewCell(style: .default, reuseIdentifier: nil)
+        }
     }
 }
 
 // MARK: UITableViewDelegate
 extension DrillsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        220.scale
+        switch elements[indexPath.row] {
+        case .offset(let offset):
+            return offset
+        case .drill:
+            return 90.scale
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let element = elements[indexPath.row]
-        mainDelegate?.drillsTableDidTap(element: element)
+        switch elements[indexPath.row] {
+        case .drill(let element):
+            mainDelegate?.drillsTableDidTap(element: element.drill)
+        default:
+            return
+        }
     }
 }
 
 // MARK: Private
 private extension DrillsTableView {
     func initialize() {
-        register(DrillsTableCell.self, forCellReuseIdentifier: String(describing: DrillsTableCell.self))
+        register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(HomeDrillCoverCell.self, forCellReuseIdentifier: String(describing: HomeDrillCoverCell.self))
         
         dataSource = self
         delegate = self

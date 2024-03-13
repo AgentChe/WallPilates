@@ -15,12 +15,10 @@ final class HomeViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private let seeAllDrills: (() -> Void)
     private let seeAllWorkouts: (() -> Void)
     private let addTrainings: (() -> Void)
     
-    private init(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) {
-        self.seeAllDrills = seeAllDrills
+    private init(seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) {
         self.seeAllWorkouts = seeAllWorkouts
         self.addTrainings = addTrainings
         
@@ -80,8 +78,8 @@ final class HomeViewController: UIViewController {
 
 // MARK: Make
 extension HomeViewController {
-    static func make(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) -> HomeViewController {
-        let vc = HomeViewController(seeAllDrills: seeAllDrills, seeAllWorkouts: seeAllWorkouts, addTrainings: addTrainings)
+    static func make(seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) -> HomeViewController {
+        let vc = HomeViewController(seeAllWorkouts: seeAllWorkouts, addTrainings: addTrainings)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -142,7 +140,8 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTapTryDrills() {
-        seeAllDrills()
+        let vc = DrillsViewController.make()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func homeTableDidTapWorkouts() {
