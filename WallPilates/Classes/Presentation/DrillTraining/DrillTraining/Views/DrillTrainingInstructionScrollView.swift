@@ -14,7 +14,7 @@ final class DrillTrainingInstructionScrollView: UIView {
     lazy var instructionLabel = makeInstructionLabel()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.mono200.withAlphaComponent(0.8))
+        .textColor(Appearance.mono100.withAlphaComponent(0.8))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(19.6.scale)
         .letterSpacing(0.14.scale)
@@ -75,7 +75,7 @@ private extension DrillTrainingInstructionScrollView {
 private extension DrillTrainingInstructionScrollView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
         

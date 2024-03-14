@@ -53,7 +53,7 @@ private extension ExerciseInstructionView {
 private extension ExerciseInstructionView {
     func makeCloseButton() -> TapAreaButton {
         let view = TapAreaButton()
-        view.setImage(UIImage(named: "ExerciseInstruction.Close"), for: .normal)
+        view.setImage(UIImage(named: "WorkoutExerciseInstruction.Close"), for: .normal)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

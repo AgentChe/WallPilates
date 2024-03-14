@@ -11,7 +11,7 @@ final class ExerciseInstructionNameCell: UITableViewCell {
     lazy var label = makeLabel()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 24.scale))
         .lineHeight(28.8.scale)
         .textAlignment(.left)

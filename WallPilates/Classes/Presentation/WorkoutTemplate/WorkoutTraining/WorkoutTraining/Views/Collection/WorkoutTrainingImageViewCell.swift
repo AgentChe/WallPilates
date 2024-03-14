@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 final class WorkoutTrainingImageViewCell: UICollectionViewCell {
-    
     lazy var imageView = makeImageView()
     
     override init(frame: CGRect) {

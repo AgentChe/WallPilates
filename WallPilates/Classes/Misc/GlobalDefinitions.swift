@@ -7,8 +7,8 @@
 
 // TODO: заменить все
 final class GlobalDefinitions {
-    static let domain = "https://soccer.kyotosaka.com"
-    static let apiKey = "4Mf7e1kE1sJHZraKrR8o"
+    static let domain = "https://pilates.thinkaboutapps.com"
+    static let apiKey = "7gOuz7NvJpQYVVCUkF69"
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "aCdEI1BBlcghnB5s"

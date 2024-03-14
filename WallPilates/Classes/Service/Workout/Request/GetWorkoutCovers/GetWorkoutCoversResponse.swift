@@ -23,7 +23,8 @@ final class GetWorkoutCoversResponse {
                 let name = coverJSON["name"] as? String,
                 let imagePath = coverJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
-                let paid = coverJSON["paid"] as? Bool
+                let paid = coverJSON["paid"] as? Bool,
+                let exercisesCount = coverJSON["exercises_count"] as? Int
             else {
                 return nil
             }
@@ -33,7 +34,7 @@ final class GetWorkoutCoversResponse {
                 name: name,
                 image: imageUrl,
                 paid: paid,
-                exercisesCount: coverJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
+                exercisesCount: exercisesCount
             )
         }
     }

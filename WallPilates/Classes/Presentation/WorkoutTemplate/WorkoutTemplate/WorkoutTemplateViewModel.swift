@@ -118,12 +118,13 @@ private extension WorkoutTemplateViewModel {
                 let headerElement = WorkoutTemplateHeaderElement(
                     image: template.image,
                     name: template.name,
-                    skillLevel: skillLevels.first(where: { $0.id == template.levelId })?.name ?? ""
+                    skillLevel: skillLevels.first(where: { $0.id == template.levelId })?.name ?? "",
+                    exerciseCount: template.exercises.count
                 )
                 result.append(.header(headerElement))
                 
                 result.append(contentsOf: [
-                    .offset(9.scale),
+                    .offset(16.scale),
                     .buttons
                 ])
                 

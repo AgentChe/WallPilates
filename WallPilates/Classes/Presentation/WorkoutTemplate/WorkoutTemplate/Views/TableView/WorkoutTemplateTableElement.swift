@@ -20,4 +20,5 @@ struct WorkoutTemplateHeaderElement {
     let image: URL
     let name: String
     let skillLevel: String
+    let exerciseCount: Int
 }

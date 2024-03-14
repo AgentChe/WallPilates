@@ -11,7 +11,7 @@ final class WorkoutTemplateTitleCell: UITableViewCell {
     lazy var label = makeLabel()
     
     private lazy var attrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.left)

@@ -15,7 +15,8 @@ final class GetHomeKitResponse {
             let score = data["score"] as? Int,
             let levelId = data["level_id"] as? Int,
             let dailyPicks = data["daily_picks"] as? [String: Any],
-            let dailyWorkoutsArray = dailyPicks["workouts"] as? [[String: Any]]
+            let dailyWorkoutsArray = dailyPicks["workouts"] as? [[String: Any]],
+            let trainingCompletedSeconds = data["training_completed_seconds"] as? Int
         else {
             return nil
         }
@@ -30,8 +31,6 @@ final class GetHomeKitResponse {
         
         let workoutStepsArray = data["goals"] as? [[String: Any]] ?? []
         let workoutSteps = map(stepsArray: workoutStepsArray)
-        
-        let trainingCompletedSeconds = data["training_completed_seconds"] as? Int ?? 0 // TODO
         
         return HomeKit(
             score: score,
@@ -54,7 +53,8 @@ private extension GetHomeKitResponse {
                 let name = stepJSON["name"] as? String,
                 let imagePath = stepJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
-                let paid = stepJSON["paid"] as? Bool
+                let paid = stepJSON["paid"] as? Bool,
+                let exercisesCount = stepJSON["exercises_count"] as? Int
             else {
                 return nil
             }
@@ -64,7 +64,7 @@ private extension GetHomeKitResponse {
                 name: name,
                 image: imageUrl,
                 paid: paid,
-                exercisesCount: stepJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
+                exercisesCount: exercisesCount
             )
         }
     }

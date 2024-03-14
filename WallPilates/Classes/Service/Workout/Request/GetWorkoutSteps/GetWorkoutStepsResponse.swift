@@ -23,7 +23,8 @@ final class GetWorkoutStepsResponse {
                 let name = stepJSON["name"] as? String,
                 let imagePath = stepJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
-                let paid = stepJSON["paid"] as? Bool
+                let paid = stepJSON["paid"] as? Bool,
+                let exercisesCount = stepJSON["exercises_count"] as? Int
             else {
                 return nil
             }
@@ -33,7 +34,7 @@ final class GetWorkoutStepsResponse {
                 name: name,
                 image: imageUrl,
                 paid: paid,
-                exercisesCount: stepJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
+                exercisesCount: exercisesCount
             )
         }
     }

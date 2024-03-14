@@ -54,7 +54,7 @@ private extension WorkoutTemplateFocusZonesCell {
 private extension WorkoutTemplateFocusZonesCell {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.left)

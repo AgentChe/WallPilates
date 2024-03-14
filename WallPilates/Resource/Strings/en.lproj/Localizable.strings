@@ -118,10 +118,16 @@
 
 // MARK: WorkoutTrainingQuit
 "WorkoutTrainingQuit.Title" = "Are you sure?";
-"WorkoutTrainingQuit.SubTitle" = "Do you really want to end the workout?";
-"WorkoutTrainingQuit.Continue" = "Continue workout";
-"WorkoutTrainingQuit.Finish" = "Quit workout";
+"WorkoutTrainingQuit.SubTitle" = "Do you really want to end the training?";
+"WorkoutTrainingQuit.Continue" = "Continue training";
+"WorkoutTrainingQuit.Finish" = "Finish training";
 
+// MARK: WorkoutTrainingResult
+"WorkoutTrainingResult.Title" = "Train completed";
+"WorkoutTrainingResult.Duration" = "Duration:";
+"WorkoutTrainingResult.ExercisesCount" = "%i exercises";
+
+// MARK: DrillTrainingResult
 "DrillTrainingResult.Title" = "Workout completed";
 "DrillTrainingResult.Duration" = "Duration:";
 
@@ -143,8 +149,9 @@
 "TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings";
 
 // MARK: WorkoutTemplate
-"WorkoutTemplate.StartWorkout" = "Start workout";
+"WorkoutTemplate.StartWorkout" = "Start training";
 "WorkoutTemplate.FocusZones" = "Focus Zones";
+"WorkoutTemplate.ExercisesCount" = "%i exercises";
 
 // MARK: ExerciseInstruction
 "ExerciseInstruction.Title" = "Instruction";

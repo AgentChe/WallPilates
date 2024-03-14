@@ -47,15 +47,12 @@ extension WorkoutTrainingMenuView {
         nextExerciseAnimation.type = .push
         nextExerciseAnimation.subtype = currentAction == .next ? .fromRight : .fromLeft
         nextExerciseAnimation.timingFunction = .init(name: .easeIn)
-//        if let next = next {
-            nextContainerView.isHidden = false
-            nextExerciseTitle.attributedText = "WorkoutTraining.Next".localized.attributed(with: .nextTitleAttrs)
-            nextExerciseLabel.attributedText = next?.name.attributed(with: .nextSubtitleAttrs)
-            nextExerciseTitle.layer.add(nextExerciseAnimation, forKey: nil)
-            nextExerciseLabel.layer.add(nextExerciseAnimation, forKey: nil)
-//        } else {
-//            nextContainerView.isHidden = true
-//        }
+
+        nextContainerView.isHidden = false
+        nextExerciseTitle.attributedText = "WorkoutTraining.Next".localized.attributed(with: .nextTitleAttrs)
+        nextExerciseLabel.attributedText = next?.name.attributed(with: .nextSubtitleAttrs)
+        nextExerciseTitle.layer.add(nextExerciseAnimation, forKey: nil)
+        nextExerciseLabel.layer.add(nextExerciseAnimation, forKey: nil)
         
         titleLabel.attributedText = current.name.attributed(with: .titleAttrs)
         
@@ -239,7 +236,7 @@ private extension WorkoutTrainingMenuView {
         let view = UIButton()
         view.setAttributedTitle("WorkoutTraining.FinishWorkout".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main300
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -248,19 +245,19 @@ private extension WorkoutTrainingMenuView {
 
 private extension TextAttributes {
     static let titleAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 24.scale))
         .lineHeight(28.scale)
         .textAlignment(.center)
     
     static let nextTitleAttrs = TextAttributes()
-        .textColor(Appearance.mono200.withAlphaComponent(0.5))
+        .textColor(Appearance.mono100.withAlphaComponent(0.5))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(20.scale)
         .textAlignment(.center)
     
     static let nextSubtitleAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 16.scale))
         .lineHeight(20.scale)
         .textAlignment(.center)

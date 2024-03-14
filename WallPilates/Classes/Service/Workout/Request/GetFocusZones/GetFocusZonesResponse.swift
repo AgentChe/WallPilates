@@ -23,7 +23,8 @@ final class GetFocusZonesResponse {
                 let name = focusZoneJSON["name"] as? String,
                 let imagePath = focusZoneJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
-                let paid = focusZoneJSON["paid"] as? Bool
+                let paid = focusZoneJSON["paid"] as? Bool,
+                let exercisesCount = focusZoneJSON["exercises_count"] as? Int
             else {
                 return nil
             }
@@ -33,7 +34,7 @@ final class GetFocusZonesResponse {
                 name: name,
                 image: imageUrl,
                 paid: paid,
-                exercisesCount: focusZoneJSON["exercises_count"] as? Int ?? 0 // TODO: обязательное поле
+                exercisesCount: exercisesCount
             )
         }
     }

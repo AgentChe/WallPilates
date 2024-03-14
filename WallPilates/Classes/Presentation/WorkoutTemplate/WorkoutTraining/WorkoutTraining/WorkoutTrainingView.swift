@@ -20,17 +20,17 @@ class WorkoutTrainingView: UIView {
     lazy var progressView = makeProgressView()
     
     private lazy var trainingTickAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
         .textAlignment(.center)
     private lazy var prepareTickAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 50.scale))
         .lineHeight(60.scale)
         .textAlignment(.center)
     private lazy var preparedAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.bold(size: 60.scale))
         .lineHeight(70.scale)
         .textAlignment(.center)
@@ -203,7 +203,7 @@ private extension WorkoutTrainingView {
             .letterSpacing(-0.14.scale)
         
         let view = PaddingLabel()
-        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.2)
+        view.backgroundColor = Appearance.mono100.withAlphaComponent(0.2)
         view.layer.cornerRadius = 4.scale
         view.layer.masksToBounds = true
         view.insets = UIEdgeInsets(top: 4.scale, left: 8.scale, bottom: 4.scale, right: 8.scale)
@@ -252,8 +252,8 @@ private extension WorkoutTrainingView {
     func makeProgressView() -> ProgressSegmentView {
         let view = ProgressSegmentView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.spacing = 6
-        view.backgroundColor = UIColor(integralRed: 51, green: 51, blue: 51)
+        view.spacing = 6.scale
+        view.backgroundColor = Appearance.main200
         addSubview(view)
         return view
     }

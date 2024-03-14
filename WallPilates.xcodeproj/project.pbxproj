@@ -1591,8 +1591,8 @@
 			isa = PBXGroup;
 			children = (
 				DE0D29022B97643E007F1560 /* WorkoutTrainingResultViewController.swift */,
-				DE0D29032B97643E007F1560 /* WorkoutTrainingResultView.swift */,
 				DE0D29042B97643E007F1560 /* WorkoutTrainingResultViewModel.swift */,
+				DE0D29032B97643E007F1560 /* WorkoutTrainingResultView.swift */,
 			);
 			path = WorkoutTrainingResult;
 			sourceTree = "<group>";
@@ -1711,8 +1711,8 @@
 			children = (
 				DE0D29292B97643F007F1560 /* TableView */,
 				DE0D29302B97643F007F1560 /* ExerciseInstructionViewController.swift */,
-				DE0D29312B97643F007F1560 /* ExerciseInstructionView.swift */,
 				DE0D29322B97643F007F1560 /* ExerciseInstructionViewModel.swift */,
+				DE0D29312B97643F007F1560 /* ExerciseInstructionView.swift */,
 			);
 			path = ExerciseInstruction;
 			sourceTree = "<group>";

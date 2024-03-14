@@ -15,12 +15,13 @@ class WorkoutTrainingResultView: UIView {
     lazy var imageView = makeImageView()
     lazy var nameLabel = makeNameLabel()
     lazy var skillLevelLabel = makeTagLabel()
+    lazy var exerciseCountLabel = makeTagLabel()
     lazy var durationTitleLabel = makeDurationTitleLabel()
     lazy var durationLabel = makeDurationLabel()
     lazy var continueButton = makeContinueButton()
     
     private lazy var tagAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 12.scale))
         .lineHeight(14.4.scale)
         .textAlignment(.center)
@@ -52,6 +53,9 @@ extension WorkoutTrainingResultView {
 private extension WorkoutTrainingResultView {
     func initialize() {
         backgroundColor = Appearance.main100
+        
+        let exerciseCount = String(format: "WorkoutTrainingResult.ExercisesCount".localized, workoutTraining.template.exercises.count)
+        exerciseCountLabel.attributedText = exerciseCount.attributed(with: tagAttrs)
     }
 }
 
@@ -91,8 +95,13 @@ private extension WorkoutTrainingResultView {
         ])
         
         NSLayoutConstraint.activate([
-            skillLevelLabel.centerXAnchor.constraint(equalTo: drillContainer.centerXAnchor),
+            skillLevelLabel.trailingAnchor.constraint(equalTo: drillContainer.centerXAnchor, constant: -8.scale),
             skillLevelLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            exerciseCountLabel.leadingAnchor.constraint(equalTo: drillContainer.centerXAnchor, constant: 8.scale),
+            exerciseCountLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -118,7 +127,7 @@ private extension WorkoutTrainingResultView {
 private extension WorkoutTrainingResultView {
     func makeCloseButton() -> TapAreaButton {
         let view = TapAreaButton()
-        view.setImage(UIImage(named: "DrillTrainingResult.Close"), for: .normal)
+        view.setImage(UIImage(named: "WorkoutTrainingResult.Close"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -126,13 +135,13 @@ private extension WorkoutTrainingResultView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = "DrillTrainingResult.Title".localized.attributed(with: attrs)
+        view.attributedText = "WorkoutTrainingResult.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -140,10 +149,10 @@ private extension WorkoutTrainingResultView {
     
     func makeDrillContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 10.scale
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.main200.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -162,7 +171,7 @@ private extension WorkoutTrainingResultView {
     
     func makeNameLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.center)
@@ -176,7 +185,7 @@ private extension WorkoutTrainingResultView {
     
     func makeTagLabel() -> PaddingLabel {
         let view = PaddingLabel()
-        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.2)
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 11.scale
         view.layer.masksToBounds = true
         view.insets = UIEdgeInsets(top: 4.scale, left: 8.scale, bottom: 4.scale, right: 8.scale)
@@ -187,7 +196,7 @@ private extension WorkoutTrainingResultView {
     
     func makeDurationTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
@@ -229,7 +238,7 @@ private extension WorkoutTrainingResultView {
         
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.backgroundColor = Appearance.main300
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

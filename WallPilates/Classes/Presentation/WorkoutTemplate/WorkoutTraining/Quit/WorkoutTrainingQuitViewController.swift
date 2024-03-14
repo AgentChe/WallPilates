@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 class WorkoutTrainingQuitViewController: UIViewController {
-    lazy var mainView = DrillTrainingQuitView()
+    lazy var mainView = WorkoutTrainingQuitView()
 
     private lazy var disposeBag = DisposeBag()
 

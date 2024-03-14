@@ -92,7 +92,7 @@ extension WorkoutTemplateTableView: UITableViewDelegate {
         case .offset(let offset):
             return offset
         case .header:
-            return 363.scale
+            return 348.scale
         case .buttons:
             return 54.scale
         case .focusZones:

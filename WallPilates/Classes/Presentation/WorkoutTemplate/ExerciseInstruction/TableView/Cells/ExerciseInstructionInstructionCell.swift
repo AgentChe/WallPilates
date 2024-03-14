@@ -12,7 +12,7 @@ final class ExerciseInstructionInstructionCell: UITableViewCell {
     lazy var instructionLabel = makeLabel()
     
     private lazy var instructionAttrs = TextAttributes()
-        .textColor(Appearance.mono200.withAlphaComponent(0.8))
+        .textColor(Appearance.mono100.withAlphaComponent(0.8))
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.left)
@@ -67,7 +67,7 @@ private extension ExerciseInstructionInstructionCell {
 private extension ExerciseInstructionInstructionCell {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.left)

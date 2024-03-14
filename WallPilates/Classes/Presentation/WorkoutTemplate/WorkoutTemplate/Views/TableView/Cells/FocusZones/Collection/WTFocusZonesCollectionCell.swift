@@ -12,7 +12,7 @@ final class WTFocusZonesCollectionCell: UICollectionViewCell {
     lazy var label = makeLabel()
     
     private static let attrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
@@ -78,9 +78,7 @@ private extension WTFocusZonesCollectionCell {
     func makeContainer() -> UIView {
         let view = UIView()
         view.layer.cornerRadius = 10.scale
-        view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.main200
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

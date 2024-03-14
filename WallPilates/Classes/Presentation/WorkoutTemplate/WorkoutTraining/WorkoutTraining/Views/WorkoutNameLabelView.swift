@@ -7,11 +7,18 @@
 
 import UIKit
 
-class WorkoutNameLabelView: UIView {
-    private lazy var nameLabel = makeLabel()
+final class WorkoutNameLabelView: UIView {
+    lazy var nameLabel = makeLabel()
+    
+    private lazy var attrs = TextAttributes()
+        .textColor(Appearance.mono100)
+        .font(Fonts.Inter.semiBold(size: 16.scale))
+        .lineHeight(25.scale)
+        .textAlignment(.center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         initialize()
         makeConstrains()
     }
@@ -23,12 +30,6 @@ class WorkoutNameLabelView: UIView {
 // MARK: Public
 extension WorkoutNameLabelView {
     func setup(name: String) {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
-            .font(Fonts.Inter.semiBold(size: 16.scale))
-            .lineHeight(25.scale)
-            .textAlignment(.center)
-        
         nameLabel.attributedText = name.attributed(with: attrs)
     }
 }
@@ -36,7 +37,7 @@ extension WorkoutNameLabelView {
 // MARK: Private
 private extension WorkoutNameLabelView {
     func initialize() {
-        backgroundColor = Appearance.mono100
+        backgroundColor = Appearance.mono200
         layer.cornerRadius = 10.scale
         layer.borderWidth = 1
         layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor

@@ -85,7 +85,7 @@ private extension WorkoutTrainingQuitView {
 
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.main100
         view.layer.cornerRadius = 12.scale
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -95,7 +95,7 @@ private extension WorkoutTrainingQuitView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.center)
@@ -109,7 +109,7 @@ private extension WorkoutTrainingQuitView {
     
     func makeSubTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)
@@ -131,7 +131,7 @@ private extension WorkoutTrainingQuitView {
         let view = UIButton()
         view.setAttributedTitle("WorkoutTrainingQuit.Continue".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main300
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
@@ -139,15 +139,15 @@ private extension WorkoutTrainingQuitView {
     
     func makeFinishButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
 
         let view = UIButton()
         view.setAttributedTitle("WorkoutTrainingQuit.Finish".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = UIColor(integralRed: 51, green: 51, blue: 51)
-        view.layer.cornerRadius = 8.scale
+        view.backgroundColor = Appearance.main200
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
