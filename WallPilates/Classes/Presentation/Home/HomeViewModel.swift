@@ -93,7 +93,8 @@ private extension HomeViewModel {
             DrillMediator.shared.didLogProgress.map { _ in Void() },
             DrillMediator.shared.didSchedule.map { _ in Void() },
             PlanMediator.shared.didReinit.map { _ in Void() },
-            ProfileMediator.shared.skillLevelIdChange.map { _ in Void() }
+            ProfileMediator.shared.skillLevelIdChange.map { _ in Void() },
+            ProfileMediator.shared.drillsIdsChange.map { _ in Void() }
         )
         
         return triggers
