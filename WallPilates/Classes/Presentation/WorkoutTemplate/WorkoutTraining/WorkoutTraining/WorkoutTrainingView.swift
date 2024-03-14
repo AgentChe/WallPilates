@@ -7,8 +7,7 @@
 
 import UIKit
 
-class WorkoutTrainingView: UIView {
-    
+final class WorkoutTrainingView: UIView {
     lazy var closeButton = makeCloseButton()
     lazy var instructionView = makeInstructionView()
     lazy var pausedLabel = makePausedLabel()
@@ -35,7 +34,7 @@ class WorkoutTrainingView: UIView {
         .lineHeight(70.scale)
         .textAlignment(.center)
     
-    private lazy var menuBottomConstraint = NSLayoutConstraint()
+    private lazy var menuYConstraint = NSLayoutConstraint()
     private lazy var instructionBottomConstraint = NSLayoutConstraint()
 
     override init(frame: CGRect) {
@@ -70,9 +69,9 @@ extension WorkoutTrainingView {
     }
     
     func menu(hidden: Bool, animated: Bool = true, completion: (() -> Void)? = nil) {
-        menuBottomConstraint.isActive = false
-        menuBottomConstraint.constant = hidden ? frame.height : 0
-        menuBottomConstraint.isActive = true
+        menuYConstraint.isActive = false
+        menuYConstraint = hidden ? menuView.topAnchor.constraint(equalTo: bottomAnchor) : menuView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        menuYConstraint.isActive = true
         
         if animated {
             UIView.animate(withDuration: 0.3, animations: { [weak self] in
@@ -146,11 +145,11 @@ private extension WorkoutTrainingView {
             prepareLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
-        menuBottomConstraint = menuView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        menuYConstraint = menuView.bottomAnchor.constraint(equalTo: bottomAnchor)
         NSLayoutConstraint.activate([
             menuView.leadingAnchor.constraint(equalTo: leadingAnchor),
             menuView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            menuBottomConstraint
+            menuYConstraint
         ])
         
         NSLayoutConstraint.activate([

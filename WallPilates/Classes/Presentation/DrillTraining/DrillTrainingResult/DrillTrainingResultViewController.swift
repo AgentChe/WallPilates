@@ -49,12 +49,6 @@ final class DrillTrainingResultViewController: UIViewController {
                 base.setup(skillLevel: skillLevel)
             })
             .disposed(by: disposeBag)
-        
-        viewModel.drillCategory
-            .drive(Binder(mainView) { base, drillCategory in
-                base.setup(drillCategory: drillCategory)
-            })
-            .disposed(by: disposeBag)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

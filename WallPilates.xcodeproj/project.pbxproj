@@ -1760,8 +1760,8 @@
 		DE0D29372B97643F007F1560 /* DrillTrainingResult */ = {
 			isa = PBXGroup;
 			children = (
-				DE0D29382B97643F007F1560 /* DrillTrainingResultViewModel.swift */,
 				DE0D29392B97643F007F1560 /* DrillTrainingResultViewController.swift */,
+				DE0D29382B97643F007F1560 /* DrillTrainingResultViewModel.swift */,
 				DE0D293A2B97643F007F1560 /* DrillTrainingResultView.swift */,
 			);
 			path = DrillTrainingResult;

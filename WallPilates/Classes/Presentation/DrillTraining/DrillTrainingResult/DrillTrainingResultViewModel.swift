@@ -10,11 +10,9 @@ import RxCocoa
 
 final class DrillTrainingResultViewModel {
     lazy var skillLevel = makeSkillLevel()
-    lazy var drillCategory = makeDrillCategory()
     
     private let drillTraining: Driver<DrillTraining>
     
-    private lazy var drillManager = DrillManager()
     private lazy var contentManager = ContentManager()
     
     init(drillTraining: DrillTraining) {
@@ -35,22 +33,6 @@ extension DrillTrainingResultViewModel {
                     .obtainLevels(forceUpdate: false)
                     .compactMap { skillLevels -> SkillLevel? in
                         skillLevels.first(where: { $0.id == drillTraining.drill.skillLevelId })
-                    }
-                    .asDriver(onErrorDriveWith: .never())
-            }
-    }
-    
-    func makeDrillCategory() -> Driver<DrillCategory> {
-        drillTraining
-            .flatMapLatest { [weak self] drillTraining -> Driver<DrillCategory> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                return self.drillManager
-                    .obtainDrillCategories(forceUpdate: false)
-                    .compactMap { drillCategories -> DrillCategory? in
-                        drillCategories.first(where: { $0.id == drillTraining.drill.categoryId })
                     }
                     .asDriver(onErrorDriveWith: .never())
             }

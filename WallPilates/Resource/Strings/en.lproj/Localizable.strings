@@ -128,12 +128,12 @@
 "WorkoutTrainingResult.ExercisesCount" = "%i exercises";
 
 // MARK: DrillTrainingResult
-"DrillTrainingResult.Title" = "Workout completed";
+"DrillTrainingResult.Title" = "Train completed";
 "DrillTrainingResult.Duration" = "Duration:";
 
 // MARK: DrillTrainingQuit
 "DrillTrainingQuit.Title" = "Are you sure?";
-"DrillTrainingQuit.SubTitle" = "Do you really want to end the workout?";
+"DrillTrainingQuit.SubTitle" = "Do you really want to end the training?";
 "DrillTrainingQuit.Continue" = "Continue training";
 "DrillTrainingQuit.Finish" = "Finish training";
 

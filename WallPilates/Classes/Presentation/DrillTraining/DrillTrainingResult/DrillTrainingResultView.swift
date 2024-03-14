@@ -15,13 +15,12 @@ final class DrillTrainingResultView: UIView {
     lazy var imageView = makeImageView()
     lazy var nameLabel = makeNameLabel()
     lazy var skillLevelLabel = makeTagLabel()
-    lazy var drillCategoryLabel = makeTagLabel()
     lazy var durationTitleLabel = makeDurationTitleLabel()
     lazy var durationLabel = makeDurationLabel()
     lazy var continueButton = makeContinueButton()
     
     private lazy var tagAttrs = TextAttributes()
-        .textColor(Appearance.mono200)
+        .textColor(Appearance.mono100)
         .font(Fonts.Inter.semiBold(size: 12.scale))
         .lineHeight(14.4.scale)
         .textAlignment(.center)
@@ -46,10 +45,6 @@ final class DrillTrainingResultView: UIView {
 extension DrillTrainingResultView {
     func setup(skillLevel: SkillLevel) {
         skillLevelLabel.attributedText = skillLevel.name.attributed(with: tagAttrs)
-    }
-    
-    func setup(drillCategory: DrillCategory) {
-        drillCategoryLabel.attributedText = drillCategory.name.attributed(with: tagAttrs)
     }
 }
 
@@ -96,13 +91,8 @@ private extension DrillTrainingResultView {
         ])
         
         NSLayoutConstraint.activate([
-            skillLevelLabel.trailingAnchor.constraint(equalTo: drillContainer.centerXAnchor, constant: -5.scale),
+            skillLevelLabel.centerXAnchor.constraint(equalTo: drillContainer.centerXAnchor),
             skillLevelLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            drillCategoryLabel.leadingAnchor.constraint(equalTo: drillContainer.centerXAnchor, constant: 5.scale),
-            drillCategoryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -136,7 +126,7 @@ private extension DrillTrainingResultView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
@@ -150,10 +140,10 @@ private extension DrillTrainingResultView {
     
     func makeDrillContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 10.scale
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.mono200.withAlphaComponent(0.1).cgColor
+        view.layer.borderColor = Appearance.main200.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -172,7 +162,7 @@ private extension DrillTrainingResultView {
     
     func makeNameLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 20.scale))
             .lineHeight(24.scale)
             .textAlignment(.center)
@@ -186,7 +176,7 @@ private extension DrillTrainingResultView {
     
     func makeTagLabel() -> PaddingLabel {
         let view = PaddingLabel()
-        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.2)
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 11.scale
         view.layer.masksToBounds = true
         view.insets = UIEdgeInsets(top: 4.scale, left: 8.scale, bottom: 4.scale, right: 8.scale)
@@ -197,7 +187,7 @@ private extension DrillTrainingResultView {
     
     func makeDurationTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
+            .textColor(Appearance.mono100)
             .font(Fonts.Inter.semiBold(size: 16.scale))
             .lineHeight(19.2.scale)
             .textAlignment(.center)
@@ -211,7 +201,7 @@ private extension DrillTrainingResultView {
     
     func makeDurationLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.main300)
+            .textColor(Appearance.main400)
             .font(Fonts.Inter.bold(size: 32.scale))
             .lineHeight(38.4.scale)
             .textAlignment(.center)
@@ -239,7 +229,7 @@ private extension DrillTrainingResultView {
         
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.backgroundColor = Appearance.main300
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

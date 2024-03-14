@@ -14,6 +14,13 @@ final class DrillTrainingMenuView: UIView {
     lazy var refreshButton = makeRefreshButton()
     lazy var finishButton = makeFinishButton()
     
+    private lazy var nameAttrs = TextAttributes()
+        .textColor(Appearance.mono100)
+        .font(Fonts.Inter.semiBold(size: 24.scale))
+        .lineHeight(28.8.scale)
+        .textAlignment(.center)
+        .lineBreakMode(.byTruncatingTail)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,13 +35,7 @@ final class DrillTrainingMenuView: UIView {
 // MARK: Public
 extension DrillTrainingMenuView {
     func setup(name: String) {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
-            .font(Fonts.Inter.semiBold(size: 24.scale))
-            .lineHeight(28.8.scale)
-            .textAlignment(.center)
-            .lineBreakMode(.byTruncatingTail)
-        nameLabel.attributedText = name.attributed(with: attrs)
+        nameLabel.attributedText = name.attributed(with: nameAttrs)
     }
 }
 
@@ -122,7 +123,7 @@ private extension DrillTrainingMenuView {
         let view = UIButton()
         view.setAttributedTitle("DrillTraining.FinishTraining".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.main300
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 28.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
