@@ -29,16 +29,12 @@ final class GetHomeKitResponse {
         let tryDrillsArray = data["try_drills"] as? [[String: Any]] ?? []
         let tryDrills = map(drillsArray: tryDrillsArray)
         
-        let workoutStepsArray = data["goals"] as? [[String: Any]] ?? []
-        let workoutSteps = map(stepsArray: workoutStepsArray)
-        
         return HomeKit(
             score: score,
             levelId: levelId,
             dailyWorkouts: dailyWorkouts,
             plan: plan,
             tryDrills: tryDrills,
-            workoutSteps: workoutSteps,
             trainingCompletedSeconds: trainingCompletedSeconds
         )
     }
@@ -46,29 +42,6 @@ final class GetHomeKitResponse {
 
 // MARK: Private
 private extension GetHomeKitResponse {
-    static func map(stepsArray: [[String: Any]]) -> [WorkoutStep] {
-        stepsArray.compactMap { stepJSON -> WorkoutStep? in
-            guard
-                let id = stepJSON["training_step_id"] as? Int,
-                let name = stepJSON["name"] as? String,
-                let imagePath = stepJSON["image"] as? String,
-                let imageUrl = URL(string: imagePath),
-                let paid = stepJSON["paid"] as? Bool,
-                let exercisesCount = stepJSON["exercises_count"] as? Int
-            else {
-                return nil
-            }
-            
-            return WorkoutStep(
-                id: id,
-                name: name,
-                image: imageUrl,
-                paid: paid,
-                exercisesCount: exercisesCount
-            )
-        }
-    }
-    
     static func map(drillsArray: [[String: Any]]) -> [Drill] {
         drillsArray.compactMap { drillJSON -> Drill? in
             guard

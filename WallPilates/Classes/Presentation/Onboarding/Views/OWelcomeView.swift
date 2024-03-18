@@ -8,6 +8,7 @@
 import UIKit
 
 final class OWelcomeView: OSlideView {
+    lazy var imageView = makeImageView()
     lazy var titleLabel = makeTitleLabel()
     lazy var continueButton = makeContinueButton()
     
@@ -34,6 +35,13 @@ private extension OWelcomeView {
 private extension OWelcomeView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
@@ -49,9 +57,18 @@ private extension OWelcomeView {
 
 // MARK: Lazy initialization
 private extension OWelcomeView {
+    func makeImageView() -> UIImageView {
+        let view = UIImageView()
+        view.image = UIImage(named: "Onboarding.Welcome")
+        view.contentMode = .scaleAspectFill
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
+            .textColor(Appearance.mono200)
             .font(Fonts.Inter.bold(size: 34.scale))
             .lineHeight(40.8.scale)
             .letterSpacing(-0.48.scale)
