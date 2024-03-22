@@ -22,7 +22,6 @@ target 'WallPilates' do
   pod 'Branch'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
-  pod 'AppsFlyerFramework'
   pod 'JTAppleCalendar'
 end
 

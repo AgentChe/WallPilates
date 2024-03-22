@@ -5,26 +5,24 @@
 //  Created by Andrey Chernyshev on 16.01.2021.
 //
 
-// TODO: заменить все
 final class GlobalDefinitions {
-    static let domain = "https://pilates.thinkaboutapps.com"
+    static let domain = "https://pilates.cocorporateapps.com"
     static let apiKey = "7gOuz7NvJpQYVVCUkF69"
     
     static let otterScaleHost = "https://api.korrekted.com"
-    static let otterScaleApiKey = "aCdEI1BBlcghnB5s"
+    static let otterScaleApiKey = "idgToDZRMPFhKSm3"
     
-    static let appleAppID = "6449255756"
+    static let appleAppID = "6479897865"
     
-    static let applicationTag = "SOCCER"
-    static let amplitudeApiKey = "0d810afcbd45c0b58a5ed6cd272acfa"
-    static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
+    static let applicationTag = "WALL_PILATES"
+    static let amplitudeApiKey = "d4ad5c33d23d7a891e9c68de9471f36b"
     
-    static let termsOfServiceUrl = "https://kyotosaka.com/terms.html"
-    static let privacyPolicyUrl = "https://kyotosaka.com/policy.html"
-    static let contactUsUrl = "https://kyotosaka.com/index.html#careers"
+    static let termsOfServiceUrl = "https://cocorporateapps.com/terms-of-use.html"
+    static let privacyPolicyUrl = "https://cocorporateapps.com/privacy-policy.html"
+    static let contactUsUrl = "https://cocorporateapps.com/contacts.html"
     
     enum Paygate {
-        static let defaultLifetime = "training.app.soccer.endless"
-        static let defaultMonthly = "training.app.soccer.monthly"
+        static let defaultLifetime = "train.pilates.endless"
+        static let defaultMonthly = "train.pilates.monthly"
     }
 }

@@ -20,7 +20,6 @@
 		DE0D27F72B97642F007F1560 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27ED2B97642F007F1560 /* PlusJakartaSans-Regular.ttf */; };
 		DE0D27F82B97642F007F1560 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27EE2B97642F007F1560 /* PlusJakartaSans-Bold.ttf */; };
 		DE0D27F92B97642F007F1560 /* PlusJakartaSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27EF2B97642F007F1560 /* PlusJakartaSans-ExtraBold.ttf */; };
-		DE0D27FB2B976434007F1560 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27FA2B976434007F1560 /* GoogleService-Info.plist */; };
 		DE0D27FF2B976438007F1560 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27FD2B976438007F1560 /* Localizable.strings */; };
 		DE0D29C82B97643F007F1560 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28032B97643E007F1560 /* UIApplication+Extension.swift */; };
 		DE0D29C92B97643F007F1560 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28042B97643E007F1560 /* UIDevice+Extension.swift */; };
@@ -65,7 +64,6 @@
 		DE0D29F02B97643F007F1560 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28342B97643E007F1560 /* PushNotificationsModel.swift */; };
 		DE0D29F12B97643F007F1560 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28352B97643E007F1560 /* SceneDelegate.swift */; };
 		DE0D29F22B97643F007F1560 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28362B97643E007F1560 /* Appearance.swift */; };
-		DE0D29F32B97643F007F1560 /* AppsFlyerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28382B97643E007F1560 /* AppsFlyerManager.swift */; };
 		DE0D29F42B97643F007F1560 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28392B97643E007F1560 /* BranchManager.swift */; };
 		DE0D29F52B97643F007F1560 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */; };
 		DE0D29F62B97643F007F1560 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D283B2B97643E007F1560 /* FirebaseManager.swift */; };
@@ -328,8 +326,8 @@
 		DE0D2B052B97643F007F1560 /* OAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C42B97643F007F1560 /* OAgeView.swift */; };
 		DE0D2B072B97643F007F1560 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C62B97643F007F1560 /* OnboardingView.swift */; };
 		DE0D2B082B97643F007F1560 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */; };
-		DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0D2B1E2B98ADBC007F1560 /* API.json */; };
 		DE0D2B212B99E18B007F1560 /* ProfileEditGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D2B202B99E18B007F1560 /* ProfileEditGoalsView.swift */; };
+		DE38C27D2BADC8B20019C044 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE38C27C2BADC8B20019C044 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,7 +347,6 @@
 		DE0D27ED2B97642F007F1560 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE0D27EE2B97642F007F1560 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		DE0D27EF2B97642F007F1560 /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		DE0D27FA2B976434007F1560 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE0D27FE2B976438007F1560 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DE0D28032B97643E007F1560 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		DE0D28042B97643E007F1560 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -394,7 +391,6 @@
 		DE0D28342B97643E007F1560 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DE0D28352B97643E007F1560 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE0D28362B97643E007F1560 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		DE0D28382B97643E007F1560 /* AppsFlyerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsFlyerManager.swift; sourceTree = "<group>"; };
 		DE0D28392B97643E007F1560 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE0D283B2B97643E007F1560 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -657,8 +653,8 @@
 		DE0D29C42B97643F007F1560 /* OAgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAgeView.swift; sourceTree = "<group>"; };
 		DE0D29C62B97643F007F1560 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE0D29C72B97643F007F1560 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		DE0D2B1E2B98ADBC007F1560 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		DE0D2B202B99E18B007F1560 /* ProfileEditGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditGoalsView.swift; sourceTree = "<group>"; };
+		DE38C27C2BADC8B20019C044 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6BF8A3E3741DE0E319C8A7B /* Pods-WallPilates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallPilates.release.xcconfig"; path = "Target Support Files/Pods-WallPilates/Pods-WallPilates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -725,8 +721,8 @@
 				DE0D27E32B97642F007F1560 /* Fonts */,
 				DE0D27D72B97508D007F1560 /* Assets.xcassets */,
 				DE0D27D92B97508D007F1560 /* LaunchScreen.storyboard */,
-				DE0D27FA2B976434007F1560 /* GoogleService-Info.plist */,
 				DE0D27DC2B97508D007F1560 /* Info.plist */,
+				DE38C27C2BADC8B20019C044 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -778,7 +774,6 @@
 				DE0D28012B97643E007F1560 /* Misc */,
 				DE0D283D2B97643E007F1560 /* Service */,
 				DE0D28BF2B97643E007F1560 /* Presentation */,
-				DE0D2B1E2B98ADBC007F1560 /* API.json */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -917,7 +912,6 @@
 		DE0D28372B97643E007F1560 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE0D28382B97643E007F1560 /* AppsFlyerManager.swift */,
 				DE0D28392B97643E007F1560 /* BranchManager.swift */,
 				DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */,
 				DE0D283B2B97643E007F1560 /* FirebaseManager.swift */,
@@ -2211,7 +2205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0D27FB2B976434007F1560 /* GoogleService-Info.plist in Resources */,
 				DE0D27F32B97642F007F1560 /* Inter-Italic.otf in Resources */,
 				DE0D27DB2B97508D007F1560 /* LaunchScreen.storyboard in Resources */,
 				DE0D27FF2B976438007F1560 /* Localizable.strings in Resources */,
@@ -2220,12 +2213,12 @@
 				DE0D27F72B97642F007F1560 /* PlusJakartaSans-Regular.ttf in Resources */,
 				DE0D27F52B97642F007F1560 /* PlusJakartaSans-Medium.ttf in Resources */,
 				DE0D27F92B97642F007F1560 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
-				DE0D2B1F2B98ADBC007F1560 /* API.json in Resources */,
 				DE0D27F62B97642F007F1560 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				DE0D27D82B97508D007F1560 /* Assets.xcassets in Resources */,
 				DE0D27F12B97642F007F1560 /* Inter-Bold.ttf in Resources */,
 				DE0D27F02B97642F007F1560 /* Inter-Medium.ttf in Resources */,
 				DE0D27F42B97642F007F1560 /* Inter-SemiBold.ttf in Resources */,
+				DE38C27D2BADC8B20019C044 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2302,7 +2295,6 @@
 				DE0D2AAE2B97643F007F1560 /* DrillTrainingInstructionViewController.swift in Sources */,
 				DE0D2A322B97643F007F1560 /* IAPErrorHelper.swift in Sources */,
 				DE0D2B012B97643F007F1560 /* ODrillsView.swift in Sources */,
-				DE0D29F32B97643F007F1560 /* AppsFlyerManager.swift in Sources */,
 				DE0D29F52B97643F007F1560 /* AmplitudeManager.swift in Sources */,
 				DE0D2ACF2B97643F007F1560 /* ProfileMainViewModel.swift in Sources */,
 				DE0D2AE52B97643F007F1560 /* DrillsTableView.swift in Sources */,
@@ -2730,8 +2722,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WallPilates/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2745,8 +2738,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.WallPilates;
+				PRODUCT_BUNDLE_IDENTIFIER = train.pilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2762,8 +2756,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WallPilates/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2777,8 +2772,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.WallPilates;
+				PRODUCT_BUNDLE_IDENTIFIER = train.pilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
