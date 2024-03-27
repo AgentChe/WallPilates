@@ -35,7 +35,7 @@ private extension PaygateOptionInfo {
         return line
             .compactMap { component -> NSAttributedString? in
                 let attrs = TextAttributes()
-                    .textColor(Appearance.mono200)
+                    .textColor(Appearance.mono100)
                     .font(font(at: component.weight))
                 
                 let formatter = formatter(locale: price.priceLocale)
@@ -66,6 +66,9 @@ private extension PaygateOptionInfo {
                         .removingWhitespaces()
                         .attributed(with: attrs)
                 case .promo(let promo):
+                    let attrs = TextAttributes()
+                        .textColor(Appearance.mono200)
+                        .font(font(at: component.weight))
                     return promo.attributed(with: attrs)
                 }
             }

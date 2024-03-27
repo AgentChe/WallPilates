@@ -37,6 +37,9 @@ final class DrillTrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AmplitudeManager.shared
+            .logEvent(name: "Timer Screen")
+        
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else {
                 return .never()
@@ -47,8 +50,18 @@ final class DrillTrainingViewController: UIViewController {
         
         Observable
             .merge(
-                mainView.closeButton.rx.tap.asObservable(),
-                mainView.menuView.finishButton.rx.tap.asObservable()
+                mainView.closeButton.rx.tap
+                    .asObservable()
+                    .do(onNext: {
+                        AmplitudeManager.shared
+                            .logEvent(name: "Timer Tap", parameters: ["what": "exit"])
+                    }),
+                mainView.menuView.finishButton.rx.tap
+                    .asObservable()
+                    .do(onNext: {
+                        AmplitudeManager.shared
+                            .logEvent(name: "Timer Tap", parameters: ["what": "finish"])
+                    })
             )
             .bind(to: Binder(self) { base, void in
                 base.cancelTraining()
@@ -83,8 +96,14 @@ final class DrillTrainingViewController: UIViewController {
             .bind(to: Binder(self) { base, void in
                 switch base.mainView.menuView.playPauseButton.stateCode {
                 case .pause:
+                    AmplitudeManager.shared
+                        .logEvent(name: "Timer Tap", parameters: ["what": "play"])
+                    
                     base.lifeCyrcle.continueTraining()
                 case .play:
+                    AmplitudeManager.shared
+                        .logEvent(name: "Timer Tap", parameters: ["what": "pause"])
+                    
                     base.lifeCyrcle.pauseTraining()
                 }
             })
@@ -104,6 +123,9 @@ final class DrillTrainingViewController: UIViewController {
         
         mainView.menuView.refreshButton.rx.tap
             .bind(to: Binder(self) { base, void in
+                AmplitudeManager.shared
+                    .logEvent(name: "Timer Tap", parameters: ["what": "repeat"])
+                
                 base.lifeCyrcle.refreshTraining()
             })
             .disposed(by: disposeBag)
@@ -218,6 +240,9 @@ private extension DrillTrainingViewController {
     }
     
     func openInstruction() {
+        AmplitudeManager.shared
+            .logEvent(name: "Timer Tap", parameters: ["what": "instruction"])
+        
         mainView.menu(hidden: true) { [weak self] in
             self?.mainView.instruction(hidden: false) {
                 self?.lifeCyrcle.pauseTraining()

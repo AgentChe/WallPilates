@@ -40,6 +40,9 @@ final class DrillTrainingInstructionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AmplitudeManager.shared
+            .logEvent(name: "Exercise Screen")
+        
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else {
                 return .never()
@@ -107,8 +110,14 @@ private extension DrillTrainingInstructionViewController {
     func route(_ route: DrillTrainingInstructionViewModel.Route) {
         switch route {
         case .training(let customerDrillId):
+            AmplitudeManager.shared
+                .logEvent(name: "Exercise Tap", parameters: ["what": "start"])
+            
             drillTrainingAssembly.startTraining(from: self, customerDrillId: customerDrillId)
         case .calendar(let customerDrillId):
+            AmplitudeManager.shared
+                .logEvent(name: "Exercise Tap", parameters: ["what": "schedule"])
+            
             let calendar = CalendarViewController.make(schedulerType: .drill(customerDrillId: customerDrillId))
             present(calendar, animated: true)
         }
