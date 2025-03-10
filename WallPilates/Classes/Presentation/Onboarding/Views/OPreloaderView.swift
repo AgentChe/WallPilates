@@ -50,8 +50,6 @@ final class OPreloaderView: OSlideView {
         
         calculatePercent()
         request()
-        
-        RequestReview.request()
     }
 }
 

@@ -15,7 +15,7 @@ final class GlobalDefinitions {
     static let appleAppID = "6479897865"
     
     static let applicationTag = "WALL_PILATES"
-    static let amplitudeApiKey = "d4ad5c33d23d7a891e9c68de9471f36b"
+    static let amplitudeApiKey = "ad1acf62a1718340f0958c15b7b9dcfc"
     
     static let termsOfServiceUrl = "https://cocorporateapps.com/terms-of-use.html"
     static let privacyPolicyUrl = "https://cocorporateapps.com/privacy-policy.html"

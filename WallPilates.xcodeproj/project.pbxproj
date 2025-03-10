@@ -64,7 +64,6 @@
 		DE0D29F02B97643F007F1560 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28342B97643E007F1560 /* PushNotificationsModel.swift */; };
 		DE0D29F12B97643F007F1560 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28352B97643E007F1560 /* SceneDelegate.swift */; };
 		DE0D29F22B97643F007F1560 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28362B97643E007F1560 /* Appearance.swift */; };
-		DE0D29F42B97643F007F1560 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D28392B97643E007F1560 /* BranchManager.swift */; };
 		DE0D29F52B97643F007F1560 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */; };
 		DE0D29F62B97643F007F1560 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D283B2B97643E007F1560 /* FirebaseManager.swift */; };
 		DE0D29F72B97643F007F1560 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D283C2B97643E007F1560 /* FacebookManager.swift */; };
@@ -391,7 +390,6 @@
 		DE0D28342B97643E007F1560 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DE0D28352B97643E007F1560 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE0D28362B97643E007F1560 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		DE0D28392B97643E007F1560 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE0D283B2B97643E007F1560 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE0D283C2B97643E007F1560 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
@@ -912,7 +910,6 @@
 		DE0D28372B97643E007F1560 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE0D28392B97643E007F1560 /* BranchManager.swift */,
 				DE0D283A2B97643E007F1560 /* AmplitudeManager.swift */,
 				DE0D283B2B97643E007F1560 /* FirebaseManager.swift */,
 				DE0D283C2B97643E007F1560 /* FacebookManager.swift */,
@@ -2477,7 +2474,6 @@
 				DE0D2A672B97643F007F1560 /* SplashActivity.swift in Sources */,
 				DE0D2A502B97643F007F1560 /* HomeViewController.swift in Sources */,
 				DE0D2A372B97643F007F1560 /* WorkoutTraining.swift in Sources */,
-				DE0D29F42B97643F007F1560 /* BranchManager.swift in Sources */,
 				DE0D2A2D2B97643F007F1560 /* PurchaseValidationObserver.swift in Sources */,
 				DE0D2A9F2B97643F007F1560 /* DrillTrainingQuitView.swift in Sources */,
 				DE0D2A062B97643F007F1560 /* GetDrillCategoriesRequest.swift in Sources */,
@@ -2724,7 +2720,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4W5848G5V3;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2739,7 +2735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = train.pilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2761,7 +2757,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4W5848G5V3;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2776,7 +2772,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = train.pilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
